@@ -1306,18 +1306,10 @@
               </div>
             </div>
 
-            <div class="form-row-double">
-              <div>
-                <label for="email">Email</label>
-                <div class="field-shell">
-                  <input type="email" id="email" name="email" placeholder="Per eventuali comunicazioni" required />
-                </div>
-              </div>
-              <div>
-                <label for="telefono">Telefono</label>
-                <div class="field-shell">
-                  <input type="tel" id="telefono" name="telefono" placeholder="Facoltativo" />
-                </div>
+            <div>
+              <label for="email">Email</label>
+              <div class="field-shell">
+                <input type="email" id="email" name="email" placeholder="Per eventuali comunicazioni" required />
               </div>
             </div>
 
@@ -1333,14 +1325,39 @@
                 </div>
               </div>
               <div>
-                <label for="ospiti">Numero di persone</label>
+                <label for="ospiti">Adulti</label>
                 <div class="field-shell">
                   <select id="ospiti" name="ospiti" required>
-                    <option value="">Solo tu o con chi?</option>
+                    <option value="">Quanti adulti?</option>
                     <option value="1">Solo io</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-row-double">
+              <div>
+                <label for="bambini">Bambini</label>
+                <div class="field-shell">
+                  <select id="bambini" name="bambini">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                  </select>
+                </div>
+              </div>
+              <div>
+                <label for="culla">Numero culle</label>
+                <div class="field-shell">
+                  <select id="culla" name="culla">
+                    <option value="0">0</option>
+                    <option value="1">1 (+10€ a notte)</option>
+                    <option value="2">2 (+20€ a notte)</option>
                   </select>
                 </div>
               </div>
@@ -1354,7 +1371,6 @@
                   <option value="no">Non ho bisogno di pernottamento</option>
                   <option value="matrimoniale">Camera matrimoniale (75€)</option>
                   <option value="tripla">Camera tripla (100€)</option>
-                  <option value="culla">Aggiungi culla (+10€ a notte)</option>
                 </select>
               </div>
             </div>
