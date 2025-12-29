@@ -145,6 +145,7 @@
 
     <header>
         <div class="logo-container">
+            <!-- Se preferisci path assoluto, sostituisci 'logo.jpg' con l'URL completo -->
             <img src="LOGO.jpg" alt="Logo Andrea & Leonardo">
         </div>
         <p>12 Settembre 2026</p>
@@ -196,34 +197,62 @@
         </div>
     </section>
 
-    <!-- Come raggiungerci -->
+    <!-- Timeline degli eventi -->
     <section>
-        <h2><i class="fas fa-map-marker-alt"></i> Come raggiungerci</h2>
-        <h3>Auto:</h3>
-        <p>Hotel Bisanzio Resort, Piana dei Venti – Rossano (CS);</p>
-        
-        <h3>Treno:</h3>
-        <p>Scendere alla stazione di Rossano; l’hotel dista circa 20 minuti in taxi.</p>
-        
-        <h3>Aereo – Lamezia Terme:</h3>
-        <p>Collegamenti ferroviari per Rossano o navetta dedicata (costo 21 €) fino a Rossano.</p>
-        
-        <h3>Aereo – Crotone:</h3>
-        <p>Possibile raggiungerci in circa 1h20 tramite auto da noleggiare in loco.</p>
+        <h2><i class="fas fa-calendar-alt"></i> Programma</h2>
+        <div class="timeline">
+            <div class="event">
+                <i class="fas fa-star"></i>
+                <h4>Pre-wedding</h4>
+                <p><strong>19:00 - Evento di Benvenuto</strong><br>Un incontro informale per conoscersi prima del matrimonio.</p>
+            </div>
+
+            <div class="event">
+                <i class="fas fa-clock"></i>
+                <h4>16:00 - Cerimonia</h4>
+                <p>Inizio della cerimonia.</p>
+            </div>
+            <div class="event">
+                <i class="fas fa-glass-cheers"></i>
+                <h4>17:00 - Brindisi</h4>
+                <p>Dopo un iniziale brindisi gli sposi si dedicano alle foto mentre gli ospiti si intrattengono in location.</p>
+            </div>
+            <div class="event">
+                <i class="fas fa-wine-glass-alt"></i>
+                <h4>19:30 - Aperitivo</h4>
+                <p>Tempo per stuzzichini e conversazioni.</p>
+            </div>
+            <div class="event">
+                <i class="fas fa-utensils"></i>
+                <h4>21:00 - Cena</h4>
+                <p>Inizio della cena.</p>
+            </div>
+            <div class="event">
+                <i class="fas fa-music"></i>
+                <h4>22:30 - Ballo</h4>
+                <p>Il primo ballo e apertura della pista.</p>
+            </div>
+            <div class="event">
+                <i class="fas fa-birthday-cake"></i>
+                <h4>24:00 - Torta</h4>
+                <p>Taglio della torta nuziale.</p>
+            </div>
+            <div class="event">
+                <i class="fas fa-headphones"></i>
+                <h4>01:00 - DJ Set</h4>
+                <p>Musica e balli fino a notte fonda.</p>
+            </div>
+        </div>
     </section>
 
-    <!-- Dove alloggiare -->
     <section>
-        <h2><i class="fas fa-bed"></i> Dove alloggiare</h2>
-        <p>Hotel Bisanzio Resort (prezzo speciale per gli ospiti - posti limitati)</p>
-        <ul>
-            <li><strong>Matrimoniale:</strong> 75 € a notte con colazione</li>
-            <li><strong>Tripla:</strong> 100 € a notte con colazione</li>
-            <li><strong>Culla aggiuntiva:</strong> + 10 €</li>
-        </ul>
+        <h2><i class="fas fa-camera"></i> Album Fotografico</h2>
+        <p>Visualizza il nostro album su Wedshoots.</p>
+        <a id="wedshoots-link" class="album-btn" href="https://www.wedshoots.com/" target="_blank" rel="noopener">
+            <i class="fas fa-images"></i> Apri Album
+        </a>
     </section>
 
-    <!-- RSVP -->
     <section id="rsvp" style="background: var(--accent-color); color: white;">
         <h2 style="color: white;"><i class="fas fa-check-circle"></i> RSVP</h2>
         <p>Fateci sapere se sarete dei nostri entro il 1 Maggio 2026</p>
@@ -248,13 +277,6 @@
                 <option>3 bambini</option>
             </select>
             <textarea placeholder="Allergie, esigenze alimentari (vegetariano) o messaggi per noi ❤️"></textarea>
-            <label for="accommodation">Hai bisogno di un alloggio?</label>
-            <select id="accommodation" name="accommodation">
-                <option value="">Se sì, scegli l'opzione:</option>
-                <option value="matrimoniale">Matrimoniale - 75€ a notte</option>
-                <option value="tripla">Tripla - 100€ a notte</option>
-                <option value="none">No, non ho bisogno di alloggio</option>
-            </select>
             <button type="submit">INVIA CONFERMA</button>
         </form>
     </section>
