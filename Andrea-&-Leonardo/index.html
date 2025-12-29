@@ -66,6 +66,12 @@
             color: #ba8b68;
             margin-top: 20px;
         }
+        .countdown {
+            font-size: 2em;
+            color: #acb087; /* Sage */
+            font-weight: bold;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -88,6 +94,11 @@
     <p>Non vediamo l'ora di festeggiare con voi!</p>
 </section>
 
+<!-- Countdown Section -->
+<section>
+    <div class="countdown" id="countdown"></div>
+</section>
+
 <section class="rsvp">
     <h2>RSVP</h2>
     <p>Per confermare la tua presenza, ti preghiamo di contattarci al numero <strong>333-1234567</strong> o via email a <strong>info@matrimonioandreaeleonardo.it</strong></p>
@@ -102,6 +113,32 @@
 <footer>
     <p>&copy; 2026 Andrea & Leonardo - Matrimonio Civile</p>
 </footer>
+
+<!-- JavaScript for Countdown -->
+<script>
+    // Data del matrimonio
+    var weddingDate = new Date("Sep 12, 2026 16:30:00").getTime();
+
+    // Aggiorna il countdown ogni secondo
+    var countdownInterval = setInterval(function() {
+        var now = new Date().getTime();
+        var timeLeft = weddingDate - now;
+
+        var days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+        // Visualizza il conto alla rovescia
+        document.getElementById("countdown").innerHTML = "Manca " + days + " giorni " + hours + " ore " + minutes + " minuti " + seconds + " secondi.";
+
+        // Se il countdown finisce, mostra un messaggio
+        if (timeLeft < 0) {
+            clearInterval(countdownInterval);
+            document.getElementById("countdown").innerHTML = "Il grande giorno è arrivato!";
+        }
+    }, 1000);
+</script>
 
 </body>
 </html>
