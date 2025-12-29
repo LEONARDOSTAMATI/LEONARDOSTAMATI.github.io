@@ -1,8 +1,3 @@
-Scusami davvero per l'inconveniente. Capisco quanto sia importante avere tutto completo, quindi ho ricostruito il codice con **tutte le sezioni**: la timeline, "Come raggiungerci", "Dove alloggiare" e il **form RSVP**.
-
-### Codice completo con tutte le sezioni richieste (inclusa "Come arrivare" e "Dove alloggiare"):
-
-```html
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -292,16 +287,22 @@ usic/bensound-love.mp3" type="audio/mpeg"> </audio>
     <form>
         <input type="text" placeholder="Nome e Cognome" required>
         <input type="text" placeholder="Email" required>
+        
+        <!-- Partecipazione -->
         <select required>
             <option value="">Parteciperai?</option>
             <option>Sì, con piacere!</option>
             <option>No, purtroppo.</option>
         </select>
+        
+        <!-- Numero di adulti -->
         <select required>
             <option value="">Numero di adulti</option>
             <option>Una persona</option>
             <option>Due persone</option>
         </select>
+        
+        <!-- Numero di bambini -->
         <select required>
             <option value="">Verrai con bambini?</option>
             <option>No</option>
@@ -309,10 +310,27 @@ usic/bensound-love.mp3" type="audio/mpeg"> </audio>
             <option>2 bambini</option>
             <option>3 bambini</option>
         </select>
+        
+        <!-- Allergie / esigenze alimentari -->
         <textarea placeholder="Allergie, esigenze alimentari (vegetariano) o messaggi per noi ❤️"></textarea>
+
+        <!-- Sezione Alloggio -->
+        <h3 style="color: white;">Dove alloggiare</h3>
+        <p><strong>Hotel Bisanzio Resort</strong> (prezzo speciale per gli ospiti - posti limitati)</p>
+        <p><strong>Matrimoniale:</strong> 75 € a notte con colazione</p>
+        <p><strong>Tripla:</strong> 100 € a notte con colazione</p>
+        <p><strong>Culla aggiuntiva:</strong> + 10 €</p>
+        
+        <label for="check-in">Data di arrivo:</label>
+        <input type="date" id="check-in" name="check-in" required>
+        
+        <label for="check-out">Data di partenza:</label>
+        <input type="date" id="check-out" name="check-out" required>
+        
         <button type="submit">INVIA CONFERMA</button>
     </form>
 </section>
+
 <script>
         // Countdown Logic
         const target = new Date("September 12, 2026 16:00:00").getTime();
