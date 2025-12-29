@@ -143,7 +143,7 @@
     #music-btn {
       position: fixed;
       bottom: 4.2rem; /* sopra il countdown pill */
-      right: 1rem;
+      left: 1rem;
       width: 48px;
       height: 48px;
       border-radius: 50%;
@@ -157,6 +157,7 @@
       cursor: pointer;
       z-index: 40;
     }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 
     .countdown-pill strong {
       font-family: 'Playfair Display', serif;
@@ -1266,6 +1267,36 @@
 
   updateCountdown();
   setInterval(updateCountdown, 1000 * 60 * 60); // ogni ora è sufficiente
+
+  // Music Control
+  const audioEl = document.getElementById('bg-music');
+  const musicIcon = document.getElementById('music-icon');
+  if (audioEl && musicIcon) {
+    audioEl.volume = 0.5;
+
+    function setMusicIcon() {
+      if (audioEl.paused) {
+        musicIcon.classList.remove('fa-pause');
+        musicIcon.classList.add('fa-music');
+      } else {
+        musicIcon.classList.remove('fa-music');
+        musicIcon.classList.add('fa-pause');
+      }
+    }
+
+    window.toggleMusic = function toggleMusic() {
+      if (audioEl.paused) {
+        audioEl.play().then(setMusicIcon).catch(() => {
+          // Play fallisce senza interazione su alcuni browser; il click sul bottone lo sblocca
+        });
+      } else {
+        audioEl.pause();
+        setMusicIcon();
+      }
+    };
+
+    setMusicIcon();
+  }
 </script>
 
 </body>
