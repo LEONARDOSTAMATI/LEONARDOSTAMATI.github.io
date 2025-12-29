@@ -1,214 +1,100 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Matrimonio di Andrea & Leonardo</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
-    <style>
-        :root {
-            --primary-color: #f4f1ea;
-            --accent-color: #8d7b68;
-            --text-dark: #333;
-        }
-
-        * { box-sizing: border-box; }
-        body {
-            margin: 0; padding: 0;
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--primary-color);
-            color: var(--text-dark);
-            text-align: center;
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 400; color: var(--accent-color); }
-
-        /* Header e Logo */
-        header {
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
-                        url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070') center/cover no-repeat;
-            display: flex; flex-direction: column; justify-content: center; align-items: center;
-            color: white; padding: 20px;
-        }
-
-        .logo-container img {
-            max-width: 150px; /* Regola la grandezza del logo */
-            height: auto;
-            margin-bottom: 20px;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
-        }
-
-        header h1 { 
-            font-size: clamp(2.2rem, 10vw, 4rem); 
-            margin: 10px 0; color: white; line-height: 1.1; 
-        }
-        header p { font-size: 1rem; letter-spacing: 2px; text-transform: uppercase; color: white; margin: 5px 0; }
-
-        /* Countdown */
-        #countdown {
-            padding: 40px 10px; background: white;
-            display: grid; grid-template-columns: repeat(4, 1fr);
-            max-width: 600px; margin: 0 auto; gap: 10px;
-        }
-        .time-block { font-size: 1.2rem; font-weight: bold; color: var(--accent-color); }
-        .time-block span { display: block; font-size: 0.7rem; text-transform: uppercase; color: #999; }
-
-        /* Sezioni */
-        section { padding:60px 20px; max-width: 800px; margin: 0 auto; }
-        section:nth-of-type(even) { background-color: white; max-width: 100%; }
-
-        /* Timeline Programma */
-        .timeline { 
-            max-width: 500px; margin: 30px auto; 
-            border-left: 2px solid var(--accent-color); 
-            padding-left: 25px; text-align: left; 
-        }
-        .event { margin-bottom: 30px; position: relative; }
-        .event i { position: absolute; left: -55px; top: 0; color: var(--accent-color); font-size: 1.2rem; }
-        
-        /* Gallery */
-        .gallery-grid { 
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
-            gap: 10px; padding: 10px;
-        }
-        .gallery-grid img { width: 100%; height: 200px; object-fit: cover; border-radius: 5px; }
-
-        /* Pulsanti e Form */
-        .map-button {
-            display: inline-block; background: var(--accent-color); color: white;
-            padding: 15px 25px; text-decoration: none; border-radius: 30px;
-            margin-top: 20px; font-size: 0.9rem; font-weight: bold;
-        }
-        form { display: flex; flex-direction: column; gap: 15px; max-width: 400px; margin: 0 auto; }
-        input, select, textarea { padding: 12px; border-radius: 5px; border: 1px solid #ddd; width: 100%; }
-        button { background: white; color: var(--accent-color); border: none; padding: 15px; font-weight: bold; border-radius: 5px; cursor: pointer; }
-
-        /* Music Floating Button */
-        #music-btn {
-            position: fixed; bottom: 20px; right: 20px;
-            background: rgba(255,255,255,0.9);
-            width: 50px; height: 50px; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2); z-index: 100; cursor: pointer;
-        }
-
-        @media (max-width: 480px) {
-            .timeline { margin-left: 40px; }
-            .logo-container img { max-width: 120px; }
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrea & Leonardo's Wedding</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <audio id="bg-music" loop>
-        <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
-    </audio>
-
-    <div id="music-btn" onclick="toggleMusic()">
-        <i id="music-icon" class="fas fa-music"></i>
-    </div>
-
     <header>
-        <div class="logo-container">
-            <img src="https://leonardostamati.github.io/Andrea-&-Leonardo/LOGO.jpg" alt="Logo Andrea & Leonardo">
-        </div>
-        <p>12 Settembre 2026</p>
         <h1>Andrea & Leonardo</h1>
-        <p><i class="fas fa-heart"></i> CI SPOSIAMO</p>
+        <p>Join us as we celebrate our wedding!</p>
     </header>
 
-    <section id="countdown">
-        <div class="time-block"><div id="days">00</div><span>Giorni</span></div>
-        <div class="time-block"><div id="hours">00</div><span>Ore</span></div>
-        <div class="time-block"><div id="mins">00</div><span>Min</span></div>
-        <div class="time-block"><div id="secs">00</div><span>Sec</span></div>
-    </section>
+    <main>
+        <section id="timeline">
+            <h2>Wedding Timeline</h2>
+            <ul>
+                <li><strong>2:00 PM:</strong> Guests Arrive</li>
+                <li><strong>2:30 PM:</strong> Ceremony Begins</li>
+                <li><strong>3:30 PM:</strong> Cocktail Hour</li>
+                <li><strong>5:00 PM:</strong> Reception</li>
+                <li><strong>7:00 PM:</strong> Dance Party</li>
+                <li><strong>10:00 PM:</strong> Send-off</li>
+            </ul>
+        </section>
 
-    <section>
-        <h2><i class="fas fa-ring"></i> La Cerimonia</h2>
-        <p>Siamo felici di invitarvi al nostro matrimonio civile:</p>
-        <h3>Hotel Bisanzio Resort</h3>
-        <p>Piana dei Venti, Corigliano Rossano (CS)<br>Ore 16:00</p>
-        <a href="https://www.google.com/maps/search/?api=1&query=Hotel+Bisanzio+Resort+Corigliano+Rossano" target="_blank" class="map-button">
-            <i class="fas fa-map-marker-alt"></i> APRI GOOGLE MAPS
-        </a>
-    </section>
+        <section id="wedshoots">
+            <h2>Wedding Photos</h2>
+            <p>Check out our wedding memories on Wedshoots! Click the link below to view the album:</p>
+            <a href="https://www.wedshoots.com/album/andrea-leonardo" target="_blank">View Wedding Album</a>
+        </section>
+    </main>
 
-    <section>
-        <h2><i class="fas fa-calendar-alt"></i> Programma</h2>
-        <div class="timeline">
-            <div class="event">
-                <i class="fas fa-clock"></i>
-                <h4>16:00 - Arrivo Ospiti</h4>
-                <p>Benvenuto presso il giardino del resort.</p>
-            </div>
-            <div class="event">
-                <i class="fas fa-pen-fancy"></i>
-                <h4>16:30 - Celebrazione Civile</h4>
-                <p>Il momento del nostro "Sì".</p>
-            </div>
-            <div class="event">
-                <i class="fas fa-utensils"></i>
-                <h4>18:00 - Ricevimento</h4>
-                <p>Cena e brindisi sotto le stelle.</p>
-            </div>
-        </div>
-    </section>
+    <footer>
+        <p>Thank you for being part of our special day!</p>
+    </footer>
 
-    <section>
-        <h2><i class="fas fa-camera"></i> I Nostri Momenti</h2>
-        <div class="gallery-grid">
-            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=400" alt="Scatto 1">
-            <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=400" alt="Scatto 2">
-            <img src="https://images.unsplash.com/photo-1522673607200-1648832cee98?auto=format&fit=crop&w=400" alt="Scatto 3">
-            <img src="https://images.unsplash.com/photo-1465495910483-0d6749ee9f4a?auto=format&fit=crop&w=400" alt="Scatto 4">
-        </div>
-    </section>
-
-    <section id="rsvp" style="background: var(--accent-color); color: white;">
-        <h2 style="color: white;"><i class="fas fa-check-circle"></i> RSVP</h2>
-        <p>Fateci sapere se sarete dei nostri entro il 12 Luglio 2026</p>
-        <form>
-            <input type="text" placeholder="Nome e Cognome" required>
-            <select required>
-                <option value="">Parteciperai?</option>
-                <option>Sì, verremo con piacere!</option>
-                <option>No, purtroppo non possiamo</option>
-            </select>
-            <textarea placeholder="Allergie o messaggi per noi"></textarea>
-            <button type="submit">INVIA CONFERMA</button>
-        </form>
-    </section>
-
-    <script>
-        // Countdown Logic
-        const target = new Date("September 12, 2026 16:00:00").getTime();
-        setInterval(() => {
-            const now = new Date().getTime();
-            const diff = target - now;
-            document.getElementById("days").innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
-            document.getElementById("hours").innerText = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            document.getElementById("mins").innerText = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            document.getElementById("secs").innerText = Math.floor((diff % (1000 * 60)) / 1000);
-        }, 1000);
-
-        // Music Control Logic
-        const audio = document.getElementById("bg-music");
-        const icon = document.getElementById("music-icon");
-        function toggleMusic() {
-            if (audio.paused) {
-                audio.play();
-                icon.classList.replace("fa-music", "fa-pause");
-            } else {
-                audio.pause();
-                icon.classList.replace("fa-pause", "fa-music");
-            }
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fdfdfd;
+            color: #333;
         }
-    </script>
+
+        header {
+            background-color: #6a5acd;
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+        }
+
+        header h1 {
+            font-family: 'Georgia', serif;
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        main {
+            padding: 1.5rem;
+        }
+
+        section {
+            margin-bottom: 2.5rem;
+        }
+
+        #timeline ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        #timeline li {
+            margin-bottom: 0.5rem;
+        }
+
+        #wedshoots p {
+            margin: 0.5rem 0;
+        }
+
+        a {
+            color: #6a5acd;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+    </style>
 </body>
 </html>
