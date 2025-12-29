@@ -1,116 +1,308 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Andrea & Leonardo</title>
-  <style>
-    :root{--accent:#b85c7a;--bg:#f9f7f6;--text:#222}
-    body{font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial; background:var(--bg); color:var(--text); margin:0; padding:0;}
-    header{display:flex;align-items:center;gap:16px;padding:28px 20px;background:#fff;border-bottom:1px solid #eee}
-    .brand{display:flex;align-items:center;gap:12px}
-    .round-logo{width:96px;height:96px;border-radius:50%;object-fit:cover;border:4px solid rgba(0,0,0,0.06);box-shadow:0 6px 20px rgba(0,0,0,0.06)}
-    h1{font-size:1.6rem;margin:0}
-    .lead{color:#555;margin-top:6px;font-size:0.95rem}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Matrimonio di Andrea & Leonardo</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #f4f1ea;
+            --accent-color: #8d7b68;
+            --text-dark: #333;
+        }
 
-    main{max-width:980px;margin:28px auto;padding:0 20px}
+        * { box-sizing: border-box; }
+        body {
+            margin: 0; padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--primary-color);
+            color: var(--text-dark);
+            text-align: center;
+            overflow-x: hidden;
+        }
 
-    /* Wedshoots Section */
-    .wedshoots{background:#fff;padding:20px;border-radius:10px;margin-bottom:22px;box-shadow:0 6px 18px rgba(0,0,0,0.03)}
-    .wedshoots h2{margin-top:0}
-    .gallery{display:flex;gap:10px;flex-wrap:wrap}
-    .gallery img{width:calc(33.333% - 6.6px);border-radius:8px;object-fit:cover;height:140px}
+        h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 400; color: var(--accent-color); }
 
-    /* Timeline - stile originale (classico alternato) */
-    .timeline{position:relative;padding:30px 0}
-    .timeline::before{content:'';position:absolute;left:50%;top:0;transform:translateX(-50%);width:4px;height:100%;background:linear-gradient(#eee,#eee)}
-    .entry{position:relative;width:50%;padding:18px 24px;box-sizing:border-box}
-    .entry .card{background:#fff;padding:14px;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,0.03)}
-    .entry.left{left:0;text-align:right;padding-right:40px}
-    .entry.right{left:50%;padding-left:40px}
-    .entry .point{position:absolute;top:28px;width:18px;height:18px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(184,92,122,0.08);left:calc(50% - 9px)}
-    .entry.left .point{right:-9px;left:auto}
-    .entry.right .point{left:-9px}
-    .card h3{margin:0 0 6px 0;font-size:1.05rem}
-    .card time{display:block;color:#888;font-size:0.9rem;margin-bottom:8px}
+        /* Header e Logo (semplice) */
+        header {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)), 
+                        url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070') center/cover no-repeat;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            color: white; padding: 20px;
+        }
 
-    @media (max-width:720px){
-      .entry{width:100%}
-      .entry.left,.entry.right{left:0;padding:12px 12px 12px 48px;text-align:left}
-      .timeline::before{left:22px}
-      .entry .point{left:14px}
-    }
+        .logo-container img {
+            max-width: 150px;
+            height: auto;
+            margin-bottom: 18px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.06);
+            padding: 6px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+        }
 
-    footer{color:#777;font-size:0.9rem;padding:22px;text-align:center}
-  </style>
+        header h1 { 
+            font-size: clamp(2.2rem, 10vw, 4rem); 
+            margin: 8px 0; color: white; line-height: 1.05; 
+        }
+        header p { font-size: 1rem; letter-spacing: 2px; text-transform: uppercase; color: white; margin: 5px 0; }
+
+        /* Countdown (semplice box) */
+        #countdown {
+            padding: 32px 10px; background: white;
+            display: grid; grid-template-columns: repeat(4, 1fr);
+            max-width: 600px; margin: -40px auto 30px; gap: 10px;
+            border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+        .time-block { font-size: 1.2rem; font-weight: bold; color: var(--accent-color); }
+        .time-block span { display: block; font-size: 0.7rem; text-transform: uppercase; color: #999; }
+
+        /* Sezioni semplici */
+        section { padding: 60px 20px; max-width: 800px; margin: 0 auto; text-align: left; }
+        section:nth-of-type(even) { background-color: white; max-width: 100%; }
+
+        /* La nostra storia - timeline alternata (adatta a raccontare la storia) */
+        .story-timeline { max-width: 900px; margin: 10px auto 40px; position: relative; }
+        .story-timeline::before {
+            content: ""; position: absolute; left: 50%; transform: translateX(-50%); width: 4px; top: 0; bottom: 0; background: var(--accent-color); opacity: 0.12;
+        }
+        .story-item { width: 50%; padding: 16px 24px; box-sizing: border-box; position: relative; }
+        .story-item-left { left: 0; float: left; text-align: right; }
+        .story-item-right { left: 50%; float: right; text-align: left; }
+        .story-item .dot { position: absolute; top: 24px; width: 14px; height: 14px; border-radius: 50%; background: var(--accent-color); box-shadow: 0 0 0 6px rgba(141,123,104,0.06); }
+        .story-item-left .dot { right: -7px; }
+        .story-item-right .dot { left: -7px; }
+        .story-card { display: inline-block; background: white; padding: 14px; border-radius: 8px; box-shadow: 0 8px 20px rgba(0,0,0,0.06); max-width: 380px; }
+        .story-card h4 { margin: 0 0 6px; font-size: 1.05rem; }
+        .story-card p { margin: 0; color: #666; font-size: 0.95rem; }
+
+        /* Timeline stile originale (semplice linea per il programma) */
+        .timeline { 
+            max-width: 500px; margin: 30px auto; 
+            border-left: 2px solid var(--accent-color); 
+            padding-left: 25px; text-align: left; 
+        }
+        .event { margin-bottom: 28px; position: relative; }
+        .event i { position: absolute; left: -55px; top: 0; color: var(--accent-color); font-size: 1.2rem; }
+
+        /* Pulsanti e form semplici */
+        .map-button {
+            display: inline-block; background: var(--accent-color); color: white;
+            padding: 12px 20px; text-decoration: none; border-radius: 30px;
+            margin-top: 14px; font-size: 0.9rem; font-weight: bold;
+        }
+        .album-btn {
+            display: inline-block; background: var(--accent-color); color: white;
+            padding: 12px 20px; text-decoration: none; border-radius: 30px;
+            margin-top: 12px; font-size: 0.9rem; font-weight: bold;
+        }
+        form { display: flex; flex-direction: column; gap: 12px; max-width: 420px; margin: 0 auto; }
+        input, select, textarea { padding: 12px; border-radius: 6px; border: 1px solid #ddd; width: 100%; }
+        button { background: white; color: var(--accent-color); border: 2px solid var(--accent-color); padding: 12px; font-weight: bold; border-radius: 6px; cursor: pointer; }
+
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; padding: 10px; }
+        .gallery-grid img { width: 100%; height: 200px; object-fit: cover; border-radius: 6px; }
+
+        /* Music Floating Button */
+        #music-btn {
+            position: fixed; bottom: 20px; right: 20px;
+            background: rgba(255,255,255,0.9);
+            width: 50px; height: 50px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2); z-index: 100; cursor: pointer;
+        }
+
+        @media (max-width: 720px) {
+            .story-item, .story-item-left, .story-item-right { width: 100%; float: none; text-align:left; padding-left: 36px; padding-right: 36px; }
+            .story-item .dot { left: 18px !important; right: auto !important; }
+            .story-timeline::before { left: 24px; transform: none; }
+        }
+
+        @media (max-width: 480px) {
+            .timeline { margin-left: 40px; }
+            .logo-container img { max-width: 120px; }
+            #countdown { grid-template-columns: repeat(2,1fr); padding: 16px; }
+        }
+
+        /* clear floats */
+        .clearfix::after { content: ''; display: table; clear: both; }
+    </style>
 </head>
 <body>
-  <header>
-    <div class="brand">
-      <!-- Sostituire 'logo.jpg' con il file reale del logo tondo nella stessa cartella -->
-      <img src="logo.jpg" alt="Logo Andrea & Leonardo" class="round-logo">
-      <div>
-        <h1>Andrea & Leonardo</h1>
-        <div class="lead">Celebriamo l'amore, la famiglia e i ricordi speciali.</div>
-      </div>
+
+    <audio id="bg-music" loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="music-btn" onclick="toggleMusic()" title="Ascolta musica">
+        <i id="music-icon" class="fas fa-music"></i>
     </div>
-  </header>
 
-  <main>
-    <section class="wedshoots" aria-labelledby="wedshoots-title">
-      <h2 id="wedshoots-title">Wedshoots</h2>
-      <p>Una selezione di scatti spontanei e romantici: il nostro Wedshoots racconta i momenti più belli prima e dopo il giorno del sì.</p>
-      <div class="gallery">
-        <img src="wed1.jpg" alt="Wedshoot 1">
-        <img src="wed2.jpg" alt="Wedshoot 2">
-        <img src="wed3.jpg" alt="Wedshoot 3">
-      </div>
+    <header>
+        <div class="logo-container">
+            <!-- Se preferisci path assoluto, sostituisci 'logo.jpg' con l'URL completo -->
+            <img src="logo.jpg" alt="Logo Andrea & Leonardo">
+        </div>
+        <p>12 Settembre 2026</p>
+        <h1>Andrea &amp; Leonardo</h1>
+        <p><i class="fas fa-heart"></i> CI SPOSIAMO</p>
+    </header>
+
+    <section id="countdown">
+        <div class="time-block"><div id="days">00</div><span>Giorni</span></div>
+        <div class="time-block"><div id="hours">00</div><span>Ore</span></div>
+        <div class="time-block"><div id="mins">00</div><span>Min</span></div>
+        <div class="time-block"><div id="secs">00</div><span>Sec</span></div>
     </section>
 
-    <section class="timeline" aria-labelledby="timeline-title">
-      <h2 id="timeline-title">La nostra storia</h2>
+    <!-- La nostra storia: timeline posizionata subito dopo il countdown -->
+    <section class="story-timeline clearfix" aria-labelledby="story-title">
+        <h2 id="story-title" style="text-align:center; margin-bottom:18px;">La nostra storia</h2>
 
-      <div class="entry left">
-        <span class="point" aria-hidden="true"></span>
-        <div class="card">
-          <h3>Ci siamo incontrati</h3>
-          <time>Primavera 2016</time>
-          <p>Un incontro casuale che è diventato subito complicità. Da quel giorno abbiamo iniziato a costruire ricordi insieme.</p>
+        <div class="story-item story-item-left">
+            <div class="dot" aria-hidden="true"></div>
+            <div class="story-card">
+                <h4>Ci siamo incontrati</h4>
+                <p>Primavera 2016 — Un incontro casuale che è diventato subito complicità.</p>
+            </div>
         </div>
-      </div>
 
-      <div class="entry right">
-        <span class="point" aria-hidden="true"></span>
-        <div class="card">
-          <h3>Primo viaggio insieme</h3>
-          <time>Estate 2017</time>
-          <p>Una settimana in cui abbiamo scoperto quanto fosse bello esplorare il mondo mano nella mano.</p>
+        <div class="story-item story-item-right">
+            <div class="dot" aria-hidden="true"></div>
+            <div class="story-card">
+                <h4>Primo viaggio insieme</h4>
+                <p>Estate 2017 — Una settimana in cui abbiamo scoperto quanto fosse bello esplorare il mondo mano nella mano.</p>
+            </div>
         </div>
-      </div>
 
-      <div class="entry left">
-        <span class="point" aria-hidden="true"></span>
-        <div class="card">
-          <h3>La proposta</h3>
-          <time>Inverno 2021</time>
-          <p>Un momento intimo e sorprendente: la domanda che ci ha fatto iniziare il capitolo successivo.</p>
+        <div class="story-item story-item-left">
+            <div class="dot" aria-hidden="true"></div>
+            <div class="story-card">
+                <h4>La proposta</h4>
+                <p>Inverno 2021 — Un momento intimo e sorprendente: la domanda che ci ha fatto iniziare il capitolo successivo.</p>
+            </div>
         </div>
-      </div>
 
-      <div class="entry right">
-        <span class="point" aria-hidden="true"></span>
-        <div class="card">
-          <h3>Preparativi</h3>
-          <time>2023 - 2024</time>
-          <p>Cura dei dettagli, risate e qualche piccola preoccupazione: tutto finalizzato al nostro giorno speciale.</p>
+        <div class="story-item story-item-right">
+            <div class="dot" aria-hidden="true"></div>
+            <div class="story-card">
+                <h4>Preparativi</h4>
+                <p>2023 - 2024 — Cura dei dettagli, risate e qualche piccola preoccupazione in vista del nostro giorno.</p>
+            </div>
         </div>
-      </div>
-
     </section>
 
-    <footer>
-      © Andrea & Leonardo — Tutti i diritti riservati
-    </footer>
-  </main>
+    <section>
+        <h2><i class="fas fa-ring"></i> La Cerimonia</h2>
+        <p>Siamo felici di invitarvi al nostro matrimonio:</p>
+        <h3>Hotel Bisanzio Resort</h3>
+        <p>Piana dei Venti, Corigliano Rossano (CS)<br>Ore 16:00</p>
+        <a href="https://www.google.com/maps/search/?api=1&query=Hotel+Bisanzio+Resort+Corigliano+Rossano" target="_blank" class="map-button" rel="noopener">
+            <i class="fas fa-map-marker-alt"></i> APRI GOOGLE MAPS
+        </a>
+    </section>
+
+    <section>
+        <h2><i class="fas fa-calendar-alt"></i> Programma</h2>
+        <div class="timeline">
+            <div class="event">
+                <i class="fas fa-star"></i>
+                <h4>Pre-wedding</h4>
+                <p><strong>19:00 - Evento di Benvenuto</strong><br>Un incontro informale per conoscersi prima del matrimonio.</p>
+            </div>
+
+            <div class="event">
+                <i class="fas fa-clock"></i>
+                <h4>16:00 - Cerimonia</h4>
+                <p>Inizio della cerimonia.</p>
+            </div>
+            <div class="event">
+                <i class="fas fa-glass-cheers"></i>
+                <h4>17:00 - Brindisi</h4>
+                <p>Dopo un iniziale brindisi gli sposi si dedicano alle foto mentre gli ospiti si intrattengono in location.</p>
+            </div>
+            <div class="event">
+                <i class="fas fa-wine-glass-alt"></i>
+                <h4>19:30 - Aperitivo</h4>
+                <p>Tempo per stuzzichini e conversazioni.</p>
+            </div>
+            <div class="event">
+                <i class="fas fa-utensils"></i>
+                <h4>21:00 - Cena</h4>
+                <p>Inizio della cena.</p>
+            </div>
+            <div class="event">
+                <i class="fas fa-music"></i>
+                <h4>22:30 - Ballo</h4>
+                <p>Il primo ballo e apertura della pista.</p>
+            </div>
+            <div class="event">
+                <i class="fas fa-birthday-cake"></i>
+                <h4>24:00 - Torta</h4>
+                <p>Taglio della torta nuziale.</p>
+            </div>
+            <div class="event">
+                <i class="fas fa-headphones"></i>
+                <h4>01:00 - DJ Set</h4>
+                <p>Musica e balli fino a notte fonda.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2><i class="fas fa-camera"></i> Album Fotografico</h2>
+        <p>Visualizza il nostro album su Wedshoots (sostituisci il link con l'URL reale dell'album).</p>
+        <a id="wedshoots-link" class="album-btn" href="https://www.wedshoots.com/" target="_blank" rel="noopener">
+            <i class="fas fa-images"></i> Apri Album Wedshoots
+        </a>
+    </section>
+
+    <section id="rsvp" style="background: var(--accent-color); color: white;">
+        <h2 style="color: white;"><i class="fas fa-check-circle"></i> RSVP</h2>
+        <p>Fateci sapere se sarete dei nostri entro il 12 Luglio 2026</p>
+        <form>
+            <input type="text" placeholder="Nome e Cognome" required>
+            <select required>
+                <option value="">Parteciperai?</option>
+                <option>Sì, verremo con piacere!</option>
+                <option>No, purtroppo non possiamo</option>
+            </select>
+            <textarea placeholder="Allergie o messaggi per noi"></textarea>
+            <button type="submit">INVIA CONFERMA</button>
+        </form>
+    </section>
+
+    <script>
+        // Countdown Logic
+        const target = new Date("September 12, 2026 16:00:00").getTime();
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const diff = Math.max(0, target - now);
+            document.getElementById("days").innerText = Math.floor(diff / (1000 * 60 * 60 * 24)).toString().padStart(2,'0');
+            document.getElementById("hours").innerText = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2,'0');
+            document.getElementById("mins").innerText = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2,'0');
+            document.getElementById("secs").innerText = Math.floor((diff % (1000 * 60)) / 1000).toString().padStart(2,'0');
+        }
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        // Music Control Logic
+        const audio = document.getElementById("bg-music");
+        const icon = document.getElementById("music-icon");
+        function toggleMusic() {
+            if (audio.paused) {
+                audio.play();
+                icon.classList.replace("fa-music", "fa-pause");
+            } else {
+                audio.pause();
+                icon.classList.replace("fa-pause", "fa-music");
+            }
+        }
+    </script>
 </body>
 </html>
