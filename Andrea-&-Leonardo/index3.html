@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Andrea & Leonardo – 12 Settembre 2026</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+/* PALETTE */
+:root {
+  --sage: #ACB087;
+  --terracotta: #BA8B66;
+  --ivory: #F4E1E0;
+  --blush: #EAE0D5;
+  --ink: #2f2a28;
+}
+
+/* RESET */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: var(--ivory);
+  overflow-x: hidden;
+  overflow-y: hidden;
+  color: var(--ink);
+}
+
+/* CONTENITORE ORIZZONTALE */
+.horizontal-wrapper {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: max-content;
+  scroll-behavior: smooth;
+}
+
+/* OGNI PANNELLO */
+.panel {
+  width: 100vw;
+  height: 100vh;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+/* TITOLI */
+h1, h2 {
+  font-family: 'Playfair Display', serif;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 1;
+}
+
+h2 {
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  margin-bottom: 1rem;
+}
+
+/* HERO */
+.hero {
+  background: var(--blush);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 10vw;
+}
+
+.hero-sub {
+  margin-top: 1rem;
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+}
+
+/* PROGRAMMA */
+.programma {
+  background: var(--sage);
+  color: #1f1f1f;
+}
+
+.programma ul {
+  list-style: none;
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+/* LOCATION */
+.location {
+  background: var(--terracotta);
+  color: #fff;
+}
+
+.location p {
+  font-size: 1.1rem;
+  max-width: 400px;
+  line-height: 1.6;
+}
+
+/* RSVP */
+.rsvp {
+  background: var(--blush);
+}
+
+.rsvp form {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 350px;
+}
+
+input, select {
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+}
+
+button {
+  padding: 0.9rem 1rem;
+  background: var(--terracotta);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+}
+
+/* NAVIGAZIONE A PUNTI */
+.nav-dots {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1rem;
+  z-index: 10;
+}
+
+.nav-dots button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0,0,0,0.3);
+  cursor: pointer;
+}
+
+.nav-dots button.active {
+  background: var(--terracotta);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .panel { padding: 2rem; }
+  h1 { font-size: 2.2rem; }
+  h2 { font-size: 1.4rem; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGAZIONE A PUNTI -->
+<div class="nav-dots">
+  <button data-index="0" class="active"></button>
+  <button data-index="1"></button>
+  <button data-index="2"></button>
+  <button data-index="3"></button>
+</div>
+
+<!-- CONTENITORE ORIZZONTALE -->
+<div class="horizontal-wrapper" id="scrollContainer">
+
+  <!-- HERO -->
+  <section class="panel hero">
+    <h1>Andrea & Leonardo</h1>
+    <div class="hero-sub">12 Settembre 2026 · Rossano (CS)</div>
+  </section>
+
+  <!-- PROGRAMMA -->
+  <section class="panel programma">
+    <h2>Programma</h2>
+    <ul>
+      <li>11 Sett. – 19:00 · Welcome Party</li>
+      <li>12 Sett. – 16:00 · Cerimonia</li>
+      <li>17:00 · Brindisi</li>
+      <li>19:30 · Aperitivo</li>
+      <li>21:00 · Cena</li>
+      <li>24:00 · Taglio Torta</li>
+      <li>01:00 · DJ Set</li>
+    </ul>
+  </section>
+
+  <!-- LOCATION -->
+  <section class="panel location">
+    <h2>Location</h2>
+    <p>
+      Hotel Bisanzio Resort  
+      Piana dei Venti – Rossano (CS)  
+      Arrivo in auto, treno (Rossano) o aereo (Lamezia / Crotone).
+    </p>
+  </section>
+
+  <!-- RSVP -->
+  <section class="panel rsvp">
+    <h2>RSVP</h2>
+    <form>
+      <input type="text" placeholder="Nome e Cognome" required>
+      <input type="email" placeholder="Email" required>
+      <select required>
+        <option value="">Parteciperai?</option>
+        <option value="si">Sì</option>
+        <option value="no">No</option>
+      </select>
+      <button>Invia</button>
+    </form>
+  </section>
+
+</div>
+
+<script>
+// Scroll orizzontale con rotella del mouse
+const container = document.getElementById("scrollContainer");
+container.addEventListener("wheel", (e) => {
+  e.preventDefault();
+  container.scrollLeft += e.deltaY;
+});
+
+// Navigazione a punti
+const dots = document.querySelectorAll(".nav-dots button");
+dots.forEach(dot => {
+  dot.addEventListener("click", () => {
+    const index = dot.dataset.index;
+    container.scrollTo({
+      left: window.innerWidth * index,
+      behavior: "smooth"
+    });
+    dots.forEach(d => d.classList.remove("active"));
+    dot.classList.add("active");
+  });
+});
+
+// Aggiorna dot attivo durante lo scroll
+container.addEventListener("scroll", () => {
+  const index = Math.round(container.scrollLeft / window.innerWidth);
+  dots.forEach(d => d.classList.remove("active"));
+  dots[index].classList.add("active");
+});
+</script>
+
+</body>
+</html>
