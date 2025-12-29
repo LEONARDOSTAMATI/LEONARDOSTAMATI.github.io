@@ -2,17 +2,21 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Matrimonio di Andrea & Leonardo</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
     <style>
         :root {
-            --primary-color: #f4f1ea; /* Sfondo crema */
-            --accent-color: #8d7b68;  /* Marrone elegante */
+            --primary-color: #f4f1ea;
+            --accent-color: #8d7b68;
             --text-dark: #333;
         }
 
+        /* Reset e Base */
+        * { box-sizing: border-box; }
         body {
             margin: 0;
             padding: 0;
@@ -20,459 +24,219 @@
             background-color: var(--primary-color);
             color: var(--text-dark);
             text-align: center;
-            line-height: 1.6;
-            overflow-x: hidden; /* Evita scroll orizzontale non desiderato */
+            line-height: 1.5;
+            overflow-x: hidden;
         }
 
         h1, h2, h3 {
             font-family: 'Playfair Display', serif;
             font-weight: 400;
-            margin-bottom: 15px;
             color: var(--accent-color);
         }
-        h1 { font-size: 3.5rem; }
-        h2 { font-size: 2.5rem; margin-top: 40px; }
-        h3 { font-size: 1.8rem; }
 
-        p { margin-bottom: 10px; }
-
-        /* General Section Styling */
-        section {
-            padding: 80px 20px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        section:nth-of-type(even) {
-            background-color: white;
-        }
-
-        /* Hero Section */
+        /* Hero Section Ottimizzata */
         header {
             height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), 
-                        url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat fixed; /* fixed per effetto parallax */
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070') center/cover no-repeat;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             color: white;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
-            position: relative;
+            padding: 20px;
         }
 
-        header p { font-size: 1.3rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 5px;}
-        header h1 { font-size: 4.5rem; margin: 10px 0; color: white;}
-        header span { font-size: 1.8rem; font-family: 'Playfair Display', serif; display: block; margin-top: 10px;}
+        header h1 { 
+            font-size: clamp(2.5rem, 8vw, 4.5rem); /* Si adatta alla grandezza schermo */
+            margin: 10px 0; 
+            color: white;
+            line-height: 1.1;
+        }
+        header p { font-size: 1rem; letter-spacing: 2px; text-transform: uppercase; color: white; }
 
-        /* Countdown */
+        /* Countdown Compatto */
         #countdown {
-            padding: 50px 20px;
+            padding: 40px 10px;
             background: white;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            border-bottom: 1px solid #e0e0e0;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            max-width: 600px;
+            margin: 0 auto;
+            gap: 10px;
         }
-        .time-block { 
-            font-size: 2rem; 
-            color: var(--accent-color); 
-            font-weight: bold;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .time-block span { 
-            display: block; 
-            font-size: 0.9rem; 
-            text-transform: uppercase; 
-            color: #999; 
-            font-weight: normal;
-            margin-top: 5px;
-        }
+        .time-block { font-size: 1.2rem; font-weight: bold; color: var(--accent-color); }
+        .time-block span { display: block; font-size: 0.7rem; text-transform: uppercase; color: #999; }
 
-        /* Location Section */
-        .location-details {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-        }
-        .location-details h3 {
-            font-size: 2rem;
-            margin-bottom: 0;
-        }
-        .location-details p {
-            font-size: 1.1rem;
-            color: #555;
-        }
-        .map-button {
-            display: inline-block; 
-            margin-top: 20px; 
-            padding: 12px 25px; 
-            background-color: var(--accent-color); 
-            color: white; 
-            text-decoration: none; 
-            border-radius: 5px; 
-            font-weight: bold; 
-            transition: background-color 0.3s ease; 
-            font-family: 'Montserrat', sans-serif;
-            letter-spacing: 1px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-        .map-button:hover {
-            background-color: #6a5e50; /* Un po' più scuro */
-        }
-        .map-button i {
-            margin-right: 8px;
-        }
+        /* Sezioni */
+        section { padding: 60px 20px; max-width: 800px; margin: 0 auto; }
+        section:nth-of-type(even) { background-color: white; max-width: 100%; }
 
-
-        /* Programma */
-        #programma { 
-            padding: 80px 20px; 
-            background-color: var(--primary-color);
-        }
+        /* Timeline Programma */
         .timeline { 
-            max-width: 600px; 
-            margin: 0 auto; 
-            border-left: 1px solid var(--accent-color); 
-            padding-left: 30px; 
+            max-width: 500px; 
+            margin: 30px auto; 
+            border-left: 2px solid var(--accent-color); 
+            padding-left: 25px; 
             text-align: left; 
-            position: relative;
         }
-        .event { 
-            margin-bottom: 40px; 
-            position: relative; 
-            padding-left: 15px;
-        }
-        .event::before { 
-            content: ''; 
-            position: absolute; 
-            left: -36px; 
-            top: 8px; 
-            width: 14px; 
-            height: 14px; 
-            background: var(--accent-color); 
-            border-radius: 50%; 
-            border: 2px solid white;
-            box-shadow: 0 0 0 2px var(--accent-color);
-        }
-        .event h4 { 
-            margin: 0 0 5px 0; 
-            color: var(--accent-color); 
-            font-size: 1.3rem; 
-            font-family: 'Playfair Display', serif;
-        }
-        .event p {
-            margin: 0;
-            color: #555;
-        }
-        .event i { /* Icone per gli eventi */
-            position: absolute;
-            left: -65px; /* Spostato a sinistra del cerchio */
-            top: 5px;
-            color: var(--accent-color);
-            font-size: 1.5rem;
-        }
+        .event { margin-bottom: 30px; position: relative; }
+        .event i { position: absolute; left: -55px; top: 0; color: var(--accent-color); font-size: 1.2rem; }
+        .event h4 { margin: 0; font-size: 1.1rem; }
 
-        /* Gallery */
-        #immagini { 
-            background: #eee; 
-            padding: 50px 0; 
-        }
+        /* Gallery - Correzione Zoom */
         .gallery-grid { 
             display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-            gap: 15px; 
-            padding: 0 20px; 
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+            gap: 10px; 
+            padding: 10px;
         }
         .gallery-grid img { 
             width: 100%; 
-            height: 320px; 
+            height: 200px; 
             object-fit: cover; 
-            border-radius: 8px; 
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        .gallery-grid img:hover {
-            transform: scale(1.03);
+            border-radius: 5px; 
         }
 
-        /* RSVP */
-        #rsvp { 
-            padding: 80px 20px; 
-            background: var(--accent-color); 
-            color: white; 
-        }
-        #rsvp h2 {
+        /* Pulsante Mappa */
+        .map-button {
+            display: inline-block;
+            background: var(--accent-color);
             color: white;
-        }
-        #rsvp p {
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-        }
-        form { 
-            max-width: 500px; 
-            margin: 0 auto; 
-            display: flex; 
-            flex-direction: column; 
-            gap: 18px; 
-        }
-        input, select, textarea { 
-            padding: 15px; 
-            border-radius: 8px; 
-            border: 1px solid #ccc; 
-            font-family: inherit; 
-            font-size: 1rem;
-            width: 100%;
-            box-sizing: border-box; /* Includi padding nel width */
-        }
-        textarea {
-            resize: vertical; /* Permette di ridimensionare solo verticalmente */
-            min-height: 100px;
-        }
-        button[type="submit"] { 
-            background: white; 
-            color: var(--accent-color); 
-            font-weight: bold; 
-            cursor: pointer; 
-            transition: background-color 0.3s ease, color 0.3s ease; 
-            padding: 15px;
-            border-radius: 8px;
-            border: none;
-            font-size: 1.1rem;
-            letter-spacing: 1px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-        button[type="submit"]:hover { 
-            background: #f0f0f0; 
-            color: #6a5e50;
+            padding: 15px 25px;
+            text-decoration: none;
+            border-radius: 30px;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
         }
 
-        footer { 
-            padding: 30px; 
-            font-size: 0.9rem; 
-            opacity: 0.8; 
-            background-color: #f0f0f0;
-            color: var(--text-dark);
+        /* RSVP Form */
+        form { display: flex; flex-direction: column; gap: 15px; max-width: 400px; margin: 0 auto; }
+        input, select, textarea { padding: 12px; border-radius: 5px; border: 1px solid #ddd; width: 100%; }
+        button { background: white; color: var(--accent-color); border: none; padding: 15px; font-weight: bold; cursor: pointer; border-radius: 5px; }
+
+        /* Music Floating Button */
+        #music-btn {
+            position: fixed; bottom: 20px; right: 20px;
+            background: rgba(255,255,255,0.8);
+            width: 45px; height: 45px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 100;
         }
 
-        /* Music Player Controls */
-        #music-controls {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-            cursor: pointer;
-            z-index: 1000;
-            transition: background-color 0.3s ease;
-        }
-        #music-controls:hover {
-            background-color: rgba(240, 240, 240, 0.9);
-        }
-        #music-controls i {
-            color: var(--accent-color);
-            font-size: 1.5rem;
-        }
-
-        /* Responsive Adjustments */
-        @media (max-width: 768px) {
-            header h1 { font-size: 3rem; }
-            header p { font-size: 1rem; }
-            #countdown { flex-direction: column; gap: 15px;}
-            .time-block { font-size: 1.5rem; }
-            .timeline { padding-left: 20px; }
-            .event::before { left: -26px; }
-            .event i { left: -50px; }
-            .gallery-grid { grid-template-columns: 1fr; }
+        /* Mobile specific fixes */
+        @media (max-width: 480px) {
+            section { padding: 40px 15px; }
+            .timeline { margin-left: 40px; }
+            #countdown { grid-template-columns: repeat(4, 1fr); }
+            .time-block { font-size: 1rem; }
         }
     </style>
 </head>
 <body>
 
-    <audio id="background-music" loop autoplay>
-        <source src="https://assets.mixkit.co/sfx/preview/mixkit-fairytale-game-over-194.mp3" type="audio/mpeg">
-        Il tuo browser non supporta l'elemento audio.
+    <audio id="bg-music" loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
     </audio>
 
-    <div id="music-controls">
-        <i class="fas fa-pause" id="music-icon"></i>
+    <div id="music-btn" onclick="toggleMusic()">
+        <i id="music-icon" class="fas fa-music"></i>
     </div>
 
     <header>
-        <p>CI SPOSIAMO IL</p>
+        <p>12 Settembre 2026</p>
         <h1>Andrea & Leonardo</h1>
-        <span>12 Settembre 2026</span>
+        <p><i class="fas fa-heart"></i> Ci Sposiamo</p>
     </header>
 
     <section id="countdown">
-        <div class="time-block" id="days">00 <span>Giorni</span></div>
-        <div class="time-block" id="hours">00 <span>Ore</span></div>
-        <div class="time-block" id="minutes">00 <span>Minuti</span></div>
-        <div class="time-block" id="seconds">00 <span>Secondi</span></div> </section>
+        <div class="time-block"><div id="days">00</div><span>Giorni</span></div>
+        <div class="time-block"><div id="hours">00</div><span>Ore</span></div>
+        <div class="time-block"><div id="mins">00</div><span>Min</span></div>
+        <div class="time-block"><div id="secs">00</div><span>Sec</span></div>
+    </section>
 
     <section>
-        <h2><i class="fas fa-heartbeat"></i> La Nostra Storia</h2>
-        <p>Dopo anni di amore, risate e avventure, siamo entusiasti di fare il passo più importante della nostra vita. Non vediamo l'ora di condividere questo giorno speciale con voi, le persone che hanno reso il nostro percorso ancora più significativo.</p>
-        <p>Unitevi a noi per celebrare l'inizio del nostro "per sempre".</p>
+        <h2><i class="fas fa-church"></i> La Cerimonia</h2>
+        <p>Vi aspettiamo per il nostro rito civile presso:</p>
+        <h3>Hotel Bisanzio Resort</h3>
+        <p>Corigliano Rossano (CS) - Ore 16:00</p>
+        <a href="https://www.google.com/maps/search/?api=1&query=Hotel+Bisanzio+Resort+Corigliano+Rossano" target="_blank" class="map-button">
+            <i class="fas fa-map-marker-alt"></i> APRI GOOGLE MAPS
+        </a>
     </section>
 
-    <section style="background-color: white;">
-        <h2><i class="fas fa-map-marker-alt"></i> La Cerimonia</h2>
-        <div class="location-details">
-            <p>Siamo felici di invitarvi al nostro matrimonio civile che si terrà presso il:</p>
-            <h3>Hotel Bisanzio Resort</h3>
-            <p>Piana dei Venti, Corigliano Rossano (CS)<br>Ore 16:00</p>
-            
-            <a href="https://www.google.com/maps/search/?api=1&query=Hotel+Bisanzio+Resort+Piana+dei+Venti+Corigliano+Rossano+CS&query_place_id=ChIJHzuklF2DQBMRen-TpC0Szpc" 
-               target="_blank" 
-               class="map-button">
-               <i class="fas fa-map-marked-alt"></i> VEDI POSIZIONE SU GOOGLE MAPS
-            </a>
-        </div>
-    </section>
-
-    <section id="programma">
-        <h2><i class="fas fa-calendar-alt"></i> Il Programma della Giornata</h2>
+    <section>
+        <h2><i class="fas fa-list-ul"></i> Programma</h2>
         <div class="timeline">
             <div class="event">
                 <i class="fas fa-clock"></i>
-                <h4>16:00 - Arrivo Ospiti</h4>
-                <p>Accoglienza degli invitati presso il magnifico giardino dell'Hotel Bisanzio Resort.</p>
+                <h4>16:00 - Arrivo</h4>
+                <p>Accoglienza ospiti nel resort.</p>
             </div>
             <div class="event">
-                <i class="fas fa-ring"></i>
-                <h4>16:30 - Cerimonia Civile</h4>
-                <p>Il rito si svolgerà in un'incantevole location all'aperto, con una splendida vista.</p>
+                <i class="fas fa-pen-fancy"></i>
+                <h4>16:30 - Rito Civile</h4>
+                <p>Promesse e celebrazione.</p>
             </div>
             <div class="event">
-                <i class="fas fa-champagne-glasses"></i>
-                <h4>18:00 - Aperitivo & Cena</h4>
-                <p>Brindisi, risate e delizie culinarie per festeggiare insieme il nostro amore.</p>
-            </div>
-            <div class="event">
-                <i class="fas fa-music"></i>
-                <h4>Dalle 20:00 - Festa & Balli</h4>
-                <p>Musica e divertimento per continuare i festeggiamenti fino a tarda sera.</p>
+                <i class="fas fa-glass-cheers"></i>
+                <h4>18:00 - Ricevimento</h4>
+                <p>Cena e brindisi insieme.</p>
             </div>
         </div>
     </section>
 
-    <section id="immagini">
-        <h2><i class="fas fa-camera-retro"></i> I Nostri Momenti</h2>
+    <section style="background: #fdfdfd;">
+        <h2><i class="fas fa-camera"></i> I nostri scatti</h2>
         <div class="gallery-grid">
-            <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Andrea e Leonardo innamorati">
-            <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Coppia felice che cammina">
-            <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Dettaglio anelli nuziali">
-             <img src="https://images.unsplash.com/photo-1520853046779-d5c4146a7828?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Sposi che si baciano">
-            <img src="https://images.unsplash.com/photo-1521737711867-ee19857d422a?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tavolo nuziale allestito">
-            <img src="https://images.unsplash.com/photo-1519682337033-a3d8b139369e?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Torta nuziale">
+            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=400" alt="Foto 1">
+            <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=400" alt="Foto 2">
+            <img src="https://images.unsplash.com/photo-1522673607200-1648832cee98?auto=format&fit=crop&w=400" alt="Foto 3">
+            <img src="https://images.unsplash.com/photo-1465495910483-0d6749ee9f4a?auto=format&fit=crop&w=400" alt="Foto 4">
         </div>
     </section>
 
-    <section id="rsvp">
-        <h2><i class="fas fa-envelope-open-text"></i> Conferma la tua presenza</h2>
-        <p>Ti preghiamo di rispondere entro il <strong>12 Luglio 2026</strong>. La tua presenza è il nostro regalo più grande.</p>
-        <form action="#" method="POST" data-netlify="true"> <input type="text" name="name" placeholder="Nome e Cognome" required>
-            <select name="participation" required>
-                <option value="">Parteciperai al matrimonio?</option>
-                <option value="si">Sì, con immenso piacere!</option>
-                <option value="no">Purtroppo non potrò partecipare</option>
+    <section id="rsvp" style="background: var(--accent-color); color: white;">
+        <h2 style="color: white;"><i class="fas fa-envelope"></i> RSVP</h2>
+        <p>Conferma la tua presenza entro il 12 Luglio 2026</p>
+        <form>
+            <input type="text" placeholder="Nome e Cognome" required>
+            <select required>
+                <option value="">Parteciperai?</option>
+                <option>Sì, ci sarò!</option>
+                <option>No, purtroppo</option>
             </select>
-            <textarea name="allergies" placeholder="Hai allergie, intolleranze o richieste speciali?"></textarea>
-            <button type="submit"><i class="fas fa-paper-plane"></i> INVIA CONFERMA</button>
+            <textarea placeholder="Eventuali intolleranze"></textarea>
+            <button type="submit">INVIA CONFERMA</button>
         </form>
     </section>
 
-    <footer>
-        <p>&copy; 2026 Andrea & Leonardo - Matrimonio - Tutti i diritti riservati.</p>
-        <p>Realizzato con Amore.</p>
-    </footer>
-
     <script>
-        const targetDate = new Date("September 12, 2026 16:00:00").getTime();
-
-        function updateCountdown() {
+        // Countdown
+        const target = new Date("September 12, 2026 16:00:00").getTime();
+        setInterval(() => {
             const now = new Date().getTime();
-            const distance = targetDate - now;
+            const diff = target - now;
+            document.getElementById("days").innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
+            document.getElementById("hours").innerText = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById("mins").innerText = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            document.getElementById("secs").innerText = Math.floor((diff % (1000 * 60)) / 1000);
+        }, 1000);
 
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.getElementById("days").innerHTML = days + "<span>Giorni</span>";
-            document.getElementById("hours").innerHTML = hours + "<span>Ore</span>";
-            document.getElementById("minutes").innerHTML = minutes + "<span>Minuti</span>";
-            document.getElementById("seconds").innerHTML = seconds + "<span>Secondi</span>";
-
-            if (distance < 0) {
-                clearInterval(countdownInterval);
-                document.getElementById("countdown").innerHTML = "<p style='font-size:1.5rem; color:var(--accent-color);'>Il Grande Giorno è Arrivato!</p>";
+        // Music Toggle
+        const audio = document.getElementById("bg-music");
+        const icon = document.getElementById("music-icon");
+        function toggleMusic() {
+            if (audio.paused) {
+                audio.play();
+                icon.classList.replace("fa-music", "fa-pause");
+            } else {
+                audio.pause();
+                icon.classList.replace("fa-pause", "fa-music");
             }
         }
-
-        const countdownInterval = setInterval(updateCountdown, 1000);
-        updateCountdown(); // Chiamata iniziale per evitare ritardi
-
-        // Gestione Musica
-        const backgroundMusic = document.getElementById("background-music");
-        const musicControls = document.getElementById("music-controls");
-        const musicIcon = document.getElementById("music-icon");
-        let isPlaying = true; // La musica parte in autoplay
-
-        musicControls.addEventListener("click", () => {
-            if (isPlaying) {
-                backgroundMusic.pause();
-                musicIcon.classList.remove("fa-pause");
-                musicIcon.classList.add("fa-play");
-                isPlaying = false;
-            } else {
-                backgroundMusic.play();
-                musicIcon.classList.remove("fa-play");
-                musicIcon.classList.add("fa-pause");
-                isPlaying = true;
-            }
-        });
-
-        // Autoplay policy fix for some browsers (e.g., Chrome)
-        // This will attempt to play music on user interaction
-        document.addEventListener('DOMContentLoaded', () => {
-            const playAudio = () => {
-                backgroundMusic.play().catch(error => {
-                    console.log("Autoplay prevented:", error);
-                    // Optionally show a message to the user to click to play audio
-                });
-                document.removeEventListener('click', playAudio);
-                document.removeEventListener('scroll', playAudio);
-            };
-
-            // Try to play on first user interaction (click or scroll)
-            document.addEventListener('click', playAudio);
-            document.addEventListener('scroll', playAudio);
-
-            // Set the initial icon based on whether autoplay worked or not (if user hasn't clicked yet)
-            setTimeout(() => {
-                if (backgroundMusic.paused) {
-                    musicIcon.classList.remove("fa-pause");
-                    musicIcon.classList.add("fa-play");
-                    isPlaying = false;
-                } else {
-                     musicIcon.classList.remove("fa-play");
-                     musicIcon.classList.add("fa-pause");
-                     isPlaying = true;
-                }
-            }, 100); // Give it a moment to check autoplay status
-        });
-
     </script>
 </body>
 </html>
