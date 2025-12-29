@@ -67,121 +67,28 @@
         section:nth-of-type(even) { background-color: white; max-width: 100%; }
 
         /* La nostra storia - timeline alternata (adatta a raccontare la storia) */
-        .story-timeline {
-            max-width: 900px;
-            margin: 0 auto 40px;
-            position: relative;
-            padding: 20px;
-        }
-
+        .story-timeline { max-width: 900px; margin: 10px auto 40px; position: relative; }
         .story-timeline::before {
-            content: "";
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 4px;
-            top: 0;
-            bottom: 0;
-            background: var(--accent-color);
-            opacity: 0.12;
+            content: ""; position: absolute; left: 50%; transform: translateX(-50%); width: 4px; top: 0; bottom: 0; background: var(--accent-color); opacity: 0.12;
         }
+        .story-item { width: 50%; padding: 16px 24px; box-sizing: border-box; position: relative; }
+        .story-item-left { left: 0; float: left; text-align: right; }
+        .story-item-right { left: 50%; float: right; text-align: left; }
+        .story-item .dot { position: absolute; top: 24px; width: 14px; height: 14px; border-radius: 50%; background: var(--accent-color); box-shadow: 0 0 0 6px rgba(141,123,104,0.06); }
+        .story-item-left .dot { right: -7px; }
+        .story-item-right .dot { left: -7px; }
+        .story-card { display: inline-block; background: white; padding: 14px; border-radius: 8px; box-shadow: 0 8px 20px rgba(0,0,0,0.06); max-width: 380px; }
+        .story-card h4 { margin: 0 0 6px; font-size: 1.05rem; }
+        .story-card p { margin: 0; color: #666; font-size: 0.95rem; }
 
-        .story-item {
-            width: 48%; /* Cambia da 50% a 48% per dare un po' di margine tra gli elementi */
-            padding: 16px;
-            box-sizing: border-box;
-            position: relative;
-            margin-bottom: 20px; /* Aggiungi margine tra gli elementi */
+        /* Timeline stile originale (semplice linea per il programma) */
+        .timeline { 
+            max-width: 500px; margin: 30px auto; 
+            border-left: 2px solid var(--accent-color); 
+            padding-left: 25px; text-align: left; 
         }
-
-        .story-item-left {
-            float: left;
-            text-align: right;
-            padding-right: 20px;
-        }
-
-        .story-item-right {
-            float: right;
-            text-align: left;
-            padding-left: 20px;
-        }
-
-        .story-item .dot {
-            position: absolute;
-            top: 24px;
-            width: 14px;
-            height: 14px;
-            border-radius: 50%;
-            background: var(--accent-color);
-            box-shadow: 0 0 0 6px rgba(141,123,104,0.06);
-        }
-
-        .story-item-left .dot {
-            right: -7px;
-        }
-
-        .story-item-right .dot {
-            left: -7px;
-        }
-
-        .story-card {
-            display: inline-block;
-            background: white;
-            padding: 14px;
-            border-radius: 8px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-            max-width: 380px;
-        }
-
-        .story-card h4 {
-            margin: 0 0 6px;
-            font-size: 1.05rem;
-        }
-
-        .story-card p {
-            margin: 0;
-            color: #666;
-            font-size: 0.95rem;
-        }
-
-        /* Responsività: Una colonna su dispositivi piccoli */
-        @media (max-width: 720px) {
-            .story-item {
-                width: 100%;
-                float: none;
-                text-align: left;
-            }
-
-            .story-item-left, .story-item-right {
-                padding-left: 36px;
-                padding-right: 36px;
-                text-align: left;
-            }
-
-            .story-timeline::before {
-                left: 10px; /* Piccolo aggiustamento per la linea centrale */
-                transform: none;
-            }
-
-            .story-item .dot {
-                left: 18px !important; /* Assicura che il puntino sia ben centrato */
-                right: auto !important;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .story-item-left, .story-item-right {
-                padding-left: 20px;
-                padding-right: 20px;
-            }
-        }
-
-        /* clear floats */
-        .clearfix::after {
-            content: '';
-            display: table;
-            clear: both;
-        }
+        .event { margin-bottom: 28px; position: relative; }
+        .event i { position: absolute; left: -55px; top: 0; color: var(--accent-color); font-size: 1.2rem; }
 
         /* Pulsanti e form semplici */
         .map-button {
@@ -189,16 +96,41 @@
             padding: 12px 20px; text-decoration: none; border-radius: 30px;
             margin-top: 14px; font-size: 0.9rem; font-weight: bold;
         }
-
         .album-btn {
             display: inline-block; background: var(--accent-color); color: white;
             padding: 12px 20px; text-decoration: none; border-radius: 30px;
             margin-top: 12px; font-size: 0.9rem; font-weight: bold;
         }
-
         form { display: flex; flex-direction: column; gap: 12px; max-width: 420px; margin: 0 auto; }
         input, select, textarea { padding: 12px; border-radius: 6px; border: 1px solid #ddd; width: 100%; }
         button { background: white; color: var(--accent-color); border: 2px solid var(--accent-color); padding: 12px; font-weight: bold; border-radius: 6px; cursor: pointer; }
+
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; padding: 10px; }
+        .gallery-grid img { width: 100%; height: 200px; object-fit: cover; border-radius: 6px; }
+
+        /* Music Floating Button */
+        #music-btn {
+            position: fixed; bottom: 20px; right: 20px;
+            background: rgba(255,255,255,0.9);
+            width: 50px; height: 50px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2); z-index: 100; cursor: pointer;
+        }
+
+        @media (max-width: 720px) {
+            .story-item, .story-item-left, .story-item-right { width: 100%; float: none; text-align:left; padding-left: 36px; padding-right: 36px; }
+            .story-item .dot { left: 18px !important; right: auto !important; }
+            .story-timeline::before { left: 24px; transform: none; }
+        }
+
+        @media (max-width: 480px) {
+            .timeline { margin-left: 40px; }
+            .logo-container img { max-width: 120px; }
+            #countdown { grid-template-columns: repeat(2,1fr); padding: 16px; }
+        }
+
+        /* clear floats */
+        .clearfix::after { content: ''; display: table; clear: both; }
     </style>
 </head>
 <body>
@@ -213,6 +145,7 @@
 
     <header>
         <div class="logo-container">
+            <!-- Se preferisci path assoluto, sostituisci 'logo.jpg' con l'URL completo -->
             <img src="LOGO.jpg" alt="Logo Andrea & Leonardo">
         </div>
         <p>12 Settembre 2026</p>
@@ -345,7 +278,6 @@
                 <option>Una persona</option>
                 <option>Due persone</option>
             </select>
-            <select required>
                 <option value="">Verrai con bambini?</option>
                 <option>No</option>
                 <option>1 bambino</option>
