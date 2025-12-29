@@ -1,0 +1,1641 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <title>Andrea &amp; Leonardo – 12 Settembre 2026</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Wedding website di Andrea & Leonardo – 12 Settembre 2026, Hotel Bisanzio Resort, Rossano (CS)." />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --sage: #ACB087;
+      --terracotta: #BA8B66;
+      --ivory: #F4E1E0;
+      --blush: #EAE0D5;
+      --ink: #2f2a28;
+      --ink-soft: #5b534f;
+
+      --bg: var(--ivory);
+      --text: var(--ink);
+      --radius-soft: 14px;
+      --transition-fast: 0.25s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+      /* texture-like background */
+      background-image:
+        radial-gradient(circle at 0 0, rgba(255,255,255,0.45) 0, transparent 50%),
+        radial-gradient(circle at 100% 100%, rgba(0,0,0,0.04) 0, transparent 55%);
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* -----------------------------
+       GLOBAL LAYOUT
+    --------------------------------*/
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 1;
+      width: 100%;
+      overflow-x: hidden;
+    }
+
+    section {
+      position: relative;
+      padding: 4.5rem 1.6rem;
+    }
+
+    @media (min-width: 900px) {
+      section {
+        padding: 6rem 5vw;
+      }
+    }
+
+    /* -----------------------------
+       TYPOGRAPHY
+    --------------------------------*/
+
+    .eyebrow {
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      color: var(--ink-soft);
+    }
+
+    .title-hero-main {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 8vw, 5rem);
+      line-height: 0.92;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .title-hero-sub {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.1rem, 2.4vw, 1.4rem);
+      text-transform: uppercase;
+      letter-spacing: 0.26em;
+      margin-top: 1.5rem;
+    }
+
+    .title-section {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.7rem, 3.2vw, 2.4rem);
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      margin-bottom: 2rem;
+    }
+
+    .accent-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      letter-spacing: 0.15em;
+    }
+
+    p {
+      font-size: 0.95rem;
+    }
+
+    @media (min-width: 900px) {
+      p {
+        font-size: 1rem;
+      }
+    }
+
+    /* -----------------------------
+       HAMBURGER NAV MINIMAL
+    --------------------------------*/
+
+    .nav-toggle {
+      position: fixed;
+      top: 1.3rem;
+      right: 1.3rem;
+      z-index: 40;
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      border: 1px solid rgba(47,42,40,0.35);
+      backdrop-filter: blur(9px);
+      background: rgba(244,225,224,0.78);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+    }
+
+    .nav-toggle:hover {
+      background: rgba(234,224,213,0.98);
+      border-color: var(--ink-soft);
+      transform: translateY(-1px);
+    }
+
+    .nav-toggle-lines {
+      width: 18px;
+      height: 14px;
+      position: relative;
+    }
+
+    .nav-toggle-lines span {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--ink);
+      transition: transform var(--transition-fast), top var(--transition-fast), opacity var(--transition-fast);
+    }
+
+    .nav-toggle-lines span:nth-child(1) { top: 0; }
+    .nav-toggle-lines span:nth-child(2) { top: 6px; }
+    .nav-toggle-lines span:nth-child(3) { top: 12px; }
+
+    .nav-toggle.open .nav-toggle-lines span:nth-child(1) {
+      top: 6px;
+      transform: rotate(40deg);
+    }
+
+    .nav-toggle.open .nav-toggle-lines span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .nav-toggle.open .nav-toggle-lines span:nth-child(3) {
+      top: 6px;
+      transform: rotate(-40deg);
+    }
+
+    .nav-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 30;
+      background: rgba(244,225,224,0.96);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.35s ease;
+    }
+
+    .nav-overlay.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .nav-overlay ul {
+      list-style: none;
+      text-align: center;
+    }
+
+    .nav-overlay li + li {
+      margin-top: 1.2rem;
+    }
+
+    .nav-overlay a {
+      font-family: 'Playfair Display', serif;
+      text-transform: uppercase;
+      letter-spacing: 0.24em;
+      font-size: 0.85rem;
+      padding-bottom: 0.2rem;
+      border-bottom: 1px solid transparent;
+      transition: border-color var(--transition-fast), color var(--transition-fast);
+    }
+
+    .nav-overlay a:hover {
+      border-color: var(--ink-soft);
+      color: var(--ink-soft);
+    }
+
+    /* -----------------------------
+       HERO SPLIT-SCREEN
+    --------------------------------*/
+
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: minmax(0,1.3fr) minmax(0,1.1fr);
+      align-items: stretch;
+      position: relative;
+      gap: 0;
+      padding-top: 4.5rem;
+      padding-bottom: 3.5rem;
+    }
+
+    @media (max-width: 800px) {
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding-top: 5.5rem;
+      }
+    }
+
+    .hero-left {
+      padding: 0 1.6rem 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    @media (min-width: 900px) {
+      .hero-left {
+        padding: 0 5vw 4rem;
+      }
+    }
+
+    .hero-left-top {
+      margin-top: 1.5rem;
+      max-width: 520px;
+    }
+
+    .hero-floating-title {
+      position: relative;
+      display: inline-flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      margin: 1.2rem 0 1.6rem;
+    }
+
+    .hero-floating-title span {
+      display: inline-block;
+    }
+
+    .hero-floating-title span:nth-child(1) {
+      transform: translateX(-0.08em);
+    }
+    .hero-floating-title span:nth-child(2) {
+      transform: translateX(0.18em);
+    }
+
+    .hero-meta {
+      margin-top: 1.4rem;
+      display: grid;
+      grid-template-columns: auto;
+      gap: 0.6rem;
+      font-size: 0.83rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    @media (min-width: 640px) {
+      .hero-meta {
+        grid-template-columns: repeat(3, auto);
+        gap: 1.5rem;
+      }
+    }
+
+    .hero-meta span {
+      white-space: nowrap;
+    }
+
+    .hero-note {
+      margin-top: 2.4rem;
+      max-width: 360px;
+      font-size: 0.87rem;
+      color: var(--ink-soft);
+    }
+
+    .hero-left-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 1rem;
+      margin-top: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-badge {
+      border-radius: 999px;
+      border: 1px solid rgba(47,42,40,0.25);
+      padding: 0.55rem 1.4rem;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      background: rgba(234,224,213,0.7);
+      backdrop-filter: blur(8px);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .hero-badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--terracotta);
+    }
+
+    .hero-scroll {
+      font-size: 0.75rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .hero-scroll-line {
+      width: 40px;
+      height: 1px;
+      background: rgba(47,42,40,0.4);
+    }
+
+    .hero-right {
+      position: relative;
+      overflow: hidden;
+      border-radius: 40px 0 0 40px;
+      margin-left: auto;
+      margin-right: 1.6rem;
+      box-shadow: -40px 40px 90px rgba(0,0,0,0.12);
+    }
+
+    @media (min-width: 1200px) {
+      .hero-right {
+        margin-right: 5vw;
+      }
+    }
+
+    @media (max-width: 800px) {
+      .hero-right {
+        margin: 2.4rem 1.6rem 0;
+        border-radius: 24px;
+      }
+    }
+
+    .hero-photo {
+      position: relative;
+      height: 100%;
+      min-height: 360px;
+      background-image:
+        linear-gradient(15deg, rgba(236,214,200,0.16), rgba(0,0,0,0.38)),
+        url('https://images.pexels.com/photos/4617990/pexels-photo-4617990.jpeg?auto=compress&cs=tinysrgb&w=1600');
+      background-size: cover;
+      background-position: center center;
+      background-attachment: fixed;
+      transform-origin: center;
+    }
+
+    @media (max-width: 800px) {
+      .hero-photo {
+        background-attachment: scroll;
+      }
+    }
+
+    .hero-photo-overlay-tag {
+      position: absolute;
+      bottom: 1.8rem;
+      left: 1.8rem;
+      padding: 0.45rem 1rem;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: #f9f9f9;
+      border: 1px solid rgba(244,225,224,0.6);
+      backdrop-filter: blur(9px);
+      background: linear-gradient(120deg, rgba(172,176,135,0.45), rgba(186,139,102,0.75));
+    }
+
+    .hero-photo-overlay-label {
+      position: absolute;
+      top: 1.8rem;
+      right: 1.8rem;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      font-size: 0.7rem;
+      color: rgba(244,225,224,0.86);
+    }
+
+    /* -----------------------------
+       BENTO GRID AGENDA
+    --------------------------------*/
+
+    .section-agenda {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+
+    .agenda-header {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+      margin-bottom: 2.8rem;
+    }
+
+    @media (min-width: 900px) {
+      .agenda-header {
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+      }
+    }
+
+    .agenda-intro {
+      max-width: 440px;
+      font-size: 0.95rem;
+      color: var(--ink-soft);
+    }
+
+    .agenda-note {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+    }
+
+    .agenda-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-auto-rows: minmax(120px, auto);
+      gap: 1rem;
+    }
+
+    @media (max-width: 900px) {
+      .agenda-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .agenda-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .agenda-card {
+      position: relative;
+      border-radius: 22px;
+      padding: 1.1rem 1.2rem 1.3rem;
+      overflow: hidden;
+      cursor: default;
+      color: var(--ink);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transform-origin: center;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast), translate var(--transition-fast);
+    }
+
+    .agenda-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 0 0, rgba(255,255,255,0.18), transparent 55%);
+      opacity: 0;
+      transition: opacity var(--transition-fast);
+      pointer-events: none;
+    }
+
+    .agenda-card:hover {
+      transform: translateY(-4px) scale(1.01);
+      box-shadow: 0 16px 45px rgba(0,0,0,0.16);
+    }
+
+    .agenda-card:hover::after {
+      opacity: 1;
+    }
+
+    .agenda-label {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.72rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .agenda-time {
+      font-size: 0.88rem;
+      text-transform: uppercase;
+      letter-spacing: 0.17em;
+      margin-bottom: 0.7rem;
+    }
+
+    .agenda-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .agenda-desc {
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+      max-width: 18rem;
+    }
+
+    .agenda-tag {
+      margin-top: 0.6rem;
+      align-self: flex-end;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+    }
+
+    .agenda-card--welcome {
+      background: var(--sage);
+      color: #242220;
+      grid-column: span 2;
+    }
+
+    .agenda-card--ceremony {
+      background: var(--blush);
+      grid-row: span 2;
+    }
+
+    .agenda-card--brindisi {
+      background: var(--ivory);
+    }
+
+    .agenda-card--aperitivo {
+      background: var(--terracotta);
+      color: #f9f5f1;
+    }
+
+    .agenda-card--cena {
+      background: #d3c8b8;
+      grid-column: span 2;
+    }
+
+    .agenda-card--torta {
+      background: #b5977c;
+      color: #fdf7f3;
+    }
+
+    .agenda-card--dj {
+      background: #383233;
+      color: #f6efe9;
+    }
+
+    /* -----------------------------
+       LOGISTICA + PERNOTTAMENTO
+    --------------------------------*/
+
+    .section-logistica {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 3rem;
+    }
+
+    @media (max-width: 900px) {
+      .section-logistica {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .logistica-block {
+      border-radius: 26px;
+      padding: 2rem 1.8rem 2.3rem;
+      background: rgba(234,224,213,0.9);
+      box-shadow: 0 18px 55px rgba(0,0,0,0.12);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .logistica-block::before {
+      content: "Rossano, CS";
+      position: absolute;
+      top: 1.4rem;
+      right: 1.6rem;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.24em;
+      color: rgba(47,42,40,0.45);
+    }
+
+    .logistica-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      margin-bottom: 1.6rem;
+    }
+
+    .logistica-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.3rem;
+      font-size: 0.9rem;
+    }
+
+    .logistica-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      margin-bottom: 0.2rem;
+    }
+
+    .logistica-mode {
+      margin-bottom: 0.35rem;
+    }
+
+    .logistica-mode strong {
+      font-weight: 600;
+    }
+
+    .logistica-note {
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+      margin-top: 1rem;
+      max-width: 26rem;
+    }
+
+    .pernottamento-card {
+      border-radius: 26px;
+      padding: 2rem 1.8rem 2.1rem;
+      background: rgba(186,139,102,0.9);
+      color: #fdf7f2;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pernottamento-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 0 0, rgba(244,225,224,0.25), transparent 55%),
+        radial-gradient(circle at 120% 120%, rgba(172,176,135,0.4), transparent 60%);
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    .pernottamento-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .pernottamento-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.21em;
+      margin-bottom: 1rem;
+    }
+
+    .pernottamento-hotel {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      margin-bottom: 1.3rem;
+    }
+
+    .pernottamento-list {
+      font-size: 0.92rem;
+    }
+
+    .pernottamento-list p + p {
+      margin-top: 0.3rem;
+    }
+
+    .pernottamento-footer {
+      margin-top: 1.4rem;
+      font-size: 0.8rem;
+      max-width: 20rem;
+    }
+
+    /* -----------------------------
+       STORY – HORIZONTAL CARDS
+    --------------------------------*/
+
+    .section-story {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+
+    .story-header {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-bottom: 2.6rem;
+    }
+
+    @media (min-width: 900px) {
+      .story-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+      }
+    }
+
+    .story-intro {
+      max-width: 420px;
+      font-size: 0.95rem;
+      color: var(--ink-soft);
+    }
+
+    .story-tip {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+    }
+
+    .story-scroller {
+      position: relative;
+      overflow-x: auto;
+      padding-bottom: 1.4rem;
+      margin: 0 -1.6rem;
+      padding-left: 1.6rem;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+    }
+
+    @media (min-width: 900px) {
+      .story-scroller {
+        margin: 0;
+        padding-left: 0;
+      }
+    }
+
+    .story-track {
+      display: inline-flex;
+      gap: 1.6rem;
+      padding-right: 3rem;
+    }
+
+    .story-card-wrapper {
+      scroll-snap-align: start;
+      perspective: 1200px;
+      flex: 0 0 80%;
+      max-width: 380px;
+    }
+
+    @media (min-width: 900px) {
+      .story-card-wrapper {
+        flex: 0 0 320px;
+      }
+    }
+
+    .story-card {
+      border-radius: 24px;
+      padding: 1.8rem 1.6rem 2rem;
+      background: #f0ddda;
+      box-shadow: 0 18px 60px rgba(0,0,0,0.14);
+      transform-style: preserve-3d;
+      transform-origin: center center;
+      transition: transform 0.6s ease, box-shadow 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .story-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 0 0, rgba(255,255,255,0.3), transparent 55%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      pointer-events: none;
+    }
+
+    .story-card:hover,
+    .story-card:focus-within {
+      transform: rotateY(-9deg) translateY(-6px);
+      box-shadow: 0 26px 80px rgba(0,0,0,0.32);
+    }
+
+    .story-card:hover::before,
+    .story-card:focus-within::before {
+      opacity: 1;
+    }
+
+    .story-step-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      margin-bottom: 0.6rem;
+      color: rgba(47,42,40,0.76);
+    }
+
+    .story-step-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .story-step-meta {
+      font-size: 0.83rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      margin-bottom: 0.8rem;
+      color: rgba(47,42,40,0.7);
+    }
+
+    .story-step-text {
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+    }
+
+    /* -----------------------------
+       RSVP – BLOCCO TERRACOTTA
+    --------------------------------*/
+
+    .section-rsvp {
+      padding-top: 5rem;
+      padding-bottom: 6rem;
+    }
+
+    .rsvp-grid {
+      display: grid;
+      grid-template-columns: minmax(0,1.2fr) minmax(0,1fr);
+      gap: 2.8rem;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 900px) {
+      .rsvp-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .rsvp-copy {
+      max-width: 420px;
+    }
+
+    .rsvp-copy p {
+      font-size: 0.95rem;
+      color: var(--ink-soft);
+    }
+
+    .rsvp-deadline {
+      margin-top: 1.4rem;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+    }
+
+    .rsvp-form-shell {
+      border-radius: 28px;
+      background: var(--terracotta);
+      color: #fef7f1;
+      padding: 2.3rem 1.9rem 2.4rem;
+      box-shadow: 0 22px 70px rgba(0,0,0,0.25);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .rsvp-form-shell::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 0 0, rgba(244,225,224,0.45), transparent 50%),
+        radial-gradient(circle at 120% 120%, rgba(172,176,135,0.55), transparent 60%);
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    .rsvp-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .rsvp-tag {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      margin-bottom: 1rem;
+      opacity: 0.9;
+    }
+
+    .rsvp-form-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.21em;
+      margin-bottom: 1.4rem;
+    }
+
+    form {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .form-row-double {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.8rem;
+    }
+
+    @media (min-width: 640px) {
+      .form-row-double {
+        grid-template-columns: 1.1fr 0.9fr;
+      }
+    }
+
+    label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      margin-bottom: 0.35rem;
+      display: block;
+    }
+
+    .field-shell {
+      position: relative;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .field-shell--textarea {
+      border-radius: 18px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid rgba(255,255,255,0.35);
+      background: rgba(44,34,32,0.25);
+      color: #fdf7f2;
+      padding: 0.7rem 1rem;
+      font-family: inherit;
+      font-size: 0.9rem;
+      border-radius: inherit;
+      outline: none;
+      transition: border-color var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 82px;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: rgba(255,250,246,0.68);
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--sage);
+      background: rgba(44,34,32,0.6);
+      box-shadow: 0 0 0 1px var(--sage), 0 0 0 6px rgba(172,176,135,0.35);
+    }
+
+    .rsvp-submit-row {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 0.4rem;
+    }
+
+    .btn-rsvp {
+      border-radius: 999px;
+      border: none;
+      padding: 0.7rem 1.3rem 0.8rem;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      background: #fef7f1;
+      color: #2f2522;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.35);
+    }
+
+    .btn-rsvp:hover {
+      background: #f7eee7;
+      transform: translateY(-1px);
+      box-shadow: 0 16px 38px rgba(0,0,0,0.45);
+    }
+
+    .btn-rsvp-icon {
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(47,42,40,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+    }
+
+    .rsvp-legal {
+      margin-top: 1rem;
+      font-size: 0.78rem;
+      opacity: 0.88;
+    }
+
+    /* -----------------------------
+       STICKY COUNTDOWN
+    --------------------------------*/
+
+    .countdown-pill {
+      position: fixed;
+      z-index: 45;
+      bottom: 1.4rem;
+      right: 1.4rem;
+      border-radius: 999px;
+      border: 1px solid rgba(47,42,40,0.35);
+      background: rgba(244,225,224,0.92);
+      padding: 0.55rem 0.9rem 0.55rem 0.7rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      box-shadow: 0 14px 40px rgba(0,0,0,0.2);
+      backdrop-filter: blur(10px);
+      cursor: default;
+      transform-origin: bottom right;
+      animation: countdown-pop 0.9s ease-out 0.7s both;
+    }
+
+    .countdown-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: var(--sage);
+      box-shadow: 0 0 0 0 rgba(172,176,135,0.7);
+      animation: pulse-dot 2.6s ease-out infinite;
+    }
+
+    .countdown-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.18em;
+    }
+
+    .countdown-label {
+      opacity: 0.7;
+    }
+
+    @media (max-width: 600px) {
+      .countdown-pill {
+        bottom: 1rem;
+        right: 1rem;
+        padding-inline: 0.7rem;
+        gap: 0.5rem;
+      }
+      .countdown-label {
+        display: none;
+      }
+    }
+
+    /* -----------------------------
+       ANIMAZIONI – REVEAL / SLIDE-IN
+    --------------------------------*/
+
+    [data-animate] {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s cubic-bezier(0.18,0.64,0.37,1), transform 0.9s cubic-bezier(0.18,0.64,0.37,1);
+    }
+
+    [data-animate].in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    [data-animate="slide-left"] {
+      transform: translateX(40px);
+    }
+
+    [data-animate="slide-left"].in-view {
+      transform: translateX(0);
+    }
+
+    [data-animate="slide-right"] {
+      transform: translateX(-40px);
+    }
+
+    [data-animate="slide-right"].in-view {
+      transform: translateX(0);
+    }
+
+    [data-animate="reveal-mask"] {
+      position: relative;
+      overflow: hidden;
+    }
+
+    [data-animate="reveal-mask"]::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--bg);
+      transform: translateX(0);
+      transition: transform 1.1s cubic-bezier(0.16,0.7,0.3,1);
+    }
+
+    [data-animate="reveal-mask"].in-view::after {
+      transform: translateX(101%);
+    }
+
+    @keyframes countdown-pop {
+      0% {
+        opacity: 0;
+        transform: translateY(18px) scale(0.75);
+      }
+      60% {
+        opacity: 1;
+        transform: translateY(0) scale(1.03);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes pulse-dot {
+      0% {
+        box-shadow: 0 0 0 0 rgba(172,176,135,0.6);
+        transform: scale(1);
+      }
+      70% {
+        box-shadow: 0 0 0 12px rgba(172,176,135,0);
+        transform: scale(1.05);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(172,176,135,0);
+        transform: scale(1);
+      }
+    }
+
+    /* FINE STILI */
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Hamburger artistico ridotto -->
+  <button class="nav-toggle" aria-label="Apri il menu" type="button">
+    <div class="nav-toggle-lines">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </button>
+
+  <nav class="nav-overlay" aria-hidden="true">
+    <ul>
+      <li><a href="#agenda">programma</a></li>
+      <li><a href="#logistica">come arrivare</a></li>
+      <li><a href="#story">la nostra storia</a></li>
+      <li><a href="#rsvp">rsvp</a></li>
+    </ul>
+  </nav>
+
+  <!-- Countdown sticky elegante -->
+  <aside class="countdown-pill" aria-label="Countdown al matrimonio">
+    <div class="countdown-dot"></div>
+    <span class="countdown-label">Mancano</span>
+    <span class="countdown-value" id="countdown-days">--</span>
+    <span class="countdown-label">giorni</span>
+  </aside>
+
+  <main>
+
+    <!-- HERO SPLIT SCREEN -->
+    <section class="hero">
+      <div class="hero-left">
+        <div class="hero-left-top" data-animate="slide-right">
+          <div class="eyebrow">Hotel Bisanzio Resort · Piana dei Venti</div>
+
+          <div class="hero-floating-title title-hero-main">
+            <span>Andrea</span>
+            <span>&amp; Leonardo</span>
+          </div>
+
+          <div class="title-hero-sub" data-animate="reveal-mask">
+            12 settembre 2026
+          </div>
+
+          <div class="hero-meta">
+            <span>Rossano (CS)</span>
+            <span>Cerimonia ore 16:00</span>
+            <span>Dress code: soft earth tones</span>
+          </div>
+
+          <p class="hero-note">
+            Un rito contemporaneo immerso nella natura, luci basse e dettagli essenziali. Più che un matrimonio,
+            un’esperienza da vivere lentamente, tra terra, vento e mare.
+          </p>
+        </div>
+
+        <div class="hero-left-bottom" data-animate="slide-right">
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            <span>Save the weekend</span>
+          </div>
+          <div class="hero-scroll">
+            <span>Scroll</span>
+            <span class="hero-scroll-line"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right" data-animate="slide-left">
+        <div class="hero-photo">
+          <div class="hero-photo-overlay-tag">Earth &amp; Nature Editorial</div>
+          <div class="hero-photo-overlay-label">Andrea · Leonardo · 12.09.26</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENTO GRID AGENDA -->
+    <section id="agenda" class="section-agenda">
+      <header class="agenda-header">
+        <div>
+          <h2 class="title-section" data-animate="slide-right">Il weekend</h2>
+          <p class="agenda-intro" data-animate="slide-right">
+            Abbiamo pensato a un percorso in tre atti: un welcome party informale, una cerimonia
+            nel tardo pomeriggio e una lunga notte tra stelle, musica e brindisi.
+          </p>
+        </div>
+        <div class="agenda-note" data-animate="slide-left">
+          11 settembre · welcome party<br />
+          12 settembre · ceremony &amp; party
+        </div>
+      </header>
+
+      <div class="agenda-grid">
+
+        <!-- Welcome Party -->
+        <article class="agenda-card agenda-card--welcome" data-animate="reveal-mask">
+          <div>
+            <div class="agenda-label">Venerdì 11 settembre · ore 19:00</div>
+            <div class="agenda-title">Welcome Party</div>
+            <div class="agenda-desc">
+              Un incontro tra amici al Bisanzio: drink, luce dorata e musica soffusa per iniziare a respirare
+              l’aria del weekend.
+            </div>
+          </div>
+          <div class="agenda-tag">Dress code: relaxed chic</div>
+        </article>
+
+        <!-- Cerimonia -->
+        <article class="agenda-card agenda-card--ceremony" data-animate="slide-left">
+          <div>
+            <div class="agenda-label">Sabato 12 settembre</div>
+            <div class="agenda-time">Ore 16:00</div>
+            <div class="agenda-title">Cerimonia</div>
+            <div class="agenda-desc">
+              Nel giardino della Piana dei Venti, tra elementi naturali e dettagli minimali. Momento
+              centrale, intimo e profondamente nostro.
+            </div>
+          </div>
+          <div class="agenda-tag">Inizia qui</div>
+        </article>
+
+        <!-- Brindisi -->
+        <article class="agenda-card agenda-card--brindisi" data-animate="slide-right">
+          <div>
+            <div class="agenda-time">Ore 17:00</div>
+            <div class="agenda-title">Brindisi</div>
+            <div class="agenda-desc">
+              Calici al sole che tramonta, un primo saluto a voi che sarete con noi in questo giorno.
+            </div>
+          </div>
+          <div class="agenda-tag">Sparkling</div>
+        </article>
+
+        <!-- Aperitivo -->
+        <article class="agenda-card agenda-card--aperitivo" data-animate="slide-right">
+          <div>
+            <div class="agenda-time">Ore 19:30</div>
+            <div class="agenda-title">Aperitivo</div>
+            <div class="agenda-desc">
+              Stazioni food, ingredienti mediterranei e cocktail contemporanei. Una passeggiata gastronomica
+              all’aperto.
+            </div>
+          </div>
+          <div class="agenda-tag">Golden hour</div>
+        </article>
+
+        <!-- Cena -->
+        <article class="agenda-card agenda-card--cena" data-animate="reveal-mask">
+          <div>
+            <div class="agenda-time">Ore 21:00</div>
+            <div class="agenda-title">Cena</div>
+            <div class="agenda-desc">
+              Una tavola lunga, luci basse e cucina di territorio rivisitata. Prendetevi il tempo per
+              assaporare ogni dettaglio.
+            </div>
+          </div>
+          <div class="agenda-tag">Under the lights</div>
+        </article>
+
+        <!-- Taglio torta -->
+        <article class="agenda-card agenda-card--torta" data-animate="slide-left">
+          <div>
+            <div class="agenda-time">Ore 24:00</div>
+            <div class="agenda-title">Taglio della torta</div>
+            <div class="agenda-desc">
+              Un momento scenografico sotto il cielo di Rossano, tra fiamme leggere e riflessi caldi.
+            </div>
+          </div>
+          <div class="agenda-tag">Midnight slice</div>
+        </article>
+
+        <!-- DJ Set -->
+        <article class="agenda-card agenda-card--dj" data-animate="slide-left">
+          <div>
+            <div class="agenda-time">Ore 01:00</div>
+            <div class="agenda-title">DJ Set</div>
+            <div class="agenda-desc">
+              La notte si sposta sulla pista: suoni elettronici, qualche sorpresa e nessuna fretta di tornare a casa.
+            </div>
+          </div>
+          <div class="agenda-tag">Until late</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- LOGISTICA & PERNOTTAMENTO -->
+    <section id="logistica" class="section-logistica">
+      <div class="logistica-block" data-animate="slide-right">
+        <div class="logistica-title">Logistica</div>
+        <div class="logistica-grid">
+          <div>
+            <div class="logistica-label">Location</div>
+            <p>
+              Hotel Bisanzio Resort<br>
+              Piana dei Venti – Rossano (CS)
+            </p>
+          </div>
+
+          <div>
+            <div class="logistica-label">Come arrivare</div>
+            <p class="logistica-mode"><strong>In auto</strong><br>Arrivo a Rossano (CS). Seguire le indicazioni per “Hotel Bisanzio Resort – Piana dei Venti”.</p>
+            <p class="logistica-mode"><strong>In treno</strong><br>Stazione di Rossano. Dalla stazione si raggiunge il resort in pochi minuti di taxi.</p>
+            <p class="logistica-mode"><strong>In aereo</strong><br>
+              Aeroporto di Lamezia Terme o Crotone, poi auto o transfer verso Rossano.
+            </p>
+          </div>
+        </div>
+        <p class="logistica-note">
+          Se avete bisogno di suggerimenti per transfer condivisi o orari più comodi, segnalatelo nel form RSVP:
+          proveremo a coordinare al meglio gli spostamenti.
+        </p>
+      </div>
+
+      <aside class="pernottamento-card" data-animate="slide-left">
+        <div class="pernottamento-inner">
+          <div class="pernottamento-title">Pernottamento</div>
+          <div class="pernottamento-hotel">
+            Hotel Bisanzio Resort
+          </div>
+          <div class="pernottamento-list">
+            <p>Camera matrimoniale · 75€ a notte</p>
+            <p>Camera tripla · 100€ a notte</p>
+          </div>
+          <p class="pernottamento-footer">
+            Le camere sono riservate per il weekend del matrimonio con tariffe dedicate.
+            Indicate nel form RSVP se desiderate soggiornare in struttura e con chi condividerete la stanza.
+          </p>
+        </div>
+      </aside>
+    </section>
+
+    <!-- STORY – HORIZONTAL / 3D CARDS -->
+    <section id="story" class="section-story">
+      <header class="story-header">
+        <div>
+          <h2 class="title-section" data-animate="slide-right">La nostra storia</h2>
+          <p class="story-intro" data-animate="slide-right">
+            Più che un “come ci siamo conosciuti”, questo è un montaggio di fotogrammi:
+            tre momenti che ci hanno portato fino a Rossano, settembre 2026.
+          </p>
+        </div>
+        <div class="story-tip" data-animate="slide-left">
+          Scroll orizzontale · le card ruotano mentre le attraversi con lo sguardo
+        </div>
+      </header>
+
+      <div class="story-scroller" aria-label="Timeline orizzontale della storia">
+        <div class="story-track">
+
+          <div class="story-card-wrapper" data-animate="reveal-mask">
+            <article class="story-card" tabindex="0">
+              <div class="story-step-label">Atto I</div>
+              <h3 class="story-step-title">Una conversazione che non voleva finire</h3>
+              <div class="story-step-meta">Milano · Una sera di pioggia</div>
+              <p class="story-step-text">
+                Un incontro nato per caso, rimasto sospeso tra battute, domande e dettagli.
+                Nessun grande gesto, solo la sensazione che quella chiacchierata non dovesse interrompersi.
+              </p>
+            </article>
+          </div>
+
+          <div class="story-card-wrapper" data-animate="reveal-mask">
+            <article class="story-card" tabindex="0">
+              <div class="story-step-label">Atto II</div>
+              <h3 class="story-step-title">Rotte di terra e di mare</h3>
+              <div class="story-step-meta">Viaggi · Treni · Messaggi lunghi</div>
+              <p class="story-step-text">
+                Chilometri, tratte, coincidenze prese e perse. Una geografia nuova che ha iniziato a disegnarsi
+                tra un ritorno e una partenza, con la certezza che il punto di arrivo fosse sempre l’altro.
+              </p>
+            </article>
+          </div>
+
+          <div class="story-card-wrapper" data-animate="reveal-mask">
+            <article class="story-card" tabindex="0">
+              <div class="story-step-label">Atto III</div>
+              <h3 class="story-step-title">Un sì tra vento e ulivi</h3>
+              <div class="story-step-meta">Piana dei Venti · Rossano</div>
+              <p class="story-step-text">
+                Il mare di lato, la collina davanti, la luce del sud a colorare tutto.
+                Qui abbiamo deciso di fermare un istante e farlo diventare casa, insieme a voi.
+              </p>
+            </article>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- RSVP MODERNO -->
+    <section id="rsvp" class="section-rsvp">
+      <div class="rsvp-grid">
+        <div class="rsvp-copy">
+          <h2 class="title-section" data-animate="slide-right">RSVP</h2>
+          <p data-animate="slide-right">
+            La vostra presenza è la parte più importante di questo giorno.
+            Vi chiediamo solo una cosa: confermare la partecipazione entro
+            la data indicata, così da poter curare al meglio ogni dettaglio.
+          </p>
+          <div class="rsvp-deadline" data-animate="slide-right">
+            Conferma entro il 1 maggio 2026
+          </div>
+        </div>
+
+        <div class="rsvp-form-shell" data-animate="slide-left">
+          <div class="rsvp-inner">
+            <div class="rsvp-tag">Andrea &amp; Leonardo</div>
+            <div class="rsvp-form-title">Conferma la tua presenza</div>
+
+            <form action="#" method="post">
+              <div>
+                <label for="nome">Nome e cognome</label>
+                <div class="field-shell">
+                  <input type="text" id="nome" name="nome" placeholder="Il tuo nome completo" required />
+                </div>
+              </div>
+
+              <div class="form-row-double">
+                <div>
+                  <label for="email">Email</label>
+                  <div class="field-shell">
+                    <input type="email" id="email" name="email" placeholder="Per eventuali comunicazioni" required />
+                  </div>
+                </div>
+                <div>
+                  <label for="telefono">Telefono</label>
+                  <div class="field-shell">
+                    <input type="tel" id="telefono" name="telefono" placeholder="Facoltativo" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row-double">
+                <div>
+                  <label for="presenza">Parteciperai?</label>
+                  <div class="field-shell">
+                    <select id="presenza" name="presenza" required>
+                      <option value="">Seleziona un’opzione</option>
+                      <option value="si">Sì, sarò presente</option>
+                      <option value="no">Purtroppo non potrò esserci</option>
+                    </select>
+                  </div>
+                </div>
+                <div>
+                  <label for="ospiti">Numero di persone</label>
+                  <div class="field-shell">
+                    <select id="ospiti" name="ospiti" required>
+                      <option value="">Solo tu o con chi?</option>
+                      <option value="1">Solo io</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <label for="pernottamento">Pernottamento</label>
+                <div class="field-shell">
+                  <select id="pernottamento" name="pernottamento">
+                    <option value="">Seleziona un’opzione</option>
+                    <option value="no">Non ho bisogno di pernottamento</option>
+                    <option value="matrimoniale">Camera matrimoniale (75€)</option>
+                    <option value="tripla">Camera tripla (100€)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label for="note">Allergie, esigenze speciali, note</label>
+                <div class="field-shell field-shell--textarea">
+                  <textarea id="note" name="note" placeholder="Segnalaci eventuali intolleranze, richieste particolari o preferenze di viaggio."></textarea>
+                </div>
+              </div>
+
+              <div class="rsvp-submit-row">
+                <button class="btn-rsvp" type="submit">
+                  Invia RSVP
+                  <span class="btn-rsvp-icon">→</span>
+                </button>
+              </div>
+
+              <p class="rsvp-legal">
+                I dati inseriti saranno utilizzati esclusivamente per l’organizzazione del matrimonio
+                di Andrea &amp; Leonardo.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- JS leggerissimo per animazioni in-view, menu e countdown -->
+<script>
+  // Hamburger overlay
+  const navToggle = document.querySelector('.nav-toggle');
+  const navOverlay = document.querySelector('.nav-overlay');
+
+  function toggleNav() {
+    const isOpen = navToggle.classList.toggle('open');
+    navOverlay.classList.toggle('open', isOpen);
+    navOverlay.setAttribute('aria-hidden', String(!isOpen));
+  }
+
+  navToggle.addEventListener('click', toggleNav);
+
+  navOverlay.addEventListener('click', (e) => {
+    if (e.target.tagName === 'A') {
+      toggleNav();
+    }
+  });
+
+  // In-view reveal using IntersectionObserver
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.18 }
+  );
+
+  document.querySelectorAll('[data-animate]').forEach((el) => observer.observe(el));
+
+  // Countdown calcolato al 12 settembre 2026
+  const countdownEl = document.getElementById('countdown-days');
+  const weddingDate = new Date('2026-09-12T16:00:00+02:00');
+
+  function updateCountdown() {
+    const now = new Date();
+    const diff = weddingDate - now;
+    const days = Math.max(0, Math.floor(diff / (1000 * 60 * 60 * 24)));
+    if (countdownEl) countdownEl.textContent = String(days).padStart(2, '0');
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000 * 60 * 60); // aggiorno ogni ora, basta per i giorni
+</script>
+</body>
+</html>
