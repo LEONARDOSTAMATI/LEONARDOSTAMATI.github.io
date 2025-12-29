@@ -573,36 +573,46 @@
     }
 
     .story-card {
-      border-radius: 20px;
-      padding: 1.6rem 1.4rem 1.7rem;
-      background: #f0ddda;
-      box-shadow: 0 18px 60px rgba(0,0,0,0.16);
-      transform-style: preserve-3d;
-      transform-origin: center center;
-      transition: transform 0.6s ease, box-shadow 0.4s ease;
       position: relative;
       overflow: hidden;
+      border-radius: 24px;
+      padding: 1.6rem 1.6rem 1.8rem;
+      background: linear-gradient(180deg, #f4e7e3 0%, #f0ddda 100%);
+      border: 1px solid rgba(47,42,40,0.12);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.12);
+      transform: none;
+      transition: none;
     }
 
     .story-card::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at 0 0, rgba(255,255,255,0.3), transparent 55%);
-      opacity: 0;
-      transition: opacity 0.4s ease;
+      background: radial-gradient(circle at 0 0, rgba(255,255,255,0.25), transparent 60%);
+      opacity: 0.45; /* luce morbida sempre visibile */
       pointer-events: none;
+    }
+
+    /* Barra di accento in alto */
+    .story-card::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, rgba(186,139,102,0.9), rgba(172,176,135,0.9));
     }
 
     .story-card:hover,
     .story-card:focus-within {
-      transform: rotateY(-8deg) translateY(-5px);
-      box-shadow: 0 24px 80px rgba(0,0,0,0.35);
+      transform: none;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.12);
     }
 
     .story-card:hover::before,
     .story-card:focus-within::before {
-      opacity: 1;
+      opacity: 0.45;
     }
 
     .story-step-label {
