@@ -642,6 +642,66 @@
       color: var(--ink-soft);
     }
 
+    /* Timeline verticale su mobile con alternanza destra/sinistra */
+    @media (max-width: 720px) {
+      .story-scroller {
+        overflow: visible;
+        margin: 0;
+        padding-left: 0;
+        padding-bottom: 2rem;
+      }
+
+      .story-scroller::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        width: 2px;
+        background: rgba(47,42,40,0.25);
+      }
+
+      .story-track {
+        display: block;
+        padding-right: 0;
+      }
+
+      .story-card-wrapper {
+        flex: none;
+        max-width: none;
+        width: 100%;
+        margin: 1.2rem 0;
+        position: relative;
+        padding: 0 1rem;
+      }
+
+      .story-card-wrapper::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--ivory);
+        border: 2px solid rgba(47,42,40,0.35);
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      }
+
+      .story-card {
+        width: 78%;
+      }
+
+      /* Alternanza: odd a sinistra, even a destra */
+      .story-card-wrapper:nth-child(odd) .story-card {
+        margin-right: auto;
+      }
+      .story-card-wrapper:nth-child(even) .story-card {
+        margin-left: auto;
+      }
+    }
+
     /* RSVP */
     .section-rsvp {
       padding-top: 3.2rem;
