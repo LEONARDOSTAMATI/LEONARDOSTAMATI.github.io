@@ -1211,6 +1211,7 @@
           <div class="pernottamento-list">
             <p>Camera matrimoniale · 75€ a notte</p>
             <p>Camera tripla · 100€ a notte</p>
+            <p>Culla aggiuntiva · +10€ a notte</p>
           </div>
           <p class="pernottamento-footer">
             Le camere sono bloccate per il weekend del matrimonio con tariffe dedicate.
@@ -1353,7 +1354,30 @@
                   <option value="no">Non ho bisogno di pernottamento</option>
                   <option value="matrimoniale">Camera matrimoniale (75€)</option>
                   <option value="tripla">Camera tripla (100€)</option>
+                  <option value="culla">Aggiungi culla (+10€ a notte)</option>
                 </select>
+              </div>
+            </div>
+
+            <div class="form-row-double">
+              <div>
+                <label for="arrivo">Data di arrivo</label>
+                <div class="field-shell">
+                  <input type="date" id="arrivo" name="arrivo" inputmode="none" onkeydown="return false;" />
+                </div>
+              </div>
+              <div>
+                <label for="partenza">Data di partenza</label>
+                <div class="field-shell">
+                  <input type="date" id="partenza" name="partenza" inputmode="none" onkeydown="return false;" />
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <label for="culla-note">Note su culla</label>
+              <div class="field-shell">
+                <input type="text" id="culla-note" name="culla-note" placeholder="Età bimbo o esigenze particolari (facoltativo)" />
               </div>
             </div>
 
