@@ -109,18 +109,27 @@ document.querySelectorAll('.gallery-item').forEach(item => {
     item.addEventListener('click', () => {
         const imagePlaceholder = item.querySelector('.image-placeholder');
         const imageTitle = item.querySelector('.image-title').textContent;
+        const img = imagePlaceholder.querySelector('img');
         
-        // Usa Unsplash Source per immagini più affidabili
-        const imageNumber = imagePlaceholder.getAttribute('data-image');
-        const imageId = parseInt(imageNumber) + 1000; // Offset per variare le immagini
-        modalImage.src = `https://source.unsplash.com/1200x800/?abstract,art,photography&sig=${imageId}`;
+        // Usa l'immagine già caricata nel placeholder, o carica una versione ad alta risoluzione
+        if (img && img.src) {
+            // Sostituisci i parametri per ottenere una versione più grande
+            modalImage.src = img.src.replace('w=800', 'w=1200').replace('q=80', 'q=90');
+        } else {
+            // Fallback se non c'è immagine
+            const imageNumber = imagePlaceholder.getAttribute('data-image');
+            const category = imagePlaceholder.getAttribute('data-category') || 'photography';
+            modalImage.src = `https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=90&sig=${imageNumber}`;
+        }
+        
         modalCaption.textContent = imageTitle;
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
         
         // Gestione errori di caricamento
         modalImage.onerror = function() {
-            // Fallback a un'immagine placeholder SVG se Unsplash non funziona
+            // Fallback a un'immagine placeholder SVG se l'immagine non funziona
+            const imageNumber = imagePlaceholder.getAttribute('data-image');
             this.src = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800'%3E%3Crect fill='%232a2a2a' width='1200' height='800'/%3E%3Ctext fill='%23a0a0a0' font-family='sans-serif' font-size='24' x='50%25' y='50%25' text-anchor='middle'%3EImmagine ${imageNumber}%3C/text%3E%3C/svg%3E`;
         };
     });
