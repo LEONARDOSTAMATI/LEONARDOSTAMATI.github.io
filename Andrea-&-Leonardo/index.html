@@ -8,103 +8,114 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
-    <style>
-    :root {
-        /* Palette estratta dall'immagine */
-        --sage: #ACB087;        /* Verde Salvia */
-        --terracotta: #BA8B66;  /* Terracotta */
-        --ivory: #F4E1E0;       /* Avorio (sfondo caldo) */
-        --icing: #FADFCC;       /* Accento chiaro */
-        --blush: #EAE0D5;       /* Sfondo sezioni secondarie */
-        --text-dark: #4A4A4A;   /* Grigio antracite caldo (meno duro del nero) */
-    }
+   <style>
+        :root {
+            --primary-color: #f4f1ea;
+            --accent-color: #8d7b68;
+            --text-dark: #333;
+        }
 
-    * { box-sizing: border-box; }
-    
-    body {
-        margin: 0; padding: 0;
-        font-family: 'Montserrat', sans-serif;
-        background-color: var(--ivory); /* Sfondo principale caldo */
-        color: var(--text-dark);
-        text-align: center;
-        overflow-x: hidden;
-    }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0; padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--primary-color);
+            color: var(--text-dark);
+            text-align: center;
+            overflow-x: hidden;
+        }
 
-    h1, h2, h3 { 
-        font-family: 'Playfair Display', serif; 
-        font-weight: 400; 
-        color: var(--sage); /* Titoli in Verde Salvia */
-    }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 400; color: var(--accent-color); }
 
-    /* Header */
-    header {
-        height: 100vh;
-        background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
-                    url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070') center/cover no-repeat;
-        display: flex; flex-direction: column; justify-content: center; align-items: center;
-        color: white; padding: 20px;
-    }
+        /* Header e Logo (semplice) */
+        header {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)), 
+                        url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070') center/cover no-repeat;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            color: white; padding: 20px;
+        }
 
-    header h1 { 
-        font-size: clamp(2.2rem, 10vw, 4rem); 
-        margin: 8px 0; color: white; /* Mantieni bianco per leggibilità su foto */
-    }
+        .logo-container img {
+            max-width: 150px;
+            height: auto;
+            margin-bottom: 18px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.06);
+            padding: 6px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+        }
 
-    /* Countdown */
-    #countdown {
-        padding: 32px 10px; 
-        background: white;
-        display: grid; grid-template-columns: repeat(4, 1fr);
-        max-width: 600px; margin: -40px auto 30px; gap: 10px;
-        border-radius: 8px; 
-        box-shadow: 0 8px 24px rgba(0,0,0,0.05);
-        border: 1px solid var(--icing);
-    }
-    .time-block { font-size: 1.2rem; font-weight: bold; color: var(--terracotta); } /* Numeri in Terracotta */
-    .time-block span { display: block; font-size: 0.7rem; text-transform: uppercase; color: var(--sage); }
+        header h1 { 
+            font-size: clamp(2.2rem, 10vw, 4rem); 
+            margin: 8px 0; color: white; line-height: 1.05; 
+        }
+        header p { font-size: 1rem; letter-spacing: 2px; text-transform: uppercase; color: white; margin: 5px 0; }
 
-    /* Sezioni */
-    section { padding: 80px 20px; max-width: 800px; margin: 0 auto; text-align: left; }
-    section:nth-of-type(even) { 
-        background-color: var(--blush); /* Alternanza con il Blush della palette */
-        max-width: 100%; 
-    }
+        /* Countdown (semplice box) */
+        #countdown {
+            padding: 32px 10px; background: white;
+            display: grid; grid-template-columns: repeat(4, 1fr);
+            max-width: 600px; margin: -40px auto 30px; gap: 10px;
+            border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+        .time-block { font-size: 1.2rem; font-weight: bold; color: var(--accent-color); }
+        .time-block span { display: block; font-size: 0.7rem; text-transform: uppercase; color: #999; }
 
-    /* Timeline Storia */
-    .story-timeline::before { background: var(--sage); opacity: 0.3; }
-    .story-item .dot { background: var(--terracotta); }
-    .story-card h4 { color: var(--terracotta); }
+        /* Sezioni semplici */
+        section { padding: 60px 20px; max-width: 800px; margin: 0 auto; text-align: left; }
+        section:nth-of-type(even) { background-color: white; max-width: 100%; }
 
-    /* Timeline Agenda */
-    .timeline { border-left: 2px solid var(--sage); }
-    .event i { color: var(--terracotta); }
+        /* La nostra storia */
+        .story-timeline { max-width: 900px; margin: 10px auto 40px; position: relative; }
+        .story-timeline::before {
+            content: ""; position: absolute; left: 50%; transform: translateX(-50%); width: 4px; top: 0; bottom: 0; background: var(--accent-color); opacity: 0.12;
+        }
+        .story-item { width: 50%; padding: 16px 24px; box-sizing: border-box; position: relative; }
+        .story-item-left { left: 0; float: left; text-align: right; }
+        .story-item-right { left: 50%; float: right; text-align: left; }
+        .story-item .dot { position: absolute; top: 24px; width: 14px; height: 14px; border-radius: 50%; background: var(--accent-color); box-shadow: 0 0 0 6px rgba(141,123,104,0.06); }
+        .story-item-left .dot { right: -7px; }
+        .story-item-right .dot { left: -7px; }
+        .story-card { display: inline-block; background: white; padding: 14px; border-radius: 8px; box-shadow: 0 8px 20px rgba(0,0,0,0.06); max-width: 380px; }
+        .story-card h4 { margin: 0 0 6px; font-size: 1.05rem; }
+        .story-card p { margin: 0; color: #666; font-size: 0.95rem; }
 
-    /* Pulsanti */
-    .map-button, .album-btn {
-        display: inline-block; 
-        background: var(--terracotta); 
-        color: white;
-        padding: 12px 25px; text-decoration: none; border-radius: 4px; /* Angoli meno arrotondati per stile moderno */
-        margin-top: 14px; font-size: 0.9rem; font-weight: bold;
-        transition: opacity 0.3s;
-    }
-    .map-button:hover, .album-btn:hover { opacity: 0.8; }
+        /* Timeline Programma */
+        .timeline { 
+            max-width: 500px; margin: 30px auto; 
+            border-left: 2px solid var(--accent-color); 
+            padding-left: 25px; text-align: left; 
+        }
+        .event { margin-bottom: 28px; position: relative; }
+        .event i { position: absolute; left: -55px; top: 0; color: var(--accent-color); font-size: 1.2rem; }
 
-    /* Form RSVP */
-    #rsvp { background: var(--sage) !important; color: white; } /* Sezione RSVP in Salvia */
-    #rsvp h2, #rsvp h3, #rsvp p { color: white !important; }
-    
-    button[type="submit"] { 
-        background: var(--terracotta); 
-        color: white; 
-        border: none; 
-        padding: 15px; 
-        letter-spacing: 1px;
-        border-radius: 4px;
-    }
+        /* Pulsanti e form */
+        .map-button, .album-btn {
+            display: inline-block; background: var(--accent-color); color: white;
+            padding: 12px 20px; text-decoration: none; border-radius: 30px;
+            margin-top: 14px; font-size: 0.9rem; font-weight: bold;
+        }
+        form { display: flex; flex-direction: column; gap: 12px; max-width: 420px; margin: 0 auto; }
+        input, select, textarea { padding: 12px; border-radius: 6px; border: 1px solid #ddd; width: 100%; }
+        button { background: white; color: var(--accent-color); border: 2px solid var(--accent-color); padding: 12px; font-weight: bold; border-radius: 6px; cursor: pointer; }
 
-    #music-btn { color: var(--terracotta); }
-</style>
+        #music-btn {
+            position: fixed; bottom: 20px; right: 20px;
+            background: rgba(255,255,255,0.9);
+            width: 50px; height: 50px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2); z-index: 100; cursor: pointer;
+        }
+
+        @media (max-width: 720px) {
+            .story-item, .story-item-left, .story-item-right { width: 100%; float: none; text-align:left; padding-left: 36px; padding-right: 36px; }
+            .story-item .dot { left: 18px !important; right: auto !important; }
+            .story-timeline::before { left: 24px; transform: none; }
+        }
+
+        .clearfix::after { content: ''; display: table; clear: both; }
+    </style>
 </head>
 <body>
 
