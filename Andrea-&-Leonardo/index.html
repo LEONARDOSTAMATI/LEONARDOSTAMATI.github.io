@@ -1,3 +1,8 @@
+Scusami davvero per l'inconveniente. Capisco quanto sia importante avere tutto completo, quindi ho ricostruito il codice con **tutte le sezioni**: la timeline, "Come raggiungerci", "Dove alloggiare" e il **form RSVP**.
+
+### Codice completo con tutte le sezioni richieste (inclusa "Come arrivare" e "Dove alloggiare"):
+
+```html
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -136,152 +141,179 @@
 <body>
 
     <audio id="bg-music" loop>
-        <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
-    </audio>
+        <source src="https://www.bensound.com/bensound-m
+```
 
-    <div id="music-btn" onclick="toggleMusic()" title="Ascolta musica">
-        <i id="music-icon" class="fas fa-music"></i>
+
+usic/bensound-love.mp3" type="audio/mpeg"> </audio>
+
+```
+<div id="music-btn" onclick="toggleMusic()" title="Ascolta musica">
+    <i id="music-icon" class="fas fa-music"></i>
+</div>
+
+<header>
+    <div class="logo-container">
+        <!-- Se preferisci path assoluto, sostituisci 'logo.jpg' con l'URL completo -->
+        <img src="LOGO.jpg" alt="Logo Andrea & Leonardo">
+    </div>
+    <p>12 Settembre 2026</p>
+    <h1>Andrea &amp; Leonardo</h1>
+    <p><i class="fas fa-heart"></i> CI SPOSIAMO</p>
+</header>
+
+<section id="countdown">
+    <div class="time-block"><div id="days">00</div><span>Giorni</span></div>
+    <div class="time-block"><div id="hours">00</div><span>Ore</span></div>
+    <div class="time-block"><div id="mins">00</div><span>Min</span></div>
+    <div class="time-block"><div id="secs">00</div><span>Sec</span></div>
+</section>
+
+<!-- La nostra storia: timeline posizionata subito dopo il countdown -->
+<section class="story-timeline clearfix" aria-labelledby="story-title">
+    <h2 id="story-title" style="text-align:center; margin-bottom:18px;">La nostra storia</h2>
+
+    <div class="story-item story-item-left">
+        <div class="dot" aria-hidden="true"></div>
+        <div class="story-card">
+            <h4>Ci siamo incontrati</h4>
+            <p>Primavera 2016 — Un incontro casuale che è diventato subito complicità.</p>
+        </div>
     </div>
 
-    <header>
-        <div class="logo-container">
-            <!-- Se preferisci path assoluto, sostituisci 'logo.jpg' con l'URL completo -->
-            <img src="LOGO.jpg" alt="Logo Andrea & Leonardo">
+    <div class="story-item story-item-right">
+        <div class="dot" aria-hidden="true"></div>
+        <div class="story-card">
+            <h4>Primo viaggio insieme</h4>
+            <p>Estate 2017 — Una settimana in cui abbiamo scoperto quanto fosse bello esplorare il mondo mano nella mano.</p>
         </div>
-        <p>12 Settembre 2026</p>
-        <h1>Andrea &amp; Leonardo</h1>
-        <p><i class="fas fa-heart"></i> CI SPOSIAMO</p>
-    </header>
+    </div>
 
-    <section id="countdown">
-        <div class="time-block"><div id="days">00</div><span>Giorni</span></div>
-        <div class="time-block"><div id="hours">00</div><span>Ore</span></div>
-        <div class="time-block"><div id="mins">00</div><span>Min</span></div>
-        <div class="time-block"><div id="secs">00</div><span>Sec</span></div>
-    </section>
+    <div class="story-item story-item-left">
+        <div class="dot" aria-hidden="true"></div>
+        <div class="story-card">
+            <h4>La proposta</h4>
+            <p>Inverno 2021 — Un momento intimo e sorprendente: la domanda che ci ha fatto iniziare il capitolo successivo.</p>
+        </div>
+    </div>
 
-    <!-- La nostra storia: timeline posizionata subito dopo il countdown -->
-    <section class="story-timeline clearfix" aria-labelledby="story-title">
-        <h2 id="story-title" style="text-align:center; margin-bottom:18px;">La nostra storia</h2>
+    <div class="story-item story-item-right">
+        <div class="dot" aria-hidden="true"></div>
+        <div class="story-card">
+            <h4>Preparativi</h4>
+            <p>2023 - 2024 — Cura dei dettagli, risate e qualche piccola preoccupazione in vista del nostro giorno.</p>
+        </div>
+    </div>
+</section>
 
-        <div class="story-item story-item-left">
-            <div class="dot" aria-hidden="true"></div>
-            <div class="story-card">
-                <h4>Ci siamo incontrati</h4>
-                <p>Primavera 2016 — Un incontro casuale che è diventato subito complicità.</p>
-            </div>
+<!-- Come raggiungerci -->
+<section>
+    <h2><i class="fas fa-map-marker-alt"></i> Come Raggiungerci</h2>
+    <h3>Auto:</h3>
+    <p>Hotel Bisanzio Resort, Piana dei Venti – Rossano (CS);</p>
+    <h3>Treno:</h3>
+    <p>Scendere alla stazione di Rossano; l’hotel dista circa 20 minuti in taxi.</p>
+    <h3>Aereo – Lamezia Terme:</h3>
+    <p>Collegamenti ferroviari per Rossano o navetta dedicata (costo 21 €) fino a Rossano.</p>
+    <h3>Aereo – Crotone:</h3>
+    <p>Possibile raggiungerci in circa 1h20 tramite auto da noleggiare in loco.</p>
+</section>
+
+<!-- Dove Alloggiare -->
+<section>
+    <h2><i class="fas fa-bed"></i> Dove Alloggiare</h2>
+    <p>Hotel Bisanzio Resort (prezzo speciale per gli ospiti - posti limitati)</p>
+    <ul>
+        <li><strong>Matrimoniale:</strong> 75 € a notte con colazione</li>
+        <li><strong>Tripla:</strong> 100 € a notte con colazione</li>
+        <li><strong>Culla aggiuntiva:</strong> + 10 €</li>
+    </ul>
+</section>
+
+<!-- Timeline degli eventi -->
+<section>
+    <h2><i class="fas fa-calendar-alt"></i> Programma</h2>
+    <div class="timeline">
+        <div class="event">
+            <i class="fas fa-star"></i>
+            <h4>Pre-wedding</h4>
+            <p><strong>19:00 - Evento di Benvenuto</strong><br>Un incontro informale per conoscersi prima del matrimonio.</p>
         </div>
 
-        <div class="story-item story-item-right">
-            <div class="dot" aria-hidden="true"></div>
-            <div class="story-card">
-                <h4>Primo viaggio insieme</h4>
-                <p>Estate 2017 — Una settimana in cui abbiamo scoperto quanto fosse bello esplorare il mondo mano nella mano.</p>
-            </div>
+        <div class="event">
+            <i class="fas fa-clock"></i>
+            <h4>16:00 - Cerimonia</h4>
+            <p>Inizio della cerimonia.</p>
         </div>
-
-        <div class="story-item story-item-left">
-            <div class="dot" aria-hidden="true"></div>
-            <div class="story-card">
-                <h4>La proposta</h4>
-                <p>Inverno 2021 — Un momento intimo e sorprendente: la domanda che ci ha fatto iniziare il capitolo successivo.</p>
-            </div>
+        <div class="event">
+            <i class="fas fa-glass-cheers"></i>
+            <h4>17:00 - Brindisi</h4>
+            <p>Dopo un iniziale brindisi gli sposi si dedicano alle foto mentre gli ospiti si intrattengono in location.</p>
         </div>
-
-        <div class="story-item story-item-right">
-            <div class="dot" aria-hidden="true"></div>
-            <div class="story-card">
-                <h4>Preparativi</h4>
-                <p>2023 - 2024 — Cura dei dettagli, risate e qualche piccola preoccupazione in vista del nostro giorno.</p>
-            </div>
+        <div class="event">
+            <i class="fas fa-wine-glass-alt"></i>
+            <h4>19:30 - Aperitivo</h4>
+            <p>Tempo per stuzzichini e conversazioni.</p>
         </div>
-    </section>
-
-    <!-- Timeline degli eventi -->
-    <section>
-        <h2><i class="fas fa-calendar-alt"></i> Programma</h2>
-        <div class="timeline">
-            <div class="event">
-                <i class="fas fa-star"></i>
-                <h4>Pre-wedding</h4>
-                <p><strong>19:00 - Evento di Benvenuto</strong><br>Un incontro informale per conoscersi prima del matrimonio.</p>
-            </div>
-
-            <div class="event">
-                <i class="fas fa-clock"></i>
-                <h4>16:00 - Cerimonia</h4>
-                <p>Inizio della cerimonia.</p>
-            </div>
-            <div class="event">
-                <i class="fas fa-glass-cheers"></i>
-                <h4>17:00 - Brindisi</h4>
-                <p>Dopo un iniziale brindisi gli sposi si dedicano alle foto mentre gli ospiti si intrattengono in location.</p>
-            </div>
-            <div class="event">
-                <i class="fas fa-wine-glass-alt"></i>
-                <h4>19:30 - Aperitivo</h4>
-                <p>Tempo per stuzzichini e conversazioni.</p>
-            </div>
-            <div class="event">
-                <i class="fas fa-utensils"></i>
-                <h4>21:00 - Cena</h4>
-                <p>Inizio della cena.</p>
-            </div>
-            <div class="event">
-                <i class="fas fa-music"></i>
-                <h4>22:30 - Ballo</h4>
-                <p>Il primo ballo e apertura della pista.</p>
-            </div>
-            <div class="event">
-                <i class="fas fa-birthday-cake"></i>
-                <h4>24:00 - Torta</h4>
-                <p>Taglio della torta nuziale.</p>
-            </div>
-            <div class="event">
-                <i class="fas fa-headphones"></i>
-                <h4>01:00 - DJ Set</h4>
-                <p>Musica e balli fino a notte fonda.</p>
-            </div>
+        <div class="event">
+            <i class="fas fa-utensils"></i>
+            <h4>21:00 - Cena</h4>
+            <p>Inizio della cena.</p>
         </div>
-    </section>
+        <div class="event">
+            <i class="fas fa-music"></i>
+            <h4>22:30 - Ballo</h4>
+            <p>Il primo ballo e apertura della pista.</p>
+        </div>
+        <div class="event">
+            <i class="fas fa-birthday-cake"></i>
+            <h4>24:00 - Torta</h4>
+            <p>Taglio della torta nuziale.</p>
+        </div>
+        <div class="event">
+            <i class="fas fa-headphones"></i>
+            <h4>01:00 - DJ Set</h4>
+            <p>Musica e balli fino a notte fonda.</p>
+        </div>
+    </div>
+</section>
 
-    <section>
-        <h2><i class="fas fa-camera"></i> Album Fotografico</h2>
-        <p>Visualizza il nostro album su Wedshoots.</p>
-        <a id="wedshoots-link" class="album-btn" href="https://www.wedshoots.com/" target="_blank" rel="noopener">
-            <i class="fas fa-images"></i> Apri Album
-        </a>
-    </section>
+<section>
+    <h2><i class="fas fa-camera"></i> Album Fotografico</h2>
+    <p>Visualizza il nostro album su Wedshoots.</p>
+    <a id="wedshoots-link" class="album-btn" href="https://www.wedshoots.com/" target="_blank" rel="noopener">
+        <i class="fas fa-images"></i> Apri Album
+    </a>
+</section>
 
-    <section id="rsvp" style="background: var(--accent-color); color: white;">
-        <h2 style="color: white;"><i class="fas fa-check-circle"></i> RSVP</h2>
-        <p>Fateci sapere se sarete dei nostri entro il 1 Maggio 2026</p>
-        <form>
-            <input type="text" placeholder="Nome e Cognome" required>
-            <input type="text" placeholder="Email" required>
-            <select required>
-                <option value="">Parteciperai?</option>
-                <option>Sì, con piacere!</option>
-                <option>No, purtroppo.</option>
-            </select>
-            <select required>
-                <option value="">Numero di adulti</option>
-                <option>Una persona</option>
-                <option>Due persone</option>
-            </select>
-            <select required>
-                <option value="">Verrai con bambini?</option>
-                <option>No</option>
-                <option>1 bambino</option>
-                <option>2 bambini</option>
-                <option>3 bambini</option>
-            </select>
-            <textarea placeholder="Allergie, esigenze alimentari (vegetariano) o messaggi per noi ❤️"></textarea>
-            <button type="submit">INVIA CONFERMA</button>
-        </form>
-    </section>
-
-    <script>
+<section id="rsvp" style="background: var(--accent-color); color: white;">
+    <h2 style="color: white;"><i class="fas fa-check-circle"></i> RSVP</h2>
+    <p>Fateci sapere se sarete dei nostri entro il 1 Maggio 2026</p>
+    <form>
+        <input type="text" placeholder="Nome e Cognome" required>
+        <input type="text" placeholder="Email" required>
+        <select required>
+            <option value="">Parteciperai?</option>
+            <option>Sì, con piacere!</option>
+            <option>No, purtroppo.</option>
+        </select>
+        <select required>
+            <option value="">Numero di adulti</option>
+            <option>Una persona</option>
+            <option>Due persone</option>
+        </select>
+        <select required>
+            <option value="">Verrai con bambini?</option>
+            <option>No</option>
+            <option>1 bambino</option>
+            <option>2 bambini</option>
+            <option>3 bambini</option>
+        </select>
+        <textarea placeholder="Allergie, esigenze alimentari (vegetariano) o messaggi per noi ❤️"></textarea>
+        <button type="submit">INVIA CONFERMA</button>
+    </form>
+</section>
+<script>
         // Countdown Logic
         const target = new Date("September 12, 2026 16:00:00").getTime();
         function updateCountdown() {
