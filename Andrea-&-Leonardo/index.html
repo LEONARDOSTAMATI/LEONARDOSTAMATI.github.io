@@ -3,142 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andrea & Leonardo - Matrimonio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <title>Matrimonio di Andrea & Leonardo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #f4f1ea; /* Sfondo crema */
+            --accent-color: #8d7b68;  /* Marrone elegante */
+            --text-dark: #333;
+        }
+
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f4dfcc; /* Icing */
-            color: #ba8b68; /* Terracotta */
             margin: 0;
             padding: 0;
-        }
-        header {
-            background-color: #acb087; /* Sage */
-            color: white;
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--primary-color);
+            color: var(--text-dark);
             text-align: center;
-            padding: 50px 0;
         }
-        header h1 {
+
+        h1, h2, h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 3em;
-            margin: 0;
+            font-weight: 400;
         }
-        header p {
-            font-size: 1.5em;
-            margin: 0;
-        }
-        section {
-            padding: 50px 20px;
-            text-align: center;
-        }
-        .wedding-details {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-        }
-        .rsvp {
-            margin-top: 50px;
-            background-color: #f4e0e0; /* Blush */
-            padding: 30px;
-            border-radius: 10px;
-        }
-        .contact {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            margin-top: 20px;
-        }
-        footer {
-            background-color: #ba8b68; /* Terracotta */
+
+        /* Hero Section */
+        header {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), 
+                        url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             color: white;
-            text-align: center;
-            padding: 20px;
         }
-        .logo {
-            width: 150px;
-            margin-top: 30px;
+
+        header h1 { font-size: 4rem; margin-bottom: 0; }
+        header p { font-size: 1.5rem; letter-spacing: 3px; }
+
+        /* Countdown */
+        #countdown {
+            padding: 50px 20px;
+            background: white;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
         }
-        .iban {
-            font-size: 1.2em;
-            color: #ba8b68;
-            margin-top: 20px;
-        }
-        .countdown {
-            font-size: 2em;
-            color: #acb087; /* Sage */
-            font-weight: bold;
-            margin-top: 20px;
-        }
+        .time-block { font-size: 1.5rem; color: var(--accent-color); }
+        .time-block span { display: block; font-size: 0.8rem; text-transform: uppercase; color: #999; }
+
+        /* Programma */
+        #programma { padding: 80px 20px; }
+        .timeline { max-width: 600px; margin: 0 auto; border-left: 1px solid var(--accent-color); padding-left: 30px; text-align: left; }
+        .event { margin-bottom: 40px; position: relative; }
+        .event::before { content: ''; position: absolute; left: -36px; top: 5px; width: 10px; height: 10px; background: var(--accent-color); border-radius: 50%; }
+
+        /* Gallery */
+        #immagini { background: #eee; padding: 50px 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px; padding: 0 10px; }
+        .gallery-grid img { width: 100%; height: 300px; object-fit: cover; border-radius: 5px; }
+
+        /* RSVP */
+        #rsvp { padding: 80px 20px; background: var(--accent-color); color: white; }
+        form { max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; }
+        input, select, button { padding: 12px; border-radius: 5px; border: none; font-family: inherit; }
+        button { background: white; color: var(--accent-color); font-weight: bold; cursor: pointer; transition: 0.3s; }
+        button:hover { background: #f0f0f0; }
+
+        footer { padding: 20px; font-size: 0.8rem; opacity: 0.7; }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Andrea & Leonardo</h1>
-    <p>12 settembre 2026 - 16:30</p>
-    <p>Matrimonio Civile a Corigliano Rossano, Hotel Resort Bisanzio</p>
-    <img src="file_0000000070907246be568fac00ec3035.png" alt="Logo" class="logo">
-</header>
+    <header>
+        <p>CI SPOSIAMO</p>
+        <h1>Andrea & Leonardo</h1>
+        <p>12 Settembre 2026</p>
+    </header>
 
-<section>
-    <h2>La Nostra Storia</h2>
-    <p>Andrea e Leonardo si sono conosciuti... <em>racconto da inserire</em></p>
-</section>
+    <section id="countdown">
+        <div class="time-block" id="days">00 <span>Giorni</span></div>
+        <div class="time-block" id="hours">00 <span>Ore</span></div>
+        <div class="time-block" id="minutes">00 <span>Minuti</span></div>
+    </section>
 
-<section class="wedding-details">
-    <h2>Dettagli del Matrimonio</h2>
-    <p>La cerimonia si terrà il 12 settembre 2026, alle ore 16:30, presso l'Hotel Resort Bisanzio, Corigliano Rossano.</p>
-    <p>Non vediamo l'ora di festeggiare con voi!</p>
-</section>
+    <section style="padding: 80px 20px;">
+        <h2>La Cerimonia</h2>
+        <p>Siamo felici di invitarvi al nostro matrimonio civile che si terrà presso il:</p>
+        <h3>Hotel Bisanzio Resort</h3>
+        <p>Corigliano Rossano (CS)<br>Ore 16:00</p>
+    </section>
 
-<!-- Countdown Section -->
-<section>
-    <div class="countdown" id="countdown"></div>
-</section>
+    <section id="programma">
+        <h2>Il Programma</h2>
+        <div class="timeline">
+            <div class="event">
+                <strong>16:00 - Arrivo Ospiti</strong>
+                <p>Accoglienza presso il giardino del resort.</p>
+            </div>
+            <div class="event">
+                <strong>16:30 - Cerimonia Civile</strong>
+                <p>Il rito si svolgerà all'aperto vista lago.</p>
+            </div>
+            <div class="event">
+                <strong>18:00 - Aperitivo & Cena</strong>
+                <p>Festeggiamenti, musica e brindisi.</p>
+            </div>
+        </div>
+    </section>
 
-<section class="rsvp">
-    <h2>RSVP</h2>
-    <p>Per confermare la tua presenza, ti preghiamo di contattarci al numero <strong>333-1234567</strong> o via email a <strong>info@matrimonioandreaeleonardo.it</strong></p>
-    <p class="iban">IBAN: IT60X0542811101000000123456</p>
-</section>
+    <section id="immagini">
+        <h2>I Nostri Momenti</h2>
+        <div class="gallery-grid">
+            <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=600" alt="Foto 1">
+            <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=600" alt="Foto 2">
+            <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=600" alt="Foto 3">
+        </div>
+    </section>
 
-<section class="contact">
-    <h2>Contatti</h2>
-    <p>Per qualsiasi informazione, non esitare a contattarci!</p>
-</section>
+    <section id="rsvp">
+        <h2>Conferma la tua presenza</h2>
+        <p>Ti preghiamo di rispondere entro il 12 Luglio 2026</p>
+        <form action="#">
+            <input type="text" placeholder="Nome e Cognome" required>
+            <select required>
+                <option value="">Parteciperai?</option>
+                <option value="si">Sì, con piacere!</option>
+                <option value="no">Purtroppo non potrò</option>
+            </select>
+            <input type="text" placeholder="Allergie o intolleranze">
+            <button type="submit">Invia Conferma</button>
+        </form>
+    </section>
 
-<footer>
-    <p>&copy; 2026 Andrea & Leonardo - Matrimonio Civile</p>
-</footer>
+    <footer>
+        <p>Andrea & Leonardo - 12.09.2026</p>
+    </footer>
 
-<!-- JavaScript for Countdown -->
-<script>
-    // Data del matrimonio
-    var weddingDate = new Date("Sep 12, 2026 16:30:00").getTime();
+    <script>
+        const targetDate = new Date("September 12, 2026 16:00:00").getTime();
 
-    // Aggiorna il countdown ogni secondo
-    var countdownInterval = setInterval(function() {
-        var now = new Date().getTime();
-        var timeLeft = weddingDate - now;
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
 
-        var days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 
-        // Visualizza il conto alla rovescia
-        document.getElementById("countdown").innerHTML = "Manca " + days + " giorni " + hours + " ore " + minutes + " minuti " + seconds + " secondi.";
-
-        // Se il countdown finisce, mostra un messaggio
-        if (timeLeft < 0) {
-            clearInterval(countdownInterval);
-            document.getElementById("countdown").innerHTML = "Il grande giorno è arrivato!";
+            document.getElementById("days").innerHTML = days + "<span>Giorni</span>";
+            document.getElementById("hours").innerHTML = hours + "<span>Ore</span>";
+            document.getElementById("minutes").innerHTML = minutes + "<span>Minuti</span>";
         }
-    }, 1000);
-</script>
 
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
 </body>
 </html>
