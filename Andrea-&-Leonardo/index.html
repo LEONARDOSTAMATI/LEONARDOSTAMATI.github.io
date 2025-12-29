@@ -314,13 +314,24 @@ usic/bensound-love.mp3" type="audio/mpeg"> </audio>
         <!-- Allergie / esigenze alimentari -->
         <textarea placeholder="Allergie, esigenze alimentari (vegetariano) o messaggi per noi ❤️"></textarea>
 
-        <!-- Sezione Alloggio -->
-        <h3 style="color: white;">Dove alloggiare</h3>
-        <p><strong>Hotel Bisanzio Resort</strong> (prezzo speciale per gli ospiti - posti limitati)</p>
-        <p><strong>Matrimoniale:</strong> 75 € a notte con colazione</p>
-        <p><strong>Tripla:</strong> 100 € a notte con colazione</p>
-        <p><strong>Culla aggiuntiva:</strong> + 10 €</p>
-        
+      <!-- Sezione Alloggio -->
+<h3 style="color: white;">Dove alloggiare</h3>
+<p>Seleziona il tuo tipo di alloggio:</p>
+
+<!-- Selezione dell'alloggio -->
+<select name="room-type" required>
+    <option value="">Seleziona la camera</option>
+    <option value="matrimoniale">Matrimoniale - 75 € a notte con colazione</option>
+    <option value="tripla">Tripla - 100 € a notte con colazione</option>
+</select>
+
+<p>Hai bisogno di una culla aggiuntiva?</p>
+<select name="crib" required>
+    <option value="">Seleziona una opzione</option>
+    <option value="no">No</option>
+    <option value="yes">Sì (+10 €)</option>
+</select>
+
         <label for="check-in">Data di arrivo:</label>
         <input type="date" id="check-in" name="check-in" required>
         
