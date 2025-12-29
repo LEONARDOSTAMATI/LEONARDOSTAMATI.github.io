@@ -23,15 +23,15 @@ animateCursor();
 // Cursor hover effects
 document.querySelectorAll('a, button, .gallery-item').forEach(el => {
     el.addEventListener('mouseenter', () => {
-        cursor.style.width = '40px';
-        cursor.style.height = '40px';
-        cursor.style.borderColor = 'rgba(255, 255, 255, 0.5)';
+        cursor.style.width = '20px';
+        cursor.style.height = '20px';
+        cursor.style.borderColor = 'rgba(255, 255, 255, 0.4)';
     });
     
     el.addEventListener('mouseleave', () => {
-        cursor.style.width = '20px';
-        cursor.style.height = '20px';
-        cursor.style.borderColor = '#ffffff';
+        cursor.style.width = '10px';
+        cursor.style.height = '10px';
+        cursor.style.borderColor = 'rgba(255, 255, 255, 0.3)';
     });
 });
 
@@ -110,13 +110,19 @@ document.querySelectorAll('.gallery-item').forEach(item => {
         const imagePlaceholder = item.querySelector('.image-placeholder');
         const imageTitle = item.querySelector('.image-title').textContent;
         
-        // In a real implementation, you would use actual image URLs
-        // For now, we'll use a placeholder service
+        // Usa Unsplash Source per immagini più affidabili
         const imageNumber = imagePlaceholder.getAttribute('data-image');
-        modalImage.src = `https://picsum.photos/1200/800?random=${imageNumber}`;
+        const imageId = parseInt(imageNumber) + 1000; // Offset per variare le immagini
+        modalImage.src = `https://source.unsplash.com/1200x800/?abstract,art,photography&sig=${imageId}`;
         modalCaption.textContent = imageTitle;
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
+        
+        // Gestione errori di caricamento
+        modalImage.onerror = function() {
+            // Fallback a un'immagine placeholder SVG se Unsplash non funziona
+            this.src = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800'%3E%3Crect fill='%232a2a2a' width='1200' height='800'/%3E%3Ctext fill='%23a0a0a0' font-family='sans-serif' font-size='24' x='50%25' y='50%25' text-anchor='middle'%3EImmagine ${imageNumber}%3C/text%3E%3C/svg%3E`;
+        };
     });
 });
 
