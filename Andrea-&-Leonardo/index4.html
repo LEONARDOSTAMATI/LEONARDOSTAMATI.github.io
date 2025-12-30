@@ -1043,6 +1043,26 @@
       background: var(--terracotta);
     }
 
+    /* Divisore immagine - full-width e centrato */
+    .divider-image {
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+      display: flex;
+      justify-content: center;
+      padding: 2.2rem 0;
+      background-color: var(--ivory);
+    }
+
+    .divider-image img {
+      max-width: 210px;
+      height: auto;
+      opacity: 0.8;
+    }
+
     /* Sezione Grazie */
     .section-thanks {
       padding: 3.2rem 1.6rem 3.5rem;
@@ -1340,11 +1360,9 @@
     </div>
   </section>
 
-  <div style="text-align: center; padding: 1.4rem 0;">
-    <img src="B.png" alt="divisore" style="max-width: 210px; height: auto; opacity: 0.8;">
+  <div class="divider-image">
+    <img src="B.png" alt="divisore">
   </div>
-
-  <!-- LOGISTICA & PERNOTTAMENTO -->
   <section id="logistica" class="section-logistica">
     <div class="section-title-with-icon">
       <i class="fas fa-map-location-dot location-icon"></i>
@@ -1407,10 +1425,9 @@
     </div>
   </section>
 
-  <div style="text-align: center; padding: 1.4rem 0;">
-    <img src="A.png" alt="divisore" style="max-width: 210px; height: auto; opacity: 0.8;">
+  <div class="divider-image">
+    <img src="A.png" alt="divisore">
   </div>
-  <section id="story" class="section-story">
     <header class="story-header">
       <div>
         <div class="section-title-with-icon">
@@ -1468,8 +1485,8 @@
     </div>
   </section>
 
-  <div style="text-align: center; padding: 1.4rem 0;">
-    <img src="B.png" alt="divisore" style="max-width: 210px; height: auto; opacity: 0.8;">
+  <div class="divider-image">
+    <img src="B.png" alt="divisore">
   </div>
 
   <!-- RSVP -->
@@ -1618,8 +1635,8 @@
     </div>
   </section>
 
-  <div style="text-align: center; padding: 1.4rem 0;">
-    <img src="A.png" alt="divisore" style="max-width: 210px; height: auto; opacity: 0.8;">
+  <div class="divider-image">
+    <img src="A.png" alt="divisore">
   </div>
 
   <!-- Album Fotografico -->
@@ -1636,8 +1653,8 @@
     </div>
   </section>
 
-  <div style="text-align: center; padding: 1.4rem 0;">
-    <img src="B.png" alt="divisore" style="max-width: 210px; height: auto; opacity: 0.8;">
+  <div class="divider-image">
+    <img src="B.png" alt="divisore">
   </div>
 
   <!-- Grazie! -->
