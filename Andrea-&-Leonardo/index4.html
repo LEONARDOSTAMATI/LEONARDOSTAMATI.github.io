@@ -1103,6 +1103,95 @@
       margin: 0;
     }
 
+    /* Divisori eleganti e icone */
+    .section-divider {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .section-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      color: var(--sage);
+      margin-right: 0.8rem;
+      opacity: 0.8;
+    }
+
+    .section-title-with-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .section-title-with-icon i {
+      font-size: 1.3rem;
+      opacity: 0.9;
+      transition: transform 0.3s ease;
+    }
+
+    .section-title-with-icon:hover i {
+      transform: scale(1.15) rotate(-5deg);
+    }
+
+    .section-title-with-icon .title-section {
+      margin: 0;
+    }
+
+    /* Petali e rami decorativi */
+    .petal-divider {
+      display: flex;
+      justify-content: center;
+      gap: 0.6rem;
+      padding: 1.8rem 0;
+      color: var(--sage);
+      font-size: 1.4rem;
+      opacity: 0.35;
+    }
+
+    .petal {
+      display: inline-block;
+      animation: float-petal 3s ease-in-out infinite;
+    }
+
+    .petal:nth-child(1) {
+      animation-delay: 0s;
+    }
+
+    .petal:nth-child(2) {
+      animation-delay: 0.3s;
+    }
+
+    .petal:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+
+    .petal:nth-child(4) {
+      animation-delay: 0.9s;
+    }
+
+    .petal:nth-child(5) {
+      animation-delay: 1.2s;
+    }
+
+    @keyframes float-petal {
+      0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.35; }
+      50% { transform: translateY(-12px) rotate(8deg); opacity: 0.5; }
+    }
+
+    /* Icone nelle sezioni */
+    .location-icon { font-size: 1.2rem; color: var(--sage); }
+    .hotel-icon { font-size: 1.2rem; color: var(--terracotta); }
+    .calendar-icon { font-size: 1.2rem; color: var(--sage); }
+    .heart-icon { font-size: 1.2rem; color: var(--terracotta); }
+    .camera-icon { font-size: 1.2rem; color: var(--sage); }
+    .gift-icon { font-size: 1.2rem; color: var(--terracotta); }
+
   </style>
 </head>
 <body>
@@ -1251,9 +1340,20 @@
     </div>
   </section>
 
+  <div class="petal-divider">
+    <span class="petal">🌿</span>
+    <span class="petal">🌸</span>
+    <span class="petal">🌿</span>
+    <span class="petal">🌸</span>
+    <span class="petal">🌿</span>
+  </div>
+
   <!-- LOGISTICA & PERNOTTAMENTO -->
   <section id="logistica" class="section-logistica">
-    <h2 class="title-section" data-animate="slide-right">Come arrivare &amp; dove dormire</h2>
+    <div class="section-title-with-icon">
+      <i class="fas fa-map-location-dot location-icon"></i>
+      <h2 class="title-section" data-animate="slide-right">Come arrivare &amp; dove dormire</h2>
+    </div>
 
     <div class="logistica-grid-main">
       <div class="logistica-card" data-animate="slide-right">
@@ -1295,8 +1395,8 @@
 
       <aside class="pernottamento-card" data-animate="slide-left">
         <div class="pernottamento-inner">
-          <div class="pernottamento-title">Pernottamento</div>
-          <div class="pernottamento-hotel">Hotel Bisanzio Resort</div>
+          <div class="pernottamento-title"><i class="fas fa-bed" style="margin-right: 0.6rem; color: var(--terracotta);"></i>Pernottamento</div>
+          <div class="pernottamento-hotel"><i class="fas fa-hotel" style="margin-right: 0.4rem; color: var(--terracotta);"></i>Hotel Bisanzio Resort</div>
           <div class="pernottamento-list">
             <p>Camera matrimoniale · 75€ a notte</p>
             <p>Camera tripla · 100€ a notte</p>
@@ -1311,11 +1411,22 @@
     </div>
   </section>
 
+  <div class="petal-divider">
+    <span class="petal">🌸</span>
+    <span class="petal">🌿</span>
+    <span class="petal">🌸</span>
+    <span class="petal">🌿</span>
+    <span class="petal">🌸</span>
+  </div>
+
   <!-- STORY -->
   <section id="story" class="section-story">
     <header class="story-header">
       <div>
-        <h2 class="title-section" data-animate="slide-right">La nostra storia</h2>
+        <div class="section-title-with-icon">
+          <i class="fas fa-heart heart-icon"></i>
+          <h2 class="title-section" data-animate="slide-right">La nostra storia</h2>
+        </div>
         <p class="story-intro" data-animate="slide-right">
           Più che un “come ci siamo conosciuti”, una piccola sequenza di fotogrammi:
           tre momenti che ci hanno portato fino a Rossano, settembre 2026.
@@ -1367,11 +1478,22 @@
     </div>
   </section>
 
+  <div class="petal-divider">
+    <span class="petal">🌿</span>
+    <span class="petal">🌸</span>
+    <span class="petal">🌿</span>
+    <span class="petal">🌸</span>
+    <span class="petal">🌿</span>
+  </div>
+
   <!-- RSVP -->
   <section id="rsvp" class="section-rsvp">
     <div class="rsvp-grid">
       <div class="rsvp-copy">
-        <h2 class="title-section" data-animate="slide-right">RSVP</h2>
+        <div class="section-title-with-icon">
+          <i class="fas fa-pen-fancy"></i>
+          <h2 class="title-section" data-animate="slide-right">RSVP</h2>
+        </div>
         <p data-animate="slide-right">
           La vostra presenza è la parte più preziosa di questo giorno.
           Vi chiediamo solo di confermare entro la data indicata, così da poter
@@ -1510,10 +1632,21 @@
     </div>
   </section>
 
+  <div class="petal-divider">
+    <span class="petal">🌸</span>
+    <span class="petal">🌿</span>
+    <span class="petal">🌸</span>
+    <span class="petal">🌿</span>
+    <span class="petal">🌸</span>
+  </div>
+
   <!-- Album Fotografico -->
   <section class="section-photography" data-animate="fade-in">
     <div class="photography-container">
-      <h2 class="title-section" data-animate="slide-right">Album Fotografico</h2>
+      <div class="section-title-with-icon">
+        <i class="fas fa-camera camera-icon"></i>
+        <h2 class="title-section" data-animate="slide-right">Album Fotografico</h2>
+      </div>
       <p data-animate="slide-right">Visualizza il nostro album su Wedshoots.</p>
       <a class="album-btn" href="https://www.wedshoots.com/" target="_blank" rel="noopener">
         <i class="fas fa-images"></i> Apri Album
@@ -1521,10 +1654,21 @@
     </div>
   </section>
 
+  <div class="petal-divider">
+    <span class="petal">🌿</span>
+    <span class="petal">🌸</span>
+    <span class="petal">🌿</span>
+    <span class="petal">🌸</span>
+    <span class="petal">🌿</span>
+  </div>
+
   <!-- Grazie! -->
   <section class="section-thanks" data-animate="fade-in">
     <div class="thanks-container">
-      <h2 class="title-section" data-animate="slide-right">Grazie!</h2>
+      <div class="section-title-with-icon">
+        <i class="fas fa-gift gift-icon"></i>
+        <h2 class="title-section" data-animate="slide-right">Grazie!</h2>
+      </div>
       <div class="thanks-content" data-animate="slide-right">
         <p>
           Niente lista nozze, niente oggetti… solo la voglia di partire!
