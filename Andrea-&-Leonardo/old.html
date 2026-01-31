@@ -6,19 +6,20 @@
   <title>Andrea &amp; Leonardo – 12 Settembre 2026</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description"
-    content="Wedding weekend di Andrea & Leonardo – 12 Settembre 2026, Hotel Bisanzio Resort – Corigliano-Rossano (CS)." />
+    content="Wedding weekend di Andrea & Leonardo – 12 Settembre 2026, Hotel Bisanzio Resort, Piana dei Venti – Rossano (CS)." />
 
+  <!-- Google Fonts -->
+  <!-- Google Fonts -->
   <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Montserrat:wght@300;400;500;600&family=Pinyon+Script&display=swap"
     rel="stylesheet">
-  <link href="https://fonts.cdnfonts.com/css/amalfi-coast" rel="stylesheet">
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
   <style>
     :root {
       --sage: #ACB087;
-      --terracotta: #c6984c;
+      --terracotta: #BA8B66;
       --ivory: #F4E1E0;
       --blush: #EAE0D5;
       --ink: #2f2a28;
@@ -233,58 +234,126 @@
       }
     }
 
-    /* Header e Logo (semplice) - Ported from index.html */
-    /* Target only the main hero-header to avoid affecting other headers in main */
-    .hero-header {
-      height: 100vh;
-      background: linear-gradient(to bottom,
-          rgba(244, 225, 224, 0) 0%,
-          rgba(244, 225, 224, 0) 20%,
-          rgba(244, 225, 224, 0.6) 70%,
-          rgba(244, 225, 224, 1) 90%),
-        url('NOI-A&L.jpg') center/cover no-repeat;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+    /* Hero */
+    .hero {
+      padding-top: 4.5rem;
+      padding-bottom: 3.5rem;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 2.5rem;
       align-items: center;
-      color: var(--ink);
-      padding: 2.5rem 5vw;
-      /* More horizontal room */
-      /* Initial padding */
-      padding-top: 70vh;
-      /* Lower the content further */
-      text-align: center;
-      width: 100%;
-      /* Ensure full width availability */
     }
 
-    .logo-container img {
-      max-width: 150px;
-      height: auto;
-      margin-bottom: 18px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.06);
-      padding: 6px;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    @media (max-width: 800px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 2.2rem;
+      }
     }
 
-    header h1 {
-      font-family: 'Amalfi Coast', cursive;
-      font-size: clamp(2.5rem, 10vw, 4.5rem);
-      margin: 8px 0;
-      color: var(--ink-soft);
-      line-height: 1.2;
-      letter-spacing: normal;
-      text-transform: none;
+    .hero-left {
+      max-width: 520px;
     }
 
-    header p {
-      font-size: 0.9rem;
-      letter-spacing: 0.3em;
-      /* Increased letter spacing */
+    .hero-floating-title {
+      position: relative;
+      display: inline-flex;
+      flex-direction: column;
+      gap: 0.1rem;
+      margin: 1.1rem 0 1.2rem;
+    }
+
+    .hero-floating-title span:nth-child(1) {
+      transform: translateX(-0.06em);
+    }
+
+    .hero-floating-title span:nth-child(2) {
+      transform: translateX(0.18em);
+    }
+
+    .hero-meta {
+      margin-top: 1.6rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem 1.4rem;
+      font-size: 0.8rem;
       text-transform: uppercase;
-      color: var(--ink);
-      margin: 5px 0;
+      letter-spacing: 0.18em;
+    }
+
+    .hero-note {
+      margin-top: 1.8rem;
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+    }
+
+    .hero-right {
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-photo-card {
+      position: relative;
+      width: min(420px, 95%);
+      aspect-ratio: 3 / 4;
+      border-radius: 30px;
+      overflow: visible;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-photo {
+      width: 100%;
+      height: 100%;
+      background-image: url('NOI-S.PNG');
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: var(--ivory);
+      opacity: 0;
+      animation: sketch-reveal 1.3s ease-out 0.2s forwards;
+      will-change: opacity, filter;
+    }
+
+    .hero-tag {
+      position: absolute;
+      bottom: 1.3rem;
+      left: 1.3rem;
+      padding: 0.4rem 1rem;
+      border-radius: 999px;
+      font-size: 0.65rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: #fdf6f2;
+      border: 1px solid rgba(244, 225, 224, 0.7);
+      background: linear-gradient(120deg, rgba(172, 176, 135, 0.5), rgba(186, 139, 102, 0.9));
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-stamp {
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 100px;
+      height: 100px;
+      border-radius: 0;
+      border: none;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: rotate(-8deg);
+      overflow: visible;
+      z-index: 2;
+    }
+
+    .hero-stamp img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      opacity: 1;
     }
 
     /* Sezione programma – bento verticale */
@@ -311,7 +380,7 @@
     .agenda-intro {
       max-width: 420px;
       color: var(--ink-soft);
-      font-size: 0.85rem;
+      font-size: 0.95rem;
     }
 
     .agenda-note {
@@ -395,7 +464,7 @@
 
     .agenda-tag {
       margin-top: 0.5rem;
-      font-size: 0.6rem;
+      font-size: 0.7rem;
       text-transform: uppercase;
       letter-spacing: 0.2em;
       opacity: 0.85;
@@ -413,7 +482,7 @@
 
     .agenda-card--aperitivo {
       background: var(--terracotta);
-      color: var(--ink);
+      color: #fdf5f0;
     }
 
     .agenda-card--cena {
@@ -422,76 +491,12 @@
 
     .agenda-card--torta {
       background: #b5977c;
-      color: var(--ink);
+      color: #fdf7f3;
     }
 
     .agenda-card--dj {
-      background: #f7e1e4;
-      color: var(--ink);
-    }
-
-    .agenda-card-colazione {
-      background: #fdfaf6;
-      border: 1px solid rgba(172, 176, 135, 0.3);
-      color: var(--ink);
-    }
-
-    /* FAQ Accordion */
-    .faq-container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-
-    details {
-      margin-bottom: 1rem;
-      border-bottom: 1px solid rgba(172, 176, 135, 0.3);
-    }
-
-    summary {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      color: var(--terracotta);
-      font-weight: 600;
-      cursor: pointer;
-      padding: 1rem 0;
-      list-style: none;
-      /* Rimuove marker default */
-      position: relative;
-    }
-
-    summary::-webkit-details-marker {
-      display: none;
-    }
-
-    summary::after {
-      content: '+';
-      position: absolute;
-      right: 0;
-      font-weight: 300;
-      font-size: 1.5rem;
-      transition: transform 0.3s;
-    }
-
-    details[open] summary::after {
-      transform: rotate(45deg);
-    }
-
-    details[open] summary {
-      border-bottom: none;
-    }
-
-    .faq-answer {
-      font-size: 1rem;
-      line-height: 1.6;
-      color: var(--ink-soft);
-      padding-bottom: 1.5rem;
-      animation: fade-in 0.5s ease;
-    }
-
-    .faq-answer a {
-      color: var(--terracotta);
-      text-decoration: underline;
+      background: #383233;
+      color: #f6efe9;
     }
 
     /* Logistica & pernottamento */
@@ -522,7 +527,7 @@
     }
 
     .logistica-card::before {
-      content: "";
+      content: "Rossano · Calabria";
       position: absolute;
       top: 1.3rem;
       right: 1.4rem;
@@ -543,25 +548,6 @@
       font-family: 'Playfair Display', serif;
       font-size: 1.2rem;
       margin-bottom: 1rem;
-    }
-
-    .hotel-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--terracotta);
-      margin-top: 0.6rem;
-      transition: opacity 0.3s ease;
-      opacity: 0.9;
-    }
-
-    .hotel-link:hover {
-      opacity: 1;
-      text-decoration: underline;
     }
 
     .logistica-modes {
@@ -750,7 +736,6 @@
       height: 6px;
       background: linear-gradient(90deg, rgba(186, 139, 102, 0.85), rgba(186, 139, 102, 0.7));
     }
-
 
     @keyframes sketch-reveal {
       0% {
@@ -1472,9 +1457,9 @@
       width: 160px;
       height: 160px;
       border-radius: 50%;
-      background: #7d8254;
-      /* Fallback sage green */
-      background: radial-gradient(circle at 30% 30%, #ACB087, #7d8254 60%, #4a502e);
+      background: #b22222;
+      /* Fallback red */
+      background: radial-gradient(circle at 30% 30%, #d65a5a, #8f1e1e 60%, #5e1010);
       box-shadow:
         0 4px 10px rgba(0, 0, 0, 0.4),
         inset 0 0 20px rgba(0, 0, 0, 0.3);
@@ -1624,26 +1609,24 @@
       <div class="wax-seal">
         <img src="LOGO.png" alt="Logo Leonardo & Andrea" class="seal-logo">
       </div>
+      <div class="click-hint">Clicca per aprire</div>
     </div>
 
     <div id="intro-guest-name" style="
         position: absolute; 
-        bottom: 25%; 
+        bottom: 20%; 
         left: 0; 
         width: 100%; 
         text-align: center; 
-        font-family: 'Montserrat', sans-serif;
-        text-transform: uppercase;
-        letter-spacing: 0.25em;
-        font-size: clamp(1.1rem, 4vw, 1.6rem); 
+        font-family: 'Pinyon Script', cursive;
+        font-size: 2.0rem; 
         color: var(--ink);
         opacity: 0;
         transform: translateY(10px);
-        transition: opacity 0.8s ease, transform 0.8s ease;
-        z-index: 100;
+        transition: opacity 1s ease, transform 1s ease;
+        z-index: 30;
         pointer-events: none;
-        text-shadow: 0 1px 3px rgba(255,255,255,0.8);
-        padding: 0 20px;
+        text-shadow: 0 2px 5px rgba(255,255,255,0.5);
       ">
     </div>
   </div>
@@ -1658,9 +1641,7 @@
 
   <!-- Audio di sottofondo + pulsante controllo -->
   <audio id="bg-music" loop>
-    <source src="music.mp3" type="audio/mpeg">
-    <!-- Fallback se il file locale non va -->
-    <source src="https://www.bensound.com/bensound-music/bensound-tenderness.mp3" type="audio/mpeg">
+    <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
   </audio>
   <div id="music-btn" onclick="toggleMusic()" title="Ascolta musica">
     <i id="music-icon" class="fas fa-music"></i>
@@ -1670,113 +1651,56 @@
 
   <main>
 
-    <!-- Header ported from index.html -->
-    <header class="hero-header">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-left" data-animate="slide-right">
+          <div class="eyebrow"> </div>
 
-      <h1>Andrea &amp;<br> <span style="display: block; margin-top: 1.2rem;"> &nbsp; &nbsp; Leonardo</span></h1>
-      <p style="margin-top: 1rem;"><i class="fas fa-heart" style="color: var(--terracotta);"></i> CI SPOSIAMO</p>
-      <p>12 Settembre 2026</p>
-      <!-- <div class="logo-container">
-        <img src="LOGO.jpg" alt="Logo Andrea & Leonardo">
-      </div> -->
-    </header>
-    <div class="divider-image">
-      <img src="A.png" alt="divisore">
-    </div>
+          <div class="hero-floating-title title-hero-main">
+            <span>Andrea</span>
+            <span>&amp; Leonardo</span>
+          </div>
 
-    <!-- INTRO TEXT -->
-    <section id="invitation-intro"
-      style="padding-top: 0rem; padding-bottom: 2rem; text-align: center; max-width: 800px; margin: 0 auto;">
-      <div data-animate="fade-in">
-        <p
-          style="font-family: 'Playfair Display', serif; font-size: 1.3rem; text-transform: uppercase; letter-spacing: 0.22em; margin-bottom: 1.5rem; color: var(--terracotta); font-weight: 600;">
-          Vi invitiamo a condividere con noi questo momento</p>
-        <p style="font-size: 1.1rem; line-height: 1.8; color: var(--ink-soft); font-style: normal;">
-          Un matrimonio pensato come un libro da sfogliare in cui celebriamo l'amore che ci unisce
-          e la scelta di camminare insieme verso il futuro. <br>
-          Un weekend da vivere lentamente, insieme.
-        </p>
-      </div>
-    </section>
+          <div class="title-hero-sub" data-animate="reveal-mask">
+            12 settembre 2026 · Rossano (CS)
+          </div>
 
+          <div class="hero-meta">
+            <span>Cerimonia ore 16:00</span>
+            <span>Welcome Party · 11 settembre · 19:00</span>
+            <span>Dress code: soft earth tones</span>
+          </div>
 
-
-    <div class="divider-image">
-      <img src="A.png" alt="divisore">
-    </div>
-    <header class="story-header">
-      <div>
-        <div class="section-title-with-icon">
-          <i class="fas fa-heart heart-icon"></i>
-          <h2 class="title-section" data-animate="slide-right">La nostra storia</h2>
-        </div>
-        <p class="story-intro" data-animate="slide-right">
-          Tre momenti che hanno segnato il nostro cammino.
-        </p>
-      </div>
-    </header>
-
-    <div class="story-scroller" aria-label="Timeline della storia">
-      <div class="story-track">
-        <div class="story-card-wrapper">
-          <article class="story-card" tabindex="0">
-            <div class="story-step-label">Atto I</div>
-            <h3 class="story-step-title">L'inizio di tutto</h3>
-            <div class="story-step-meta">Bologna 2016</div>
-            <p class="story-step-text">
-              Un incontro nato per caso, rimasto sospeso tra battute, domande e risate.
-              Nessun grande gesto, solo la sensazione che quel momento non dovesse interrompersi.
-            </p>
-          </article>
+          <p class="hero-note">
+            Un matrimonio pensato come un libro da sfogliare: natura, luce calda e dettagli essenziali.
+            Un weekend da vivere lentamente, insieme.
+          </p>
         </div>
 
-        <div class="story-card-wrapper">
-          <article class="story-card" tabindex="0">
-            <div class="story-step-label">Atto II</div>
-            <h3 class="story-step-title">Noi, giorno dopo giorno</h3>
-            <div class="story-step-meta">Viaggi · Risate · Ricordi</div>
-            <p class="story-step-text">
-              Tra strade percorse, viaggi, foto scattate e mille ricordi, siamo cresciuti insieme, passo dopo passo,
-              trasformando ogni momento in qualcosa di nostro.
-            </p>
-          </article>
-        </div>
-
-        <div class="story-card-wrapper">
-          <article class="story-card" tabindex="0">
-            <div class="story-step-label">Atto III</div>
-            <h3 class="story-step-title">Un sì tra mare e montagne</h3>
-            <div class="story-step-meta">Corigliano-Rossano</div>
-            <p class="story-step-text">
-              Il mare di lato, il bosco davanti, la luce del sud a colorare tutto.
-              Qui abbiamo deciso di fermare un istante e farlo diventare il nostro luogo speciale, insieme a voi.
-            </p>
-          </article>
+        <div class="hero-right" data-animate="slide-left">
+          <div class="hero-photo-card">
+            <div class="hero-photo"></div>
+            <div class="hero-tag">Earth &amp; Nature </div>
+            <div class="hero-stamp"> <img src="LOGO.png" alt="Logo matrimonio"> </div>
+          </div>
         </div>
       </div>
-    </div>
     </section>
 
     <!-- PROGRAMMA -->
     <section id="programma" class="section-agenda">
       <header class="agenda-header">
         <div>
-          <h2 class="title-section" data-animate="slide-right">Wedding weekend</h2>
+          <h2 class="title-section" data-animate="slide-right">Il weekend</h2>
           <p class="agenda-intro" data-animate="slide-right">
-            Un weekend per trovarsi, festeggiare e scoprire la magia della
-            Calabria.
+            Due giorni, un unico racconto: un welcome party informale, una cerimonia al tramonto
+            e una notte di musica, tra ulivi e vento.
           </p>
         </div>
         <div class="agenda-note" data-animate="slide-left">
-          <span style="font-size: 0.7rem; opacity: 0.9;   letter-spacing: 0.1em; font-weight: bold;">
-            11 settembre</span>· Welcome Party<br>
-          <span style="font-size: 0.7rem; opacity: 0.9; letter-spacing: 0.1em; font-weight: bold;">
-            12 settembre</span>· Matrimonio<br>
-          <span style="font-size: 0.7rem; opacity: 0.9; letter-spacing: 0.1em; font-weight: bold;">
-            13 settembre</span>· Colazione e saluti<br>
-          <span
-            style="font-size: 0.7rem; opacity: 0.9; margin-top: 0.5rem; display: block; letter-spacing: 0.1em; font-weight: bold;">Location:
-            Hotel Bisanzio Resort</span>
+          11 settembre · Welcome Party<br>
+          12 settembre · Ceremony &amp; Party
         </div>
       </header>
 
@@ -1785,13 +1709,13 @@
           <div>
             <div class="agenda-label">Venerdì 11 settembre</div>
             <div class="agenda-title">Welcome Party</div>
-            <div class="agenda-time">Ore 18:00</div>
+            <div class="agenda-time">Ore 19:00</div>
             <p class="agenda-desc">
-              Un incontro pre wedding: pizze, birre e tramonto per entrare nel ritmo
+              Un incontro pre wedding: drink, luce dorata e musica soffusa per entrare nel ritmo
               del weekend tutti insieme.
             </p>
           </div>
-          <div class="agenda-tag">Dress code: Casual </div>
+          <div class="agenda-tag">Relaxed chic</div>
         </article>
 
         <article class="agenda-card agenda-card--ceremony" data-animate="slide-right">
@@ -1800,79 +1724,61 @@
             <div class="agenda-title">Cerimonia</div>
             <div class="agenda-time">Ore 16:00</div>
             <p class="agenda-desc">
-              Immersi nel verde, circondati dalla magia della natura ci promettiamo amore eterno.
+              Immersi nel verde, tra elementi naturali e una luce morbida che arriva dal mare.
             </p>
           </div>
-          <div class="agenda-tag">Dress code: Abito da cerimonia</div>
+          <div class="agenda-tag">The moment</div>
         </article>
 
         <article class="agenda-card agenda-card--aperitivo" data-animate="slide-left">
           <div>
-            <div class="agenda-label">Sabato 12 settembre</div>
             <div class="agenda-title">Aperitivo</div>
-            <div class="agenda-time">Ore 19:00</div>
+            <div class="agenda-time">Ore 19:30</div>
             <p class="agenda-desc">
               Isole food, ingredienti mediterranei, cocktail contemporanei: una passeggiata gastronomica all’aperto.
             </p>
           </div>
-
+          <div class="agenda-tag">Golden hour</div>
         </article>
 
         <article class="agenda-card agenda-card--cena" data-animate="slide-right">
           <div>
-            <div class="agenda-label">Sabato 12 settembre</div>
             <div class="agenda-title">Cena</div>
             <div class="agenda-time">Ore 21:00</div>
             <p class="agenda-desc">
-              Una cena a lume soffuso per festeggiare l'amore e la gioia di condividere questo momento con le persone a
-              noi più care.
+              Tavoli imperiali, luci basse e cucina di territorio rivisitata. Un tempo sospeso da vivere con calma.
             </p>
           </div>
-
+          <div class="agenda-tag">Under the lights</div>
         </article>
 
+        <article class="agenda-card agenda-card--torta" data-animate="slide-left">
+          <div>
+            <div class="agenda-title">Taglio torta</div>
+            <div class="agenda-time">Ore 24:00</div>
+            <p class="agenda-desc">
+              Un quadro notturno sotto il cielo Italiano, tra luci calde e un finale scenografico.
+            </p>
+          </div>
+          <div class="agenda-tag">Midnight</div>
+        </article>
 
         <article class="agenda-card agenda-card--dj" data-animate="slide-right">
           <div>
-            <div class="agenda-label">Domenica 13 settembre</div>
-            <div class="agenda-title">Party Time</div>
+            <div class="agenda-title">DJ Set</div>
             <div class="agenda-time">Ore 01:00</div>
             <p class="agenda-desc">
-              La notte si sposta sulla pista: la musica parte, i calici si alzano e si balla fino all'alba.
+              La notte si sposta sulla pista: elettronica morbida, qualche hit e nessuna fretta di tornare a casa.
             </p>
           </div>
-
-        </article>
-
-        <article class="agenda-card agenda-card-colazione" data-animate="slide-right">
-          <div>
-            <div class="agenda-label">Domenica 13 settembre</div>
-            <div class="agenda-title">Il Mattino Dopo</div>
-            <div class="agenda-time">Ore 10:30</div>
-            <p class="agenda-desc">
-              Un ultimo saluto per chi è ancora in albergo: colazione insieme!
-            </p>
-          </div>
-          <div class="agenda-tag">Dress code: Casual</div>
+          <div class="agenda-tag">Until late</div>
         </article>
       </div>
     </section>
 
-    <!-- LOCATION SUMMARY -->
-    <section id="location-teaser" style="padding-bottom: 0; text-align: center;">
-      <p class="eyebrow" data-animate="fade-in">La Location</p>
-      <h2 class="title-section" data-animate="slide-up"
-        style="margin-top: 0.8rem; margin-bottom: 1.5rem; font-size: 1.2rem; letter-spacing: 0.18em;">
-        Hotel Bisanzio Resort<br>
-        <span style="font-size: 0.85rem; opacity: 0.8; display: block; margin-top: 0.4rem;">Corigliano-Rossano</span>
-      </h2>
-      <div class="location-image-container" data-animate="fade-in"
-        style="max-width: 900px; margin: 0 auto; padding: 0 1.6rem 3rem;">
-        <img src="LOCATION.png" alt="Hotel Bisanzio Resort"
-          style="width: 100%; border-radius: 32px; box-shadow: 0 30px 60px rgba(0,0,0,0.18); object-fit: cover; aspect-ratio: 16/9; display: block; filter: brightness(0.8);">
-      </div>
-    </section>
-
+    <div class="divider-image">
+      <img src="B.png" alt="divisore">
+    </div>
     <section id="logistica" class="section-logistica">
       <div class="section-title-with-icon">
         <i class="fas fa-map-location-dot location-icon"></i>
@@ -1884,50 +1790,37 @@
           <div class="logistica-title-sub">Location</div>
           <div class="logistica-location">
             Hotel Bisanzio Resort<br>
-            – Corigliano-Rossano (CS)<br>
-            <a href="https://www.hotelbisanzioresort.it" target="_blank" class="hotel-link">
-              <i class="fas fa-globe"></i> Visita il sito web
-            </a>
+            Piana dei Venti – Rossano (CS)
           </div>
 
           <div class="logistica-modes">
             <div>
               <div class="logistica-label">In auto</div>
               <p>
-                Raggiungere Corigliano-Rossano (CS) e seguire le indicazioni per
-                “Hotel Bisanzio Resort”.
+                Raggiungere Rossano (CS) e seguire le indicazioni per
+                “Hotel Bisanzio Resort – Piana dei Venti”.
               </p>
             </div>
             <div>
               <div class="logistica-label">In treno</div>
               <p>
-                Stazione di Corigliano-Rossano (per chi prende l'alta velocità la stazione principale è Sibari).
+                Stazione di Rossano. Dal piazzale si raggiunge il resort
+                in pochi minuti di taxi.
               </p>
             </div>
             <div>
               <div class="logistica-label">In aereo</div>
               <p>
-                Aeroporto di Lamezia Terme. Dall’aeroporto è possibile
-                <a href="https://www.rentalcars.com/search-results?coordinates=&doDay=13&doHour=21&doMinute=0&doMonth=9&doYear=2026&driversAge=30&dropCoordinates=&dropFtsType=iata&dropLocation=SUF&dropLocationIata=&dropLocationName=Aeroporto%20Internazionale%20di%20Lamezia%20Terme%20(SUF)&ftsType=iata&location=SUF&locationIata=&locationName=Aeroporto%20Internazionale%20di%20Lamezia%20Terme%20(SUF)&puDay=11&puHour=10&puMinute=30&puMonth=9&puYear=2026&filterCriteria_sortBy=PRICE&filterCriteria_sortAscending=true"
-                  target="_blank" style="color: var(--terracotta); text-decoration: underline;">
-                  noleggiare un’auto
-                </a>
-                oppure utilizzare la
-                <a href="https://www.andirivieni.it/corse-disponibili/?bus_start_route=Aeroporto+Lamezia&bus_end_route=Rossano&j_date=11-09-2026&r_date=&bus-r=return"
-                  target="_blank" style="color: var(--terracotta); text-decoration: underline;">
-                  navetta
-                </a>
-                diretta per Rossano (per la navetta è richiesta la prenotazione online anticipata).
-
+                Aeroporto di Lamezia Terme o Crotone, poi auto o transfer
+                verso Rossano (da Lamezia navetta a 21 € per tratta).
               </p>
             </div>
           </div>
 
           <p class="logistica-note">
-            Se desiderate coordinare transfer condivisi, indicatelo nel form RSVP: proveremo a organizzare gli
-            spostamenti nel modo più semplice possibile.
-            Una volta giunti a Rossano, compatibilmente con orari e impegni, cercheremo di assistervi direttamente noi
-            con le nostre auto per raggiungere la location; in alternativa, è sempre possibile utilizzare un taxi.
+            Se desiderate coordinare transfer condivisi, indicatelo nel form RSVP:
+            proveremo a organizzare gli spostamenti nel modo più semplice possibile.
+          </p>
         </div>
 
         <aside class="pernottamento-card" data-animate="slide-left">
@@ -1935,12 +1828,7 @@
             <div class="pernottamento-title"><i class="fas fa-bed"
                 style="margin-right: 0.6rem; color: var(--terracotta);"></i>Pernottamento</div>
             <div class="pernottamento-hotel"><i class="fas fa-hotel"
-                style="margin-right: 0.4rem; color: var(--terracotta);"></i>Hotel Bisanzio Resort
-              <a href="https://www.hotelbisanzioresort.it" target="_blank" class="hotel-link"
-                style="display: flex; margin-top: 0.35rem; font-size: 0.65rem;">
-                <i class="fas fa-link"></i> Visita il sito web
-              </a>
-            </div>
+                style="margin-right: 0.4rem; color: var(--terracotta);"></i>Hotel Bisanzio Resort</div>
             <div class="pernottamento-list">
               <p>Camera matrimoniale · 75€ a notte</p>
               <p>Camera tripla · 100€ a notte</p>
@@ -1949,100 +1837,75 @@
             <p class="pernottamento-footer">
               Le camere beneficiano per il weekend del matrimonio di tariffe dedicate per chi soggiorna.
               Indicate nel form RSVP se desiderate soggiornare in struttura e il tipo di camera preferito.
-              Il saldo del soggiorno potrete effettuarlo in struttura al momento del check-out.
             </p>
           </div>
         </aside>
       </div>
     </section>
 
+    <div class="divider-image">
+      <img src="A.png" alt="divisore">
+    </div>
+    <header class="story-header">
+      <div>
+        <div class="section-title-with-icon">
+          <i class="fas fa-heart heart-icon"></i>
+          <h2 class="title-section" data-animate="slide-right">La nostra storia</h2>
+        </div>
+        <p class="story-intro" data-animate="slide-right">
+          Più che un “come ci siamo conosciuti”, una piccola sequenza di fotogrammi:
+          tre momenti che ci hanno portato fino a Rossano, settembre 2026.
+        </p>
+      </div>
+      <div class="story-tip">
+        Tre momenti · Una storia
+      </div>
+    </header>
 
+    <div class="story-scroller" aria-label="Timeline della storia">
+      <div class="story-track">
+        <div class="story-card-wrapper">
+          <article class="story-card" tabindex="0">
+            <div class="story-step-label">Atto I</div>
+            <h3 class="story-step-title">Una conversazione che non voleva finire</h3>
+            <div class="story-step-meta">Bologna · Una sera di pioggia</div>
+            <p class="story-step-text">
+              Un incontro nato per caso, rimasto sospeso tra battute, domande e dettagli.
+              Nessun grande gesto, solo la sensazione che quella chiacchierata non dovesse interrompersi.
+            </p>
+          </article>
+        </div>
+
+        <div class="story-card-wrapper">
+          <article class="story-card" tabindex="0">
+            <div class="story-step-label">Atto II</div>
+            <h3 class="story-step-title">Rotte di terra e di mare</h3>
+            <div class="story-step-meta">Viaggi · Treni · Messaggi lunghi</div>
+            <p class="story-step-text">
+              Viaggi, chilometri, tratte, coincidenze prese e perse. Una geografia nuova che ha iniziato a disegnarsi
+              tra un ritorno e una partenza, con la certezza che il punto di arrivo fosse sempre l’altro.
+            </p>
+          </article>
+        </div>
+
+        <div class="story-card-wrapper">
+          <article class="story-card" tabindex="0">
+            <div class="story-step-label">Atto III</div>
+            <h3 class="story-step-title">Un sì tra vento e ulivi</h3>
+            <div class="story-step-meta">Rossano</div>
+            <p class="story-step-text">
+              Il mare di lato, la collina davanti, la luce del sud a colorare tutto.
+              Qui abbiamo deciso di fermare un istante e farlo diventare il nostro luogo speciale, insieme a voi.
+            </p>
+          </article>
+        </div>
+      </div>
+    </div>
+    </section>
 
     <div class="divider-image">
       <img src="B.png" alt="divisore">
     </div>
-
-    <!-- FAQ -->
-    <section id="faq" class="section-faq" style="padding: 4rem 0;">
-      <div class="faq-container">
-        <div class="section-title-with-icon">
-          <i class="fas fa-question-circle" style="color: var(--terracotta);"></i>
-          <h2 class="title-section" data-animate="slide-right">Domande Frequenti</h2>
-        </div>
-
-        <details data-animate="slide-up">
-          <summary>Cosa ci consigliate di indossare per il matrimonio?</summary>
-          <div class="faq-answer">
-            L’evento sarà elegante, quindi vi suggeriamo un abito da cerimonia. Tuttavia, il luogo richiede anche un po’
-            di praticità: portate scarpe comode, perché ci sarà da muoversi e ballare! Il pomeriggio potrebbe fare
-            caldo, mentre la sera la temperatura scenderà, quindi valutate anche un leggero coprispalle o una giacca
-            elegante.<br>
-            <strong>Nota speciale:</strong> il bianco è per la sposa, il verde per lo sposo, tutti gli altri liberissimi
-            di divertirsi con il proprio stile!
-          </div>
-        </details>
-
-        <details data-animate="slide-up">
-          <summary>Dove possiamo lasciare l’auto?</summary>
-          <div class="faq-answer">
-            La location dispone di parcheggio a disposizione degli ospiti, quindi potrete arrivare comodamente senza
-            preoccupazioni.
-          </div>
-        </details>
-
-        <details data-animate="slide-up">
-          <summary>Che tempo farà durante il nostro weekend in Calabria?</summary>
-          <div class="faq-answer">
-            A metà settembre la Calabria regala giornate calde e piacevoli (25–27 °C) e serate più fresche (18–20 °C),
-            perfette per festeggiare all’aperto.
-          </div>
-        </details>
-
-        <details data-animate="slide-up">
-          <summary>Come arrivare alla location?</summary>
-          <div class="faq-answer">
-            La location non è servita da Uber o pullman, quindi consigliamo l’auto propria.<br>
-            Per chi non ha macchina, possiamo organizzare spostamenti. Se preferite un taxi, l’unico disponibile a
-            Rossano è Alfonso, che potete contattare al +39 353 3692588.
-          </div>
-        </details>
-
-        <details data-animate="slide-up">
-          <summary>Dove possiamo dormire per il matrimonio?</summary>
-          <div class="faq-answer">
-            Per chi desidera restare vicino alla festa, è possibile alloggiare direttamente nella location del
-            matrimonio. In più, per le notti di venerdì e sabato del matrimonio sarà disponibile un prezzo speciale per
-            gli ospiti.<br>
-            In alternativa, ci sono diversi B&B e hotel nei dintorni, così potrete scegliere la soluzione più comoda.
-            (La location non è vicino al mare, quindi tenetelo presente nella pianificazione.)
-          </div>
-        </details>
-
-        <details data-animate="slide-up">
-          <summary>Come possiamo approfittare della mattina prima della festa?</summary>
-          <div class="faq-answer">
-            La mattina del matrimonio è perfetta per rilassarsi, fare colazione con calma e godersi i dintorni della
-            location. Potete scegliere di andare al mare, fare una passeggiata, visitare Rossano paese e la Fabbrica
-            dell’Amarilli. Fateci sapere i vostri piani, così possiamo coordinarci e vivere la giornata al meglio!
-          </div>
-        </details>
-
-        <details data-animate="slide-up">
-          <summary>Cosa fare prima o dopo il matrimonio?</summary>
-          <div class="faq-answer">
-            La Calabria è piena di piccole magie da scoprire!<br>
-            A Rossano potrete passeggiare tra i vicoli del centro storico, scoprire piazze e scorci suggestivi e gustare
-            specialità locali. Se avete più tempo, vi consigliamo alcune tappe iconiche della Calabria: Tropea con le
-            sue spiagge da sogno, Scilla per panorami mozzafiato sul mare, e le Calabrie interne per borghi autentici e
-            tradizioni antiche.<br>
-            Per esperienze guidate, tour ed escursioni, date un’occhiata a <a
-              href="https://www.andirivieni.it/destinations/calabria/" target="_blank">Andirivieni</a> (vi consigliamo
-            di sentirli) e <a href="https://calabriastraordinaria.it/" target="_blank">Calabria Straordinaria</a> -
-            lasciatevi sorprendere!
-          </div>
-        </details>
-      </div>
-    </section>
 
     <!-- RSVP -->
     <section id="rsvp" class="section-rsvp">
@@ -2064,7 +1927,7 @@
 
         <div class="rsvp-form-shell" data-animate="slide-left">
           <div class="rsvp-inner">
-
+            <div class="rsvp-tag">Andrea &amp; Leonardo</div>
             <div class="rsvp-form-title">Conferma la tua presenza</div>
 
             <form id="rsvp-form">
@@ -2084,28 +1947,15 @@
 
               <div class="form-row-double">
                 <div>
-                  <label for="presenza-matrimonio">Parteciperai al Matrimonio</label>
+                  <label for="presenza">Parteciperai?</label>
                   <div class="field-shell">
-                    <select id="presenza-matrimonio" name="presenza-matrimonio" required>
-                      <option value="">Seleziona...</option>
+                    <select id="presenza" name="presenza" required>
+                      <option value="">Seleziona un’opzione</option>
                       <option value="si">Sì, sarò presente</option>
                       <option value="no">Purtroppo non potrò esserci</option>
                     </select>
                   </div>
                 </div>
-                <div>
-                  <label for="presenza-welcome">Parteciperai al Welcome Party</label>
-                  <div class="field-shell">
-                    <select id="presenza-welcome" name="presenza-welcome" required>
-                      <option value="">Seleziona...</option>
-                      <option value="si">Sì, sarò presente</option>
-                      <option value="no">Purtroppo non potrò esserci</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-
-              <div class="form-row-double">
                 <div>
                   <label for="ospiti">Adulti</label>
                   <div class="field-shell">
@@ -2118,6 +1968,9 @@
                     </select>
                   </div>
                 </div>
+              </div>
+
+              <div class="form-row-double">
                 <div>
                   <label for="bambini">Bambini</label>
                   <div class="field-shell">
@@ -2130,61 +1983,6 @@
                     </select>
                   </div>
                 </div>
-              </div>
-
-              <div>
-                <label for="dieta">Preferenze alimentari</label>
-                <div class="field-shell">
-                  <select id="dieta" name="dieta">
-                    <option value="">Nessuna preferenza particolare</option>
-                    <option value="Vegetariano">Vegetariano</option>
-                    <option value="Vegano">Vegano</option>
-                    <option value="Celiaco">Celiaco / senza glutine</option>
-                    <option value="Altro">Altro (vedi note)</option>
-                  </select>
-                </div>
-              </div>
-
-              <div>
-                <label for="note">Allergie, esigenze speciali, note</label>
-                <div class="field-shell field-shell--textarea">
-                  <textarea id="note" name="note"
-                    placeholder="Segnalaci eventuali intolleranze, richieste particolari o preferenze di viaggio."></textarea>
-                </div>
-              </div>
-
-              <div style="margin-top: 2rem; margin-bottom: 0.8rem; font-size: 1rem; color: white; font-weight: bold;">
-                Se hai bisogno di prenotare nella struttura dell'evento indicacelo qui sotto:
-              </div>
-
-              <div>
-                <label for="pernottamento">Pernottamento</label>
-                <div class="field-shell">
-                  <select id="pernottamento" name="pernottamento">
-                    <option value="">Seleziona un’opzione</option>
-                    <option value="no" selected>Non ho bisogno di pernottamento</option>
-                    <option value="matrimoniale">Camera matrimoniale (75€)</option>
-                    <option value="tripla">Camera tripla (100€)</option>
-                  </select>
-                </div>
-              </div>
-
-              <div id="accommodation-details">
-                <div class="form-row-double">
-                  <div>
-                    <label for="arrivo">Data di arrivo</label>
-                    <div class="field-shell">
-                      <input type="date" id="arrivo" name="arrivo" inputmode="none" onkeydown="return false;" />
-                    </div>
-                  </div>
-                  <div>
-                    <label for="partenza">Data di partenza</label>
-                    <div class="field-shell">
-                      <input type="date" id="partenza" name="partenza" inputmode="none" onkeydown="return false;" />
-                    </div>
-                  </div>
-                </div>
-
                 <div>
                   <label for="culla">Numero culle</label>
                   <div class="field-shell">
@@ -2194,6 +1992,49 @@
                       <option value="2">2 (+20€ a notte)</option>
                     </select>
                   </div>
+                </div>
+              </div>
+
+              <div>
+                <label for="pernottamento">Pernottamento</label>
+                <div class="field-shell">
+                  <select id="pernottamento" name="pernottamento">
+                    <option value="">Seleziona un’opzione</option>
+                    <option value="no">Non ho bisogno di pernottamento</option>
+                    <option value="matrimoniale">Camera matrimoniale (75€)</option>
+                    <option value="tripla">Camera tripla (100€)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-row-double">
+                <div>
+                  <label for="arrivo">Data di arrivo</label>
+                  <div class="field-shell">
+                    <input type="date" id="arrivo" name="arrivo" inputmode="none" onkeydown="return false;" />
+                  </div>
+                </div>
+                <div>
+                  <label for="partenza">Data di partenza</label>
+                  <div class="field-shell">
+                    <input type="date" id="partenza" name="partenza" inputmode="none" onkeydown="return false;" />
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <label for="culla-note">Note su culla</label>
+                <div class="field-shell">
+                  <input type="text" id="culla-note" name="culla-note"
+                    placeholder="Età bimbo o esigenze particolari (facoltativo)" />
+                </div>
+              </div>
+
+              <div>
+                <label for="note">Allergie, esigenze speciali, note</label>
+                <div class="field-shell field-shell--textarea">
+                  <textarea id="note" name="note"
+                    placeholder="Segnalaci eventuali intolleranze, richieste particolari o preferenze di viaggio."></textarea>
                 </div>
               </div>
 
@@ -2220,6 +2061,23 @@
       <img src="A.png" alt="divisore">
     </div>
 
+    <!-- Album Fotografico -->
+    <section class="section-photography" data-animate="fade-in">
+      <div class="photography-container">
+        <div class="section-title-with-icon">
+          <i class="fas fa-camera camera-icon"></i>
+          <h2 class="title-section" data-animate="slide-right">Album Fotografico</h2>
+        </div>
+        <p data-animate="slide-right">Visualizza il nostro album su Wedshoots.</p>
+        <a class="album-btn" href="https://www.wedshoots.com/" target="_blank" rel="noopener">
+          <i class="fas fa-images"></i> Apri Album
+        </a>
+      </div>
+    </section>
+
+    <div class="divider-image">
+      <img src="B.png" alt="divisore">
+    </div>
 
     <!-- Grazie! -->
     <section class="section-thanks" data-animate="fade-in">
@@ -2230,78 +2088,20 @@
         </div>
         <div class="thanks-content" data-animate="slide-right">
           <p>
-            Il nostro matrimonio non avrà lista nozze né oggetti materiali: il regalo più bello sarà celebrare questo
-            momento con le persone che amiamo. <br>
-            <br>
-            Se desiderate farci un pensiero, il modo più speciale per farlo sarà contribuire al nostro viaggio di nozze.
-            Potrete farlo lasciando una busta durante il matrimonio o con un bonifico, come vi è più comodo. <br>
-            <br>
-
+            Niente lista nozze, niente oggetti… solo la voglia di partire!
+          </p>
+          <p>
+            Se volete sorprenderci con un regalo, un contributo per il nostro viaggio di nozze sarà il modo più bello di
+            festeggiare insieme.
+            Ma, soprattutto, il dono che desideriamo di più è avervi con noi, per condividere questo momento speciale di
+            persona.
           </p>
           <div class="thanks-iban">
             <p class="iban-label">IBAN:</p>
-            <p class="iban-number">IT42O0760116200001027686557</p>
+            <p class="iban-number">ITXXXXXXXXXXXXXXXXXXXX</p>
             <p class="iban-name">Intestato a: Leonardo Stamati</p>
           </div>
         </div>
-      </div>
-    </section>
-
-
-    <div class="divider-image">
-      <img src="B.png" alt="divisore">
-    </div>
-
-    <!-- Album Fotografico -->
-    <section class="section-photography" data-animate="fade-in">
-      <div class="photography-container">
-        <div class="section-title-with-icon">
-          <i class="fas fa-camera camera-icon"></i>
-          <h2 class="title-section" data-animate="slide-right">Album Fotografico</h2>
-        </div>
-        <p data-animate="slide-right">
-          Scarica l'app <strong>WedShoots</strong> in anticipo e usa il nostro codice per condividere le tue foto con
-          noi! <br>Ogni foto racconta un pezzo del nostro cuore: fate che sia indimenticabile.
-        </p>
-
-        <div class="album-code-container"
-          style="background: rgba(255,255,255,0.6); border: 1px dashed var(--terracotta); border-radius: 12px; padding: 1rem; margin: 1.5rem auto; max-width: 300px;">
-          <p
-            style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 0.5rem; color: var(--ink-soft);">
-            Codice Album</p>
-          <strong
-            style="font-size: 1.4rem; letter-spacing: 0.1em; color: var(--terracotta); user-select: all;">ITa97694ec</strong>
-        </div>
-
-        <div class="app-store-buttons"
-          style="display: flex; gap: 1rem; justify-content: center; margin-top: 1.5rem; flex-wrap: wrap;">
-          <a href="https://apps.apple.com/es/app/wedshoots/id660256196" target="_blank"
-            style="text-decoration: none; transition: transform 0.2s; display: flex; align-items: center;">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
-              alt="Scarica su App Store" style="height: 40px; width: auto; filter: invert(1);">
-          </a>
-          <a href="https://play.google.com/store/apps/details?id=net.bodas.android.wedshoots&referrer=af_tranid%3DtrgDZecUzjZ4XBviAIwrSQ%26c%3DWP-IT-LANDINGS%26pid%3DWP-Android-IT"
-            target="_blank"
-            style="text-decoration: none; transition: transform 0.2s; display: flex; align-items: center;">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
-              alt="Disponibile su Google Play" style="height: 40px; width: auto; filter: invert(1) hue-rotate(180deg);">
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <div class="divider-image">
-      <img src="A.png" alt="divisore">
-    </div>
-
-    <!-- Footer finale -->
-    <section style="padding: 3rem 1rem; text-align: center; background: transparent;">
-      <div
-        style="font-family: 'Montserrat', sans-serif; font-size: 1.2rem; font-weight: 300; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 0.5rem;">
-        Con amore <i class="fas fa-heart" style="font-size: 0.9em; margin-left: 0.3rem;"></i>
-      </div>
-      <div style="font-family: 'Amalfi Coast', cursive; font-size: 2.5rem; color: white; font-weight: 300;">
-        Andrea & Leo
       </div>
     </section>
 
@@ -2311,58 +2111,28 @@
     // --- PERSONALIZZAZIONE OSPITE (URL) ---
     const urlParams = new URLSearchParams(window.location.search);
     const ospiteParam = urlParams.get('ospite') || urlParams.get('guest');
-    const adultiParam = urlParams.get('adulti'); // Nuovo parametro
 
-    try {
-      if (ospiteParam) {
-        // 1. Aggiorna Overlay Busta
-        const guestNameDiv = document.getElementById('intro-guest-name');
-        if (guestNameDiv) {
-          guestNameDiv.innerHTML = `<span style="font-family: 'Amalfi Coast', cursive; font-size: 1.3em; text-transform: none; letter-spacing: normal; display: block; margin-bottom: 0.6rem; opacity: 0.9;">Un invito per...</span>${ospiteParam}`;
-          setTimeout(() => {
-            guestNameDiv.style.opacity = '1';
-            guestNameDiv.style.transform = 'translateY(0)';
-          }, 300);
-        }
+    if (ospiteParam) {
+      // 1. Aggiorna Overlay Busta
+      const guestNameDiv = document.getElementById('intro-guest-name');
+      if (guestNameDiv) {
+        // Usa innerHTML per andare a capo
+        guestNameDiv.innerHTML = `<span style="font-size: 0.7em">Un invito per...</span><br>${ospiteParam}`;
 
-        // 2. Pre-compila Form RSVP
-        const nomeInput = document.getElementById('nome');
-        if (nomeInput) {
-          nomeInput.value = ospiteParam;
-        }
+        // Mostra con un leggero ritardo
+        setTimeout(() => {
+          guestNameDiv.style.opacity = '1';
+          guestNameDiv.style.transform = 'translateY(0)';
+        }, 500);
       }
 
-      // 3. Limita numero ospiti se presente parametro 'adulti' o in base al nome (logica base)
-      if (adultiParam) {
-        const maxAdulti = parseInt(adultiParam, 10);
-        const ospitiSelect = document.getElementById('ospiti');
-        if (ospitiSelect && !isNaN(maxAdulti)) {
-          // Pulisci opzioni esistenti tranne la prima (placeholder)
-          // Oppure ricostruisci da capo.
-          ospitiSelect.innerHTML = '<option value="">Quanti adulti?</option>';
-
-          // Se maxAdulti è 0, permetti solo "Non verrò" tramite 'presenza', ma qui si parla di 'adulti presenti'.
-          // Se mettono adulti=2, le opzioni saranno 1, 2. (0 non ha senso se "partecipano", ma lasciamo coerenza col form)
-          // Il form chiede "Quanti adulti?". Se non vengono, mettono "No" sopra e questo campo è disabled o ignorato?
-          // Attualmente non c'è logica di disable.
-
-          // Genera opzioni da 1 a maxAdulti
-          for (let i = 1; i <= maxAdulti; i++) {
-            const label = (i === 1) ? "Solo io" : i.toString();
-            const option = document.createElement('option');
-            option.value = i;
-            option.text = label;
-            // Seleziona l'ultimo valore come default
-            if (i === maxAdulti) {
-              option.selected = true;
-            }
-            ospitiSelect.add(option);
-          }
-        }
+      // 2. Pre-compila Form RSVP
+      const nomeInput = document.getElementById('nome');
+      if (nomeInput) {
+        nomeInput.value = ospiteParam;
+        // Opzionale: rendi readonly se vuoi impedire modifiche
+        // nomeInput.readOnly = true; 
       }
-
-    } catch (err) {
-      console.error("Errore JS: " + err.message);
     }
 
     // Animazioni on-scroll
@@ -2452,35 +2222,10 @@
 
     // --- RSVP LOGIC ---
     // IMPORTANTE: Incolla qui sotto l'URL che ottieni dal deployment su Google Apps Script!
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzkhlD4NotAzhGQJw-u_0GlwTKI9RfqOaiP2ucWbZ5Zrzfcz6RoPP4GMMqavZR3EdiA/exec";
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwQ3kGzNvGMo4PEYNTcmxFcH5TRqa1nTCWLFEOycB-5Yt539fRen3-9yo316-WESiKO/exec";
 
     const rsvpForm = document.getElementById('rsvp-form');
     const rsvpStatus = document.getElementById('rsvp-status');
-
-    // Logic for hiding accommodation details (dates + cots) if no needed
-    const pernottamentoSelect = document.getElementById('pernottamento');
-    const accommodationDetails = document.getElementById('accommodation-details');
-
-    function toggleAccommodationDetails() {
-      if (pernottamentoSelect && accommodationDetails) {
-        // Hide strictly on 'no' as requested.
-        if (pernottamentoSelect.value === 'no') {
-          accommodationDetails.style.display = 'none';
-          // Clear fields to avoid stale data
-          document.getElementById('arrivo').value = '';
-          document.getElementById('partenza').value = '';
-          document.getElementById('culla').value = '0';
-        } else {
-          accommodationDetails.style.display = 'block';
-        }
-      }
-    }
-
-    if (pernottamentoSelect) {
-      pernottamentoSelect.addEventListener('change', toggleAccommodationDetails);
-      // Run once on load
-      toggleAccommodationDetails();
-    }
 
     if (rsvpForm) {
       rsvpForm.addEventListener('submit', function (e) {
@@ -2488,58 +2233,7 @@
 
         // Check if URL is set
         if (!SCRIPT_URL) {
-          alert("ATTENZIONE: Manca l'URL dello script Google.\\nSegui le istruzioni in SETUP_RSVP.md per configurarlo.");
-          return;
-        }
-
-        // VALIDAZIONE ESPLICITA
-        const nome = document.getElementById('nome').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const presenzaMatrimonio = document.getElementById('presenza-matrimonio').value;
-        const presenzaWelcome = document.getElementById('presenza-welcome').value;
-        const ospiti = document.getElementById('ospiti').value;
-
-        // Reset previous error messages
-        rsvpStatus.style.display = 'none';
-
-        // Validate required fields
-        if (!nome) {
-          rsvpStatus.style.display = 'block';
-          rsvpStatus.style.color = '#D32F2F';
-          rsvpStatus.innerHTML = '<strong>Attenzione!</strong><br>Inserisci il tuo nome e cognome.';
-          document.getElementById('nome').focus();
-          return;
-        }
-
-        if (!email) {
-          rsvpStatus.style.display = 'block';
-          rsvpStatus.style.color = '#D32F2F';
-          rsvpStatus.innerHTML = '<strong>Attenzione!</strong><br>Inserisci la tua email.';
-          document.getElementById('email').focus();
-          return;
-        }
-
-        if (!presenzaMatrimonio) {
-          rsvpStatus.style.display = 'block';
-          rsvpStatus.style.color = '#D32F2F';
-          rsvpStatus.innerHTML = '<strong>Attenzione!</strong><br>Indica se parteciperai al Matrimonio (12-09).';
-          document.getElementById('presenza-matrimonio').focus();
-          return;
-        }
-
-        if (!presenzaWelcome) {
-          rsvpStatus.style.display = 'block';
-          rsvpStatus.style.color = '#D32F2F';
-          rsvpStatus.innerHTML = '<strong>Attenzione!</strong><br>Indica se parteciperai al Welcome Party (11-09).';
-          document.getElementById('presenza-welcome').focus();
-          return;
-        }
-
-        if (!ospiti) {
-          rsvpStatus.style.display = 'block';
-          rsvpStatus.style.color = '#D32F2F';
-          rsvpStatus.innerHTML = '<strong>Attenzione!</strong><br>Indica quanti adulti parteciperanno.';
-          document.getElementById('ospiti').focus();
+          alert("ATTENZIONE: Manca l'URL dello script Google.\nSegui le istruzioni in SETUP_RSVP.md per configurarlo.");
           return;
         }
 
@@ -2567,18 +2261,10 @@
             if (res.result === 'success') {
               // Success!
               rsvpForm.reset();
-              // Reset accommodation details visibility after reset
-              if (pernottamentoSelect) {
-                toggleAccommodationDetails();
-              }
               rsvpStatus.style.display = 'block';
-              rsvpStatus.style.color = 'white';
-              rsvpStatus.innerHTML = `<strong>Grazie ${data.nome.split(' ')[0]}!</strong><br>La tua conferma è stata ricevuta.`;
+              rsvpStatus.style.color = '#4CAF50'; // Green
+              rsvpStatus.innerHTML = `<strong>Grazie ${data.nome.split(' ')[0]}!</strong><br>La tua conferma è stata ricevuta. Ti abbiamo inviato una mail di riepilogo (se il sistema lo prevede).`;
               btn.innerHTML = "Inviato ✓";
-              setTimeout(() => {
-                btn.disabled = false;
-                btn.innerHTML = originalBtnText;
-              }, 5000);
             } else {
               // Script Error (e.g. duplicate)
               throw new Error(res.message || "Errore sconosciuto");
