@@ -1,0 +1,2607 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Andrea &amp; Leonardo – 12 Settembre 2026</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+    content="Wedding weekend di Andrea & Leonardo – 12 Settembre 2026, Hotel Bisanzio Resort – Corigliano-Rossano (CS)." />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/amalfi-coast" rel="stylesheet">
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <style>
+    :root {
+      --sage: #ACB087;
+      --terracotta: #c09f6c;
+      --ivory: #F4E1E0;
+      --blush: #EAE0D5;
+      --ink: #2f2a28;
+      --ink-soft: #5b534f;
+
+      --radius-soft: 18px;
+      --transition-fast: 0.25s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--ivory);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    main {
+      width: 100%;
+    }
+
+    section {
+      position: relative;
+      padding: 3.5rem 1.6rem;
+    }
+
+    @media (min-width: 900px) {
+      section {
+        padding: 4.5rem 7vw;
+      }
+    }
+
+    /* Tipografia */
+    .eyebrow {
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      color: var(--ink-soft);
+    }
+
+    .title-hero-main {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 9vw, 4rem);
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+
+    .title-hero-sub {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.26em;
+      margin-top: 1.2rem;
+    }
+
+    .title-section {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 3.2vw, 2.2rem);
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      margin-bottom: 1.8rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+    }
+
+    @media (min-width: 900px) {
+      p {
+        font-size: 1rem;
+      }
+    }
+
+    /* Header mini fisso (brand) */
+    .mini-header {
+      position: fixed;
+      top: 0.9rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 30;
+      padding: 0.45rem 1.2rem;
+      border-radius: 999px;
+      border: 1px solid rgba(47, 42, 40, 0.3);
+      background: rgba(244, 225, 224, 0.95);
+      backdrop-filter: blur(12px);
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+    }
+
+    /* Countdown sticky */
+    .countdown-pill {
+      position: fixed;
+      top: 0.9rem;
+      /* allineato al top del mini-header */
+      right: 1.2rem;
+      z-index: 30;
+      border-radius: 12px;
+      border: 1px solid rgba(47, 42, 40, 0.28);
+      background: rgba(234, 224, 213, 0.95);
+      padding: 0.38rem 0.64rem;
+      font-size: 0.64rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.12rem;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.16);
+      animation: countdown-pulse 2.8s ease-in-out infinite;
+    }
+
+    .countdown-pill strong {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.98rem;
+      letter-spacing: 0.18em;
+      line-height: 1;
+    }
+
+    .countdown-pill .countdown-label {
+      letter-spacing: 0.2em;
+      font-size: 0.5rem;
+      opacity: 0.82;
+    }
+
+    @keyframes countdown-pulse {
+      0% {
+        transform: translateY(0);
+        box-shadow: 0 12px 26px rgba(0, 0, 0, 0.18);
+      }
+
+      40% {
+        transform: translateY(-2px);
+        box-shadow: 0 18px 36px rgba(0, 0, 0, 0.22);
+      }
+
+      100% {
+        transform: translateY(0);
+        box-shadow: 0 12px 26px rgba(0, 0, 0, 0.18);
+      }
+    }
+
+    /* Music floating button */
+    #music-btn {
+      position: fixed;
+      top: 0.9rem;
+      /* allineato al top del mini-header */
+      left: 1.2rem;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1px solid rgba(47, 42, 40, 0.28);
+      background: rgba(234, 224, 213, 0.95);
+      backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.16);
+      cursor: pointer;
+      z-index: 40;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    @media (max-width: 430px) {
+      .countdown-pill {
+        right: 0.8rem;
+        top: 1rem;
+        padding: 0.34rem 0.56rem;
+      }
+
+      .countdown-pill strong {
+        font-size: 0.94rem;
+      }
+
+      .countdown-pill .countdown-label {
+        font-size: 0.48rem;
+      }
+    }
+
+    /* Header e Logo (semplice) - Ported from index.html */
+    /* Target only the main hero-header to avoid affecting other headers in main */
+    .hero-header {
+      height: 100vh;
+      background: linear-gradient(to bottom,
+          rgba(244, 225, 224, 0) 0%,
+          rgba(244, 225, 224, 0) 20%,
+          rgba(244, 225, 224, 0.6) 70%,
+          rgba(244, 225, 224, 1) 90%),
+        url('NOI-A&L.jpg') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: var(--ink);
+      padding: 2.5rem 5vw;
+      /* More horizontal room */
+      /* Initial padding */
+      padding-top: 70vh;
+      /* Lower the content further */
+      text-align: center;
+      width: 100%;
+      /* Ensure full width availability */
+    }
+
+    .logo-container img {
+      max-width: 150px;
+      height: auto;
+      margin-bottom: 18px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.06);
+      padding: 6px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    }
+
+    header h1 {
+      font-family: 'Amalfi Coast', cursive;
+      font-size: clamp(2.5rem, 10vw, 4.5rem);
+      margin: 8px 0;
+      color: var(--ink-soft);
+      line-height: 1.2;
+      letter-spacing: normal;
+      text-transform: none;
+    }
+
+    header p {
+      font-size: 0.9rem;
+      letter-spacing: 0.3em;
+      /* Increased letter spacing */
+      text-transform: uppercase;
+      color: var(--ink);
+      margin: 5px 0;
+    }
+
+    /* Sezione programma – bento verticale */
+    .section-agenda {
+      padding-top: 3.2rem;
+      padding-bottom: 3.5rem;
+    }
+
+    .agenda-header {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+      margin-bottom: 2.4rem;
+    }
+
+    @media (min-width: 900px) {
+      .agenda-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+      }
+    }
+
+    .agenda-intro {
+      max-width: 420px;
+      color: var(--ink-soft);
+      font-size: 0.85rem;
+    }
+
+    .agenda-note {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+    }
+
+    .agenda-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.9rem;
+    }
+
+    @media (min-width: 720px) {
+      .agenda-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (min-width: 1100px) {
+      .agenda-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .agenda-card {
+      border-radius: 20px;
+      padding: 1rem 1.2rem 1.1rem;
+      position: relative;
+      overflow: hidden;
+      cursor: default;
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.16);
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+      font-size: 0.87rem;
+    }
+
+    .agenda-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 0 0, rgba(255, 255, 255, 0.25), transparent 55%);
+      opacity: 0;
+      transition: opacity var(--transition-fast);
+      pointer-events: none;
+    }
+
+    .agenda-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 54px rgba(0, 0, 0, 0.22);
+    }
+
+    .agenda-card:hover::after {
+      opacity: 1;
+    }
+
+    .agenda-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      margin-bottom: 0.3rem;
+    }
+
+    .agenda-time {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      margin-bottom: 0.4rem;
+    }
+
+    .agenda-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .agenda-desc {
+      font-size: 0.86rem;
+      color: var(--ink-soft);
+    }
+
+    .agenda-tag {
+      margin-top: 0.5rem;
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      opacity: 0.85;
+      text-align: right;
+    }
+
+    .agenda-card--welcome {
+      background: var(--sage);
+      color: #25221f;
+    }
+
+    .agenda-card--ceremony {
+      background: var(--blush);
+    }
+
+    .agenda-card--aperitivo {
+      background: var(--terracotta);
+      color: var(--ink);
+    }
+
+    .agenda-card--cena {
+      background: #d3c8b8;
+    }
+
+    .agenda-card--torta {
+      background: #b5977c;
+      color: var(--ink);
+    }
+
+    .agenda-card--dj {
+      background: #f7e1e4;
+      color: var(--ink);
+    }
+
+    .agenda-card-colazione {
+      background: #fdfaf6;
+      border: 1px solid rgba(172, 176, 135, 0.3);
+      color: var(--ink);
+    }
+
+    /* FAQ Accordion */
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    details {
+      margin-bottom: 1rem;
+      border-bottom: 1px solid rgba(172, 176, 135, 0.3);
+    }
+
+    summary {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.85rem;
+      color: var(--terracotta);
+      font-weight: 550;
+      cursor: pointer;
+      padding: 0.95em 0;
+      list-style: none;
+      /* Rimuove marker default */
+      position: relative;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: '+';
+      position: absolute;
+      right: 0;
+      font-weight: 300;
+      font-size: 1.5rem;
+      transition: transform 0.3s;
+    }
+
+    details[open] summary::after {
+      transform: rotate(45deg);
+    }
+
+    details[open] summary {
+      border-bottom: none;
+    }
+
+    .faq-answer {
+      font-size: 0.85rem;
+      line-height: 1.6;
+      color: var(--ink-soft);
+      padding-bottom: 1.5rem;
+      animation: fade-in 0.5s ease;
+    }
+
+    .faq-answer a {
+      color: var(--terracotta);
+      text-decoration: underline;
+    }
+
+    /* Logistica & pernottamento */
+    .section-logistica {
+      padding-top: 3.2rem;
+      padding-bottom: 3.5rem;
+    }
+
+    .logistica-grid-main {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    @media (min-width: 900px) {
+      .logistica-grid-main {
+        grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      }
+    }
+
+    .logistica-card {
+      border-radius: 24px;
+      padding: 1.8rem 1.6rem 2rem;
+      background: rgba(234, 224, 213, 0.95);
+      box-shadow: 0 18px 60px rgba(0, 0, 0, 0.18);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .logistica-card::before {
+      content: "";
+      position: absolute;
+      top: 1.3rem;
+      right: 1.4rem;
+      font-size: 0.62rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: rgba(47, 42, 40, 0.55);
+    }
+
+    .logistica-title-sub {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      margin-bottom: 0.4rem;
+    }
+
+    .logistica-location {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .hotel-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--terracotta);
+      margin-top: 0.6rem;
+      transition: opacity 0.3s ease;
+      opacity: 0.9;
+    }
+
+    .hotel-link:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+
+    .logistica-modes {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .logistica-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      margin-bottom: 0.2rem;
+    }
+
+    .logistica-note {
+      margin-top: 1.1rem;
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+      max-width: 28rem;
+    }
+
+    .pernottamento-card {
+      border-radius: 24px;
+      padding: 1.8rem 1.6rem 2rem;
+      background: rgba(56, 50, 49, 0.94);
+      color: #f6f0ea;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 68px rgba(0, 0, 0, 0.25);
+    }
+
+    .pernottamento-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 0 0, rgba(244, 225, 224, 0.4), transparent 55%),
+        radial-gradient(circle at 100% 100%, rgba(186, 139, 102, 0.65), transparent 60%);
+      opacity: 0.95;
+      pointer-events: none;
+    }
+
+    .pernottamento-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .pernottamento-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.21em;
+      margin-bottom: 0.8rem;
+    }
+
+    .pernottamento-hotel {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      margin-bottom: 1rem;
+    }
+
+    .pernottamento-list p+p {
+      margin-top: 0.3rem;
+    }
+
+    .pernottamento-footer {
+      margin-top: 1rem;
+      font-size: 0.82rem;
+      max-width: 24rem;
+    }
+
+    /* Story – cards orizzontali scrollabili */
+    .section-story {
+      padding-top: 3.2rem;
+      padding-bottom: 3.5rem;
+    }
+
+    .story-header {
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+      margin-bottom: 2.2rem;
+      align-items: center;
+      text-align: center;
+    }
+
+    @media (min-width: 900px) {
+      .story-header {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    .story-intro {
+      max-width: 420px;
+      font-size: 0.95rem;
+      color: var(--ink-soft);
+      margin: 0 auto;
+    }
+
+    .story-tip {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+    }
+
+    .story-scroller {
+      position: relative;
+      overflow-x: auto;
+      padding-bottom: 1.4rem;
+      margin: 0 -1.6rem;
+      padding-left: 1.6rem;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+    }
+
+    @media (min-width: 900px) {
+      .story-scroller {
+        margin: 0;
+        padding-left: 0;
+        overflow-x: visible;
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    .story-track {
+      display: inline-flex;
+      gap: 1.4rem;
+      padding-right: 2.2rem;
+    }
+
+    @media (min-width: 900px) {
+      .story-track {
+        padding-right: 0;
+        justify-content: center;
+      }
+    }
+
+    .story-card-wrapper {
+      scroll-snap-align: start;
+      perspective: 1100px;
+      flex: 0 0 80%;
+      max-width: 360px;
+    }
+
+    @media (min-width: 900px) {
+      .story-card-wrapper {
+        flex: 0 0 320px;
+      }
+    }
+
+    .story-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 24px;
+      padding: 1.6rem 1.6rem 1.8rem;
+      background: linear-gradient(180deg, #f4e7e3 0%, #f0ddda 100%);
+      border: 1px solid rgba(47, 42, 40, 0.12);
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+      transform: none;
+      transition: none;
+    }
+
+    .story-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 0 0, rgba(255, 255, 255, 0.25), transparent 60%);
+      opacity: 0.45;
+      /* luce morbida sempre visibile */
+      pointer-events: none;
+    }
+
+    /* Barra di accento in alto */
+    .story-card::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, rgba(186, 139, 102, 0.85), rgba(186, 139, 102, 0.7));
+    }
+
+
+    @keyframes sketch-reveal {
+      0% {
+        opacity: 0;
+        filter: blur(8px);
+        transform: scale(0.95);
+      }
+
+      40% {
+        opacity: 0.4;
+        filter: blur(6px);
+        transform: scale(0.97);
+      }
+
+      70% {
+        opacity: 0.85;
+        filter: blur(2px);
+        transform: scale(0.99);
+      }
+
+      100% {
+        opacity: 1;
+        filter: blur(0px);
+        transform: scale(1);
+      }
+    }
+
+    .story-card:hover,
+    .story-card:focus-within {
+      transform: none;
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+    }
+
+    .story-card:hover::before,
+    .story-card:focus-within::before {
+      opacity: 0.45;
+    }
+
+    .story-step-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      margin-bottom: 0.5rem;
+      color: rgba(47, 42, 40, 0.76);
+    }
+
+    .story-step-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .story-step-meta {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      margin-bottom: 0.7rem;
+      color: rgba(47, 42, 40, 0.7);
+    }
+
+    .story-step-text {
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+    }
+
+    /* Timeline verticale su mobile con alternanza destra/sinistra */
+    @media (max-width: 720px) {
+      .story-scroller {
+        overflow: visible;
+        margin: 0;
+        padding-left: 0;
+        padding-bottom: 2rem;
+      }
+
+      .story-scroller::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        width: 2px;
+        background: rgba(47, 42, 40, 0.25);
+      }
+
+      .story-track {
+        display: block;
+        padding-right: 0;
+      }
+
+      .story-card-wrapper {
+        flex: none;
+        max-width: none;
+        width: 100%;
+        margin: 1.2rem 0;
+        position: relative;
+        padding: 0 1rem;
+      }
+
+      .story-card-wrapper::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--ivory);
+        border: 2px solid rgba(47, 42, 40, 0.35);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      }
+
+      .story-card {
+        width: 78%;
+      }
+
+      /* Alternanza: odd a sinistra, even a destra */
+      .story-card-wrapper:nth-child(odd) .story-card {
+        margin-right: auto;
+      }
+
+      .story-card-wrapper:nth-child(even) .story-card {
+        margin-left: auto;
+      }
+    }
+
+    /* Agenda: timeline verticale mobile con linea centrale e alternanza */
+    @media (max-width: 760px) {
+      .agenda-grid {
+        position: relative;
+        display: block;
+        padding: 0 0 2rem 0;
+      }
+
+      .agenda-grid::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        width: 2px;
+        background: rgba(47, 42, 40, 0.25);
+      }
+
+      .agenda-card {
+        width: 78%;
+        margin: 1.3rem 0;
+        transform: none;
+      }
+
+      .agenda-card:nth-child(odd) {
+        margin-right: auto;
+      }
+
+      .agenda-card:nth-child(even) {
+        margin-left: auto;
+      }
+    }
+
+    /* RSVP */
+    .section-rsvp {
+      padding-top: 3.2rem;
+      padding-bottom: 4.2rem;
+    }
+
+    .rsvp-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.2rem;
+    }
+
+    @media (min-width: 900px) {
+      .rsvp-grid {
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
+        align-items: flex-start;
+      }
+    }
+
+    .rsvp-copy {
+      max-width: 420px;
+    }
+
+    .rsvp-copy p {
+      font-size: 0.95rem;
+      color: var(--ink-soft);
+    }
+
+    .rsvp-deadline {
+      margin-top: 1.2rem;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-weight: bold;
+    }
+
+    .rsvp-form-shell {
+      border-radius: 26px;
+      background: var(--terracotta);
+      color: #fef7f1;
+      padding: 2rem 1.7rem 2.2rem;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .rsvp-form-shell::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 0 0, rgba(244, 225, 224, 0.55), transparent 55%),
+        radial-gradient(circle at 120% 120%, rgba(172, 176, 135, 0.5), transparent 60%);
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    .rsvp-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .rsvp-tag {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      margin-bottom: 1rem;
+      opacity: 0.9;
+    }
+
+    .rsvp-form-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      margin-bottom: 1.4rem;
+    }
+
+    form {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.9rem;
+    }
+
+    .form-row-double {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.8rem;
+    }
+
+    @media (min-width: 640px) {
+      .form-row-double {
+        grid-template-columns: 1.1fr 0.9fr;
+      }
+    }
+
+    label {
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      margin-bottom: 0.35rem;
+      display: block;
+    }
+
+    .field-shell {
+      position: relative;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .field-shell--textarea {
+      border-radius: 18px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      background: rgba(44, 34, 32, 0.25);
+      color: #fdf7f2;
+      padding: 0.7rem 1rem;
+      font-family: inherit;
+      font-size: 0.9rem;
+      border-radius: inherit;
+      outline: none;
+      transition: border-color var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 82px;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: rgba(255, 248, 240, 0.75);
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--sage);
+      background: rgba(44, 34, 32, 0.6);
+      box-shadow: 0 0 0 1px var(--sage), 0 0 0 6px rgba(172, 176, 135, 0.5);
+    }
+
+    .rsvp-submit-row {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 0.4rem;
+    }
+
+    .btn-rsvp {
+      border-radius: 999px;
+      border: none;
+      padding: 0.7rem 1.3rem 0.8rem;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      background: #fef7f1;
+      color: #2f2522;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.35);
+      transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+    }
+
+    .btn-rsvp:hover {
+      background: #f7eee7;
+      transform: translateY(-1px);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
+    }
+
+    .btn-rsvp-icon {
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(47, 42, 40, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+    }
+
+    .rsvp-legal {
+      margin-top: 1rem;
+      font-size: 0.78rem;
+      opacity: 0.88;
+      max-width: 320px;
+    }
+
+    /* Animazioni on scroll (semplici) */
+    [data-animate] {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.8s cubic-bezier(0.18, 0.64, 0.37, 1),
+        transform 0.9s cubic-bezier(0.18, 0.64, 0.37, 1);
+    }
+
+    [data-animate].in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    [data-animate="slide-left"] {
+      transform: translateX(40px);
+    }
+
+    [data-animate="slide-left"].in-view {
+      transform: translateX(0);
+    }
+
+    [data-animate="slide-right"] {
+      transform: translateX(-40px);
+    }
+
+    [data-animate="slide-right"].in-view {
+      transform: translateX(0);
+    }
+
+    [data-animate="reveal-mask"] {
+      position: relative;
+      overflow: hidden;
+    }
+
+    [data-animate="reveal-mask"]::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--ivory);
+      transform: translateX(0);
+      transition: transform 1.1s cubic-bezier(0.16, 0.7, 0.3, 1);
+    }
+
+    [data-animate="reveal-mask"].in-view::after {
+      transform: translateX(101%);
+    }
+
+    /* Album Fotografico */
+    .section-photography {
+      padding: 3.2rem 1.6rem 3.5rem;
+      background-color: var(--ivory);
+    }
+
+    .photography-container {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .album-btn {
+      display: inline-block;
+      background: var(--sage);
+      color: white;
+      padding: 12px 28px;
+      text-decoration: none;
+      border-radius: 30px;
+      margin-top: 1.4rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: background-color 0.3s ease;
+    }
+
+    .album-btn:hover {
+      background: var(--terracotta);
+    }
+
+    /* Divisore immagine - full-width e centrato */
+    .divider-image {
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+      display: flex;
+      justify-content: center;
+      padding: 2.2rem 0;
+      background-color: var(--ivory);
+    }
+
+    .divider-image img {
+      max-width: 210px;
+      height: auto;
+      opacity: 0.8;
+    }
+
+    /* Sezione Grazie */
+    .section-thanks {
+      padding: 3.2rem 1.6rem 3.5rem;
+      background-color: var(--ivory);
+    }
+
+    .thanks-container {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .thanks-content {
+      margin: 2rem 0 2rem 0;
+      color: var(--ink);
+    }
+
+    .thanks-content p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 1.2rem;
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+      color: var(--ink-soft);
+    }
+
+    .thanks-iban {
+      background: white;
+      border-radius: 12px;
+      padding: 1.6rem;
+      margin-top: 2rem;
+      display: inline-block;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    .iban-label {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-weight: 600;
+      color: var(--sage);
+      margin-bottom: 0.5rem;
+    }
+
+    .iban-number {
+      font-family: 'Courier New', monospace;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--ink);
+      letter-spacing: 0.05em;
+      margin-bottom: 0.8rem;
+    }
+
+    .iban-name {
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+      margin: 0;
+    }
+
+    /* Divisori eleganti e icone */
+    .section-divider {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .section-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      color: var(--sage);
+      margin-right: 0.8rem;
+      opacity: 0.8;
+    }
+
+    .section-title-with-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .section-title-with-icon i {
+      font-size: 1.3rem;
+      opacity: 0.9;
+      transition: transform 0.3s ease;
+    }
+
+    .section-title-with-icon:hover i {
+      transform: scale(1.15) rotate(-5deg);
+    }
+
+    .section-title-with-icon .title-section {
+      margin: 0;
+    }
+
+    /* Petali e rami decorativi */
+    .petal-divider {
+      display: flex;
+      justify-content: center;
+      gap: 0.6rem;
+      padding: 1.8rem 0;
+      color: var(--sage);
+      font-size: 1.4rem;
+      opacity: 0.35;
+    }
+
+    .petal {
+      display: inline-block;
+      animation: float-petal 3s ease-in-out infinite;
+    }
+
+    .petal:nth-child(1) {
+      animation-delay: 0s;
+    }
+
+    .petal:nth-child(2) {
+      animation-delay: 0.3s;
+    }
+
+    .petal:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+
+    .petal:nth-child(4) {
+      animation-delay: 0.9s;
+    }
+
+    .petal:nth-child(5) {
+      animation-delay: 1.2s;
+    }
+
+    @keyframes float-petal {
+
+      0%,
+      100% {
+        transform: translateY(0px) rotate(0deg);
+        opacity: 0.35;
+      }
+
+      50% {
+        transform: translateY(-12px) rotate(8deg);
+        opacity: 0.5;
+      }
+    }
+
+    /* Icone nelle sezioni */
+    .location-icon {
+      font-size: 1.2rem;
+      color: var(--sage);
+    }
+
+    .hotel-icon {
+      font-size: 1.2rem;
+      color: var(--terracotta);
+    }
+
+    .calendar-icon {
+      font-size: 1.2rem;
+      color: var(--sage);
+    }
+
+    .heart-icon {
+      font-size: 1.2rem;
+      color: var(--terracotta);
+    }
+
+    .camera-icon {
+      font-size: 1.2rem;
+      color: var(--sage);
+    }
+
+    .gift-icon {
+      font-size: 1.2rem;
+      color: var(--terracotta);
+    }
+
+    /* --- INTRO OVERLAY (Envelope/Pergamon) --- */
+    #intro-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--ivory);
+      overflow: hidden;
+      transition: opacity 1.2s ease, visibility 1.2s;
+    }
+
+    #intro-overlay.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    /* Background texture/pattern */
+    .intro-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://www.transparenttextures.com/patterns/cream-paper.png');
+      opacity: 0.8;
+      z-index: 1;
+    }
+
+    /* The "Envelope" structure */
+    .envelope-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+      perspective: 1000px;
+    }
+
+    /* Flaps (Left/Right panels for "opening" effect, or just a central paper feel) */
+    .flap {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 50%;
+      background: #fdfbf7;
+      transition: transform 1.8s cubic-bezier(0.6, 0.05, 0.2, 1);
+      box-shadow: 0 0 50px rgba(0, 0, 0, 0.05);
+      z-index: 10;
+    }
+
+    .flap-left {
+      left: 0;
+      transform-origin: left center;
+      border-right: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .flap-right {
+      right: 0;
+      transform-origin: right center;
+      border-left: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    /* When open, flaps slide away */
+    #intro-overlay.open .flap-left {
+      transform: translateX(-100%);
+    }
+
+    #intro-overlay.open .flap-right {
+      transform: translateX(100%);
+    }
+
+    /* Seal Container */
+    .seal-container {
+      position: relative;
+      z-index: 20;
+      cursor: pointer;
+      transition: transform 0.4s ease, opacity 0.5s ease 0.5s;
+    }
+
+    #intro-overlay.open .seal-container {
+      transform: scale(1.5);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* The Wax Seal itself */
+    .wax-seal {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: #7d8254;
+      /* Fallback sage green */
+      background: radial-gradient(circle at 30% 30%, #ACB087, #7d8254 60%, #4a502e);
+      box-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.4),
+        inset 0 0 20px rgba(0, 0, 0, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      /* Irregular shape via clip-path or border-radius tweaking could go here, 
+         but a simple circle with shadow is cleaner for code-only */
+    }
+
+    /* Ring effect inside seal */
+    .wax-seal::after {
+      content: "";
+      position: absolute;
+      inset: 10px;
+      border-radius: 50%;
+      border: 2px solid rgba(255, 255, 255, 0.15);
+      box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .seal-logo {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: contain;
+      padding: 15px;
+      /* Spacing from seal edge */
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+      opacity: 0.9;
+    }
+
+    .click-hint {
+      position: absolute;
+      bottom: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      color: #7a6e6a;
+      white-space: nowrap;
+      animation: pulse-hint 2s infinite;
+      transition: opacity 0.3s;
+    }
+
+    #intro-overlay.open .click-hint {
+      opacity: 0;
+    }
+
+    @keyframes pulse-hint {
+
+      0%,
+      100% {
+        opacity: 0.6;
+      }
+
+      50% {
+        opacity: 1;
+      }
+    }
+
+    /* --- MOBILE OPTIMIZATIONS --- */
+    @media (max-width: 480px) {
+
+      /* 1. Prevent iOS Form Zoom */
+      input,
+      select,
+      textarea {
+        font-size: 16px !important;
+      }
+
+      /* 2. Intro Overlay Sizing */
+      .wax-seal {
+        width: 130px;
+        height: 130px;
+      }
+
+      .click-hint {
+        bottom: -35px;
+        font-size: 0.7rem;
+      }
+
+      /* 3. Hero Adjustments */
+      .hero {
+        padding-top: 5.5rem;
+        /* More space for fixed headers */
+      }
+
+      .mini-header {
+        width: auto;
+        /* Shrink to fit text */
+        max-width: 65%;
+        /* Ensure it doesn't touch side buttons */
+        text-align: center;
+        white-space: normal;
+        line-height: 1.3;
+        padding: 0.5rem 1rem;
+        border-radius: 12px;
+        /* Slightly tighter radius for pill shape */
+      }
+
+      /* Hide "Mancano giorni" text on very small screens to save space */
+      .countdown-pill .countdown-label {
+        display: none;
+      }
+
+      .countdown-pill strong {
+        font-size: 1.1rem;
+      }
+
+      .countdown-pill::after {
+        content: "días";
+        font-size: 0.6rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        opacity: 0.7;
+      }
+
+      /* 4. Story Timeline spacing */
+      .story-card-wrapper {
+        padding: 0 0.5rem;
+        /* Less side padding */
+        margin: 1.8rem 0;
+      }
+
+      /* 5. General Section Padding */
+      section {
+        padding-left: 1.2rem;
+        padding-right: 1.2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- INTRO OVERLAY -->
+  <div id="intro-overlay">
+    <div class="intro-bg"></div>
+
+    <div class="flap flap-left"></div>
+    <div class="flap flap-right"></div>
+
+    <div class="seal-container" id="wax-seal-btn" title="Apri l'invito">
+      <div class="wax-seal">
+        <img src="LOGO.png" alt="Logo Leonardo & Andrea" class="seal-logo">
+      </div>
+    </div>
+
+    <div id="intro-guest-name" style="
+        position: absolute; 
+        bottom: 25%; 
+        left: 0; 
+        width: 100%; 
+        text-align: center; 
+        font-family: 'Montserrat', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 0.25em;
+        font-size: clamp(1.1rem, 4vw, 1.6rem); 
+        color: var(--ink);
+        opacity: 0;
+        transform: translateY(10px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+        z-index: 100;
+        pointer-events: none;
+        text-shadow: 0 1px 3px rgba(255,255,255,0.8);
+        padding: 0 20px;
+      ">
+    </div>
+  </div>
+
+  <div class="mini-header">Andrea &amp; Leonardo<br>Wedding Weekend</div>
+
+  <div class="countdown-pill" aria-label="Cuenta atrás para la boda">
+    <span class="countdown-label">Faltan</span>
+    <strong id="countdown-days">--</strong>
+    <span class="countdown-label">días</span>
+  </div>
+
+  <!-- Audio di sottofondo + pulsante controllo -->
+  <audio id="bg-music" loop>
+    <source src="music.mp3" type="audio/mpeg">
+    <!-- Fallback se il file locale non va -->
+    <source src="https://www.bensound.com/bensound-music/bensound-tenderness.mp3" type="audio/mpeg">
+  </audio>
+  <div id="music-btn" onclick="toggleMusic()" title="Ascolta musica">
+    <i id="music-icon" class="fas fa-music"></i>
+    <span class="sr-only">Toggle musica</span>
+
+  </div>
+
+  <main>
+
+    <!-- Header ported from index.html -->
+    <header class="hero-header">
+
+      <h1>Andrea &amp;<br> <span style="display: block; margin-top: 1.2rem;"> &nbsp; &nbsp; Leonardo</span></h1>
+      <p style="margin-top: 1rem;"><i class="fas fa-heart" style="color: var(--terracotta);"></i> NOS CASAMOS</p>
+      <p>12 de Septiembre de 2026</p>
+      <!-- <div class="logo-container">
+        <img src="LOGO.jpg" alt="Logo Andrea & Leonardo">
+      </div> -->
+    </header>
+    <div class="divider-image">
+      <img src="A.png" alt="divisore">
+    </div>
+
+    <!-- INTRO TEXT -->
+    <section id="invitation-intro"
+      style="padding-top: 0rem; padding-bottom: 2rem; text-align: center; max-width: 800px; margin: 0 auto;">
+      <div data-animate="fade-in">
+        <p
+          style="font-family: 'Playfair Display', serif; font-size: 1.3rem; text-transform: uppercase; letter-spacing: 0.22em; margin-bottom: 1.5rem; color: var(--terracotta); font-weight: 600;">
+          Les invitamos a compartir con nosotros este momento</p>
+        <p style="font-size: 1.1rem; line-height: 1.8; color: var(--ink-soft); font-style: normal;">
+          Una boda pensada como un libro para hojear en el que celebramos el amor que nos une
+          y la elección de caminar juntos hacia el futuro. <br>
+          Un fin de semana para vivir juntos.
+        </p>
+      </div>
+    </section>
+
+
+
+    <div class="divider-image">
+      <img src="A.png" alt="divisore">
+    </div>
+    <header class="story-header">
+      <div>
+        <div class="section-title-with-icon">
+          <i class="fas fa-heart heart-icon"></i>
+          <h2 class="title-section" data-animate="slide-right">Nuestra historia</h2>
+        </div>
+        <p class="story-intro" data-animate="slide-right">
+          Tres momentos que han marcado nuestro camino.
+        </p>
+      </div>
+    </header>
+
+    <div class="story-scroller" aria-label="Timeline della storia">
+      <div class="story-track">
+        <div class="story-card-wrapper">
+          <article class="story-card" tabindex="0">
+            <div class="story-step-label">Acto I</div>
+            <h3 class="story-step-title">El comienzo de todo</h3>
+            <div class="story-step-meta">Bologna 2016</div>
+            <p class="story-step-text">
+              Un encuentro nacido por casualidad, suspendido entre bromas, preguntas y risas.
+              Ningún gran gesto, solo la sensación de que ese momento no debía interrumpirse.
+            </p>
+          </article>
+        </div>
+
+        <div class="story-card-wrapper">
+          <article class="story-card" tabindex="0">
+            <div class="story-step-label">Acto II</div>
+            <h3 class="story-step-title">Nosotros, día tras día</h3>
+            <div class="story-step-meta">Viajes · Risas · Recuerdos</div>
+            <p class="story-step-text">
+              Entre caminos recorridos, viajes, fotos y mil recuerdos, hemos crecido juntos, paso a paso,
+              transformando cada momento en algo nuestro.
+            </p>
+          </article>
+        </div>
+
+        <div class="story-card-wrapper">
+          <article class="story-card" tabindex="0">
+            <div class="story-step-label">Acto III</div>
+            <h3 class="story-step-title">Un sí entre mar y montañas</h3>
+            <div class="story-step-meta">Corigliano-Rossano</div>
+            <p class="story-step-text">
+              El mar a un lado, el bosque enfrente, la luz del sur coloreándolo todo.
+              Aquí decidimos detener el tiempo y convertirlo en nuestro lugar especial, junto a vosotros.
+            </p>
+          </article>
+        </div>
+      </div>
+    </div>
+    </section>
+
+    <!-- PROGRAMMA -->
+    <section id="programma" class="section-agenda">
+      <header class="agenda-header">
+        <div>
+          <h2 class="title-section" data-animate="slide-right">Wedding weekend</h2>
+          <p class="agenda-intro" data-animate="slide-right">
+            Un fin de semana para encontrarse, celebrar y descubrir la magia de Calabria.
+          </p>
+        </div>
+        <div class="agenda-note" data-animate="slide-left">
+          <span style="font-size: 0.7rem; opacity: 0.9;   letter-spacing: 0.1em; font-weight: bold;">
+            11 de septiembre</span>· Welcome Party<br>
+          <span style="font-size: 0.7rem; opacity: 0.9; letter-spacing: 0.1em; font-weight: bold;">
+            12 de septiembre</span>· Boda<br>
+          <span style="font-size: 0.7rem; opacity: 0.9; letter-spacing: 0.1em; font-weight: bold;">
+            13 de septiembre</span>· Desayuno y despedida<br>
+          <span
+            style="font-size: 0.7rem; opacity: 0.9; margin-top: 0.5rem; display: block; letter-spacing: 0.1em; font-weight: bold;">Location:
+            Hotel Bisanzio Resort</span>
+        </div>
+      </header>
+
+      <div class="agenda-grid">
+        <article class="agenda-card agenda-card--welcome" data-animate="reveal-mask">
+          <div>
+            <div class="agenda-label">Viernes 11 de septiembre</div>
+            <div class="agenda-title">Welcome Party</div>
+            <div class="agenda-time">Ore 18:00</div>
+            <p class="agenda-desc">
+              Un encuentro pre-boda: pizzas, cervezas y atardecer para entrar en el ritmo
+              del fin de semana todos juntos.
+            </p>
+          </div>
+          <div class="agenda-tag">Dress code: Casual </div>
+        </article>
+
+        <article class="agenda-card agenda-card--ceremony" data-animate="slide-right">
+          <div>
+            <div class="agenda-label">Sábado 12 de septiembre</div>
+            <div class="agenda-title">Ceremonia</div>
+            <div class="agenda-time">Ore 16:00</div>
+            <p class="agenda-desc">
+              Inmersos en el verde, rodeados de la magia de la naturaleza, nos prometemos amor eterno.<br>
+              A continuación aperitivo y cena.
+            </p>
+          </div>
+          <div class="agenda-tag">Dress code: Traje de ceremonia</div>
+        </article>
+
+
+
+        <article class="agenda-card agenda-card--dj" data-animate="slide-right">
+          <div>
+            <div class="agenda-label">Domingo 13 de septiembre</div>
+            <div class="agenda-title">Party Time</div>
+            <div class="agenda-time">Ore 01:00</div>
+            <p class="agenda-desc">
+              La noche se traslada a la pista: empieza la música, las copas se alzan y se baila hasta el amanecer.
+            </p>
+          </div>
+
+        </article>
+
+        <article class="agenda-card agenda-card-colazione" data-animate="slide-right">
+          <div>
+            <div class="agenda-label">Domingo 13 de septiembre</div>
+            <div class="agenda-title">La Mañana Siguiente</div>
+            <div class="agenda-time">Ore 10:30</div>
+            <p class="agenda-desc">
+              Un último saludo para quienes siguen en el hotel: ¡desayuno juntos!
+            </p>
+          </div>
+          <div class="agenda-tag">Dress code: Casual</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- LOCATION SUMMARY -->
+    <section id="location-teaser" style="padding-bottom: 0; text-align: center;">
+      <p class="eyebrow" data-animate="fade-in">La Ubicación</p>
+      <h2 class="title-section" data-animate="slide-up"
+        style="margin-top: 0.8rem; margin-bottom: 1.5rem; font-size: 1.2rem; letter-spacing: 0.18em;">
+        Hotel Bisanzio Resort<br>
+        <span style="font-size: 0.85rem; opacity: 0.8; display: block; margin-top: 0.4rem;">Corigliano-Rossano</span>
+      </h2>
+      <div class="location-image-container" data-animate="fade-in"
+        style="max-width: 900px; margin: 0 auto; padding: 0 1.6rem 3rem;">
+        <img src="LOCATION.png" alt="Hotel Bisanzio Resort"
+          style="width: 100%; border-radius: 32px; box-shadow: 0 30px 60px rgba(0,0,0,0.18); object-fit: cover; aspect-ratio: 16/9; display: block; filter: brightness(0.8);">
+      </div>
+    </section>
+
+    <section id="logistica" class="section-logistica">
+      <div class="section-title-with-icon">
+        <i class="fas fa-map-location-dot location-icon"></i>
+        <h2 class="title-section" data-animate="slide-right">Cómo llegar y dónde dormir</h2>
+      </div>
+
+      <div class="logistica-grid-main">
+        <div class="logistica-card" data-animate="slide-right">
+          <div class="logistica-title-sub">Ubicación</div>
+          <div class="logistica-location">
+            Hotel Bisanzio Resort<br>
+
+            <a href="https://maps.app.goo.gl/EuqEM57vmLGgKfUt5" target="_blank" class="hotel-link">
+              <i class="fas fa-map-marker-alt"></i> Abrir en Google Maps
+            </a>
+          </div>
+
+          <div class="logistica-modes">
+            <div>
+              <div class="logistica-label">En coche</div>
+              <p>
+                Llegar a Corigliano-Rossano (CS) y seguir las indicaciones hacia
+                “Hotel Bisanzio Resort”.
+              </p>
+            </div>
+            <div>
+              <div class="logistica-label">En tren</div>
+              <p>
+                Estación de Corigliano-Rossano (para alta velocidad la estación principal es Sibari).
+              </p>
+            </div>
+            <div>
+              <div class="logistica-label">En avión</div>
+              <p>
+                Aeropuerto de Lamezia Terme. Desde el aeropuerto es posible
+                <a href="https://www.rentalcars.com/search-results?coordinates=&doDay=13&doHour=21&doMinute=0&doMonth=9&doYear=2026&driversAge=30&dropCoordinates=&dropFtsType=iata&dropLocation=SUF&dropLocationIata=&dropLocationName=Aeroporto%20Internazionale%20di%20Lamezia%20Terme%20(SUF)&ftsType=iata&location=SUF&locationIata=&locationName=Aeroporto%20Internazionale%20di%20Lamezia%20Terme%20(SUF)&puDay=11&puHour=10&puMinute=30&puMonth=9&puYear=2026&filterCriteria_sortBy=PRICE&filterCriteria_sortAscending=true"
+                  target="_blank" style="color: var(--terracotta); text-decoration: underline;">
+                  alquilar un coche
+                </a>
+                o utilizar el
+                <a href="https://www.andirivieni.it/corse-disponibili/?bus_start_route=Aeroporto+Lamezia&bus_end_route=Rossano&j_date=11-09-2026&r_date=&bus-r=return"
+                  target="_blank" style="color: var(--terracotta); text-decoration: underline;">
+                  autobús
+                </a>
+                directo a Rossano (se requiere reserva online anticipada).
+
+              </p>
+            </div>
+          </div>
+
+          <p class="logistica-note">
+            Si desean coordinar traslados compartidos, indíquenlo en el formulario.
+            Una vez en Rossano, intentaremos ayudarles directamente para llegar a la ubicación; alternativamente, es
+            posible utilizar un taxi.
+        </div>
+
+        <aside class="pernottamento-card" data-animate="slide-left">
+          <div class="pernottamento-inner">
+            <div class="pernottamento-title"><i class="fas fa-bed"
+                style="margin-right: 0.6rem; color: var(--terracotta);"></i>Alojamiento</div>
+            <div class="pernottamento-hotel"><i class="fas fa-hotel"
+                style="margin-right: 0.4rem; color: var(--terracotta);"></i>Hotel Bisanzio Resort
+              <a href="https://www.hotelbisanzioresort.it" target="_blank" class="hotel-link"
+                style="display: flex; margin-top: 0.35rem; font-size: 0.65rem;">
+                <i class="fas fa-link"></i> Visita el sitio web
+              </a>
+            </div>
+            <div class="pernottamento-list">
+              <p>Habitación matrimonial · 75€ por noche</p>
+              <p>Habitación triple · 100€ por noche</p>
+              <p>Cuna adicional · +10€ por noche</p>
+            </div>
+            <p class="pernottamento-footer">
+              Las habitaciones tienen tarifas especiales para el fin de semana de la boda. Indicad en el formulario RSVP
+              si deseáis
+              alojaros en la estructura y la tipología de habitación preferida. Durante el fin de semana de la boda, el
+              check-in es flexible: podéis llegar incluso temprano por la mañana, pero es necesario indicarlo. El
+              check-out
+              del domingo es posible hacerlo hasta tarde en la mañana, antes del almuerzo. El pago podréis efectuarlo al
+              check-out.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+
+
+    <div class="divider-image">
+      <img src="B.png" alt="divisore">
+    </div>
+
+    <!-- FAQ -->
+    <section id="faq" class="section-faq" style="padding: 4rem 0;">
+      <div class="faq-container">
+        <div class="section-title-with-icon">
+          <h2 class="title-section" data-animate="slide-right">Preguntas Frecuentes</h2>
+        </div>
+
+        <details data-animate="slide-up">
+          <summary>¿Qué nos aconsejáis llevar puesto?</summary>
+          <div class="faq-answer">
+            El evento será elegante, por lo que sugerimos un traje de ceremonia. Sin embargo, el lugar requiere también
+            un poco
+            de comodidad: ¡llevad zapatos cómodos, porque habrá que moverse y bailar! Por la tarde podría hacer
+            calor, mientras que por la noche la temperatura bajará, así que valorad llevar algo para cubriros o una
+            chaqueta
+            elegante. Todo el evento se llevará a cabo al aire libre.<br>
+            <strong>Nota especial:</strong> el blanco es para la novia, el verde para el novio, todos los demás ¡libres
+            de divertirse con su propio estilo!
+          </div>
+        </details>
+
+
+
+        <details data-animate="slide-up">
+          <summary>¿Qué tiempo hará durante el fin de semana?</summary>
+          <div class="faq-answer">
+            A mediados de septiembre Calabria regala días cálidos y agradables (25–27 °C) y noches más frescas
+            (18–20 °C),
+            perfectas para celebrar al aire libre.
+          </div>
+        </details>
+
+        <details data-animate="slide-up">
+          <summary>¿Cómo llegar al lugar?</summary>
+          <div class="faq-answer">
+            La ubicación no cuenta con servicio de Uber o autobuses, por lo que recomendamos coche propio.<br>
+            Para quienes no tengan coche, podemos organizar traslados. Si preferís un taxi, el único disponible en
+            Rossano es Alfonso, a quien podéis contactar al +39 353 3692588.
+          </div>
+        </details>
+
+        <details data-animate="slide-up">
+          <summary>¿Dónde podemos dejar el coche?</summary>
+          <div class="faq-answer">
+            El lugar dispone de aparcamiento a disposición de los invitados, así que podréis llegar cómodamente sin
+            preocupaciones.
+          </div>
+        </details>
+
+        <details data-animate="slide-up">
+          <summary>¿Dónde podemos dormir?</summary>
+          <div class="faq-answer">
+            Para quienes deseen quedarse cerca de la fiesta, es posible alojarse directamente en el lugar de la
+            boda. Además, para las noches de viernes y sábado de la boda habrá un precio especial para
+            los invitados.<br>
+            Alternativamente, hay varios B&B y hoteles en los alrededores, para que podáis elegir la solución más
+            cómoda.
+            (El lugar no está cerca del mar, tenedlo en cuenta en la planificación.)<br><br>
+            <strong>Algunos B&B sugeridos cerca del mar:</strong>
+            <ul style="list-style: none; padding: 0; margin: 10px 0 0 0;">
+              <li style="margin-bottom: 8px;">
+                <i class="fas fa-bed" style="color: var(--terracotta); margin-right: 8px; font-size: 0.8rem;"></i>
+                <a href="https://www.booking.com/hotel/it/franita.it.html?aid=332731&checkin=2026-09-11&checkout=2026-09-13"
+                  target="_blank" style="color: var(--terracotta); text-decoration: underline;">Franìta</a>
+              </li>
+              <li style="margin-bottom: 8px;">
+                <i class="fas fa-bed" style="color: var(--terracotta); margin-right: 8px; font-size: 0.8rem;"></i>
+                <a href="https://www.booking.com/hotel/it/b-amp-b-giglio-di-mare-corigliano-rossano.it.html?aid=332731&checkin=2026-09-11&checkout=2026-09-13"
+                  target="_blank" style="color: var(--terracotta); text-decoration: underline;">B&B Giglio di Mare</a>
+              </li>
+              <li>
+                <i class="fas fa-bed" style="color: var(--terracotta); margin-right: 8px; font-size: 0.8rem;"></i>
+                <a href="https://www.booking.com/hotel/it/moonlight-apartments.it.html?aid=332731&checkin=2026-09-11&checkout=2026-09-13"
+                  target="_blank" style="color: var(--terracotta); text-decoration: underline;">Moonlight Apartments</a>
+              </li>
+            </ul>
+          </div>
+        </details>
+
+        <details data-animate="slide-up">
+          <summary>¿Cómo podemos aprovechar la mañana antes de la ceremonia?</summary>
+          <div class="faq-answer">
+            La mañana de la boda es perfecta para relajarse, desayunar con calma y disfrutar de los alrededores del
+            lugar. Podéis elegir ir al mar, dar un paseo, visitar el pueblo de Rossano y la Fábrica
+            de Amarelli. ¡Hacednos saber vuestros planes, así podemos coordinarnos y vivir el día al máximo!
+          </div>
+        </details>
+
+        <details data-animate="slide-up">
+          <summary>¿Qué hacer antes o después de la boda?</summary>
+          <div class="faq-answer">
+            ¡Calabria está llena de pequeñas magias por descubrir!<br>
+            En Rossano podréis pasear por las callejuelas del centro histórico, descubrir plazas y rincones sugerentes y
+            probar
+            especialidades locales. Si tenéis más tiempo, os recomendamos algunas paradas icónicas de Calabria: Tropea
+            con sus
+            playas de ensueño, Scilla para panoramas impresionantes sobre el mar, y las Calabrias internas para pueblos
+            auténticos y
+            tradiciones antiguas.<br>
+            Para experiencias guiadas, tours y excursiones, echad un vistazo a <a
+              href="https://www.andirivieni.it/destinations/calabria/" target="_blank">Andirivieni</a> (os aconsejamos
+            contactarles) y <a href="https://calabriastraordinaria.it/" target="_blank">Calabria Straordinaria</a> -
+            ¡dejaos sorprender!
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- RSVP -->
+    <section id="rsvp" class="section-rsvp">
+      <div class="rsvp-grid">
+        <div class="rsvp-copy">
+          <div class="section-title-with-icon">
+            <i class="fas fa-pen-fancy"></i>
+            <h2 class="title-section" data-animate="slide-right">RSVP</h2>
+          </div>
+          <p data-animate="slide-right">
+            Vuestra presencia es la parte más preciosa de este día.
+            Os pedimos solo confirmar antes de la fecha indicada, para poder
+            cuidar al máximo cada detalle.
+          </p>
+          <div class="rsvp-deadline" data-animate="slide-right">
+            Confirma antes del 12 de Junio de 2026
+          </div>
+        </div>
+
+        <div class="rsvp-form-shell" data-animate="slide-left">
+          <div class="rsvp-inner">
+
+            <div class="rsvp-form-title">Confirma tu asistencia</div>
+
+            <form id="rsvp-form">
+              <div>
+                <label for="nome">Nombre y apellido</label>
+                <div class="field-shell">
+                  <input type="text" id="nome" name="nome" placeholder="Tu nombre completo" required />
+                </div>
+              </div>
+
+              <div>
+                <label for="email">Email</label>
+                <div class="field-shell">
+                  <input type="email" id="email" name="email" placeholder="Para posibles comunicaciones" required />
+                </div>
+              </div>
+
+              <div class="form-row-double">
+                <div>
+                  <label for="presenza-matrimonio">¿Asistirás a la Boda?</label>
+                  <div class="field-shell">
+                    <select id="presenza-matrimonio" name="presenza-matrimonio" required>
+                      <option value="">Selecciona...</option>
+                      <option value="si">Sí, asistiré</option>
+                      <option value="no">Lamentablemente no podré asistir</option>
+                    </select>
+                  </div>
+                </div>
+                <div>
+                  <label for="presenza-welcome">¿Asistirás a la Welcome Party?</label>
+                  <div class="field-shell">
+                    <select id="presenza-welcome" name="presenza-welcome" required>
+                      <option value="">Selecciona...</option>
+                      <option value="si">Sí, asistiré</option>
+                      <option value="no">Lamentablemente no podré asistir</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row-double">
+                <div>
+                  <label for="ospiti">Adultos</label>
+                  <div class="field-shell">
+                    <select id="ospiti" name="ospiti" required>
+                      <option value="">¿Cuántos adultos?</option>
+                      <option value="1">Solo yo</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                    </select>
+                  </div>
+                </div>
+                <div>
+                  <label for="bambini">Niños</label>
+                  <div class="field-shell">
+                    <select id="bambini" name="bambini">
+                      <option value="0">0</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <label for="dieta">Preferencias alimentarias</label>
+                <div class="field-shell">
+                  <select id="dieta" name="dieta">
+                    <option value="">Ninguna preferencia particular</option>
+                    <option value="Vegetariano">Vegetariano</option>
+                    <option value="Vegano">Vegano</option>
+                    <option value="Celiaco">Celíaco / sin gluten</option>
+                    <option value="Altro">Otro (ver notas)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label for="note">Alergias, necesidades especiales, notas</label>
+                <div class="field-shell field-shell--textarea">
+                  <textarea id="note" name="note"
+                    placeholder="Indícanos eventuales intolerancias, peticiones particulares o preferencias de viaje."></textarea>
+                </div>
+              </div>
+
+              <div style="margin-top: 2rem; margin-bottom: 0.8rem; font-size: 1rem; color: white; font-weight: normal;">
+                Si necesitas alojamiento en la estructura del evento indícalo aquí abajo:
+              </div>
+
+              <div>
+                <label for="pernottamento">Alojamiento</label>
+                <div class="field-shell">
+                  <select id="pernottamento" name="pernottamento">
+                    <option value="">Selecciona una opción</option>
+                    <option value="no" selected>No necesito alojamiento</option>
+                    <option value="matrimoniale">Habitación matrimonial (75€)</option>
+                    <option value="tripla">Habitación triple (100€)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div id="accommodation-details">
+                <div class="form-row-double">
+                  <div>
+                    <label for="arrivo">Fecha de llegada</label>
+                    <div class="field-shell">
+                      <input type="date" id="arrivo" name="arrivo" inputmode="none" onkeydown="return false;" />
+                    </div>
+                  </div>
+                  <div>
+                    <label for="partenza">Fecha de salida</label>
+                    <div class="field-shell">
+                      <input type="date" id="partenza" name="partenza" inputmode="none" onkeydown="return false;" />
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <label for="culla">Número de cunas</label>
+                  <div class="field-shell">
+                    <select id="culla" name="culla">
+                      <option value="0">0</option>
+                      <option value="1">1 (+10€ por noche)</option>
+                      <option value="2">2 (+20€ por noche)</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="rsvp-submit-row">
+                <button class="btn-rsvp" type="submit">
+                  Enviar RSVP
+                  <span class="btn-rsvp-icon">→</span>
+                </button>
+              </div>
+
+              <div id="rsvp-status" style="margin-top: 1rem; font-size: 0.85rem; display: none;"></div>
+
+              <p class="rsvp-legal">
+                Los datos introducidos se utilizarán exclusivamente para la organización de la boda
+                de Andrea & Leonardo.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider-image">
+      <img src="A.png" alt="divisore">
+    </div>
+
+
+    <!-- Gracias! -->
+    <section class="section-thanks" data-animate="fade-in">
+      <div class="thanks-container">
+        <div class="section-title-with-icon">
+          <i class="fas fa-gift gift-icon"></i>
+          <h2 class="title-section" data-animate="slide-right">¡Gracias!</h2>
+        </div>
+        <div class="thanks-content" data-animate="slide-right">
+          <p>
+            Nuestra boda no tendrá lista de bodas ni objetos materiales: el regalo más bonito será celebrar este
+            momento con las personas que amamos. <br>
+            <br>
+            Si deseáis tener un detalle con nosotros, la forma más especial será contribuir a nuestro viaje de novios.
+            Podréis hacerlo dejando un sobre durante la boda o con una transferencia, como os sea más cómodo. <br>
+            <br>
+
+          </p>
+          <div class="thanks-iban">
+            <p class="iban-label">IBAN:</p>
+            <p class="iban-number">IT42O0760116200001027686557</p>
+            <p class="iban-name">A nombre de: Leonardo Stamati</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <div class="divider-image">
+      <img src="B.png" alt="divisore">
+    </div>
+
+    <!-- Álbum Fotográfico -->
+    <section class="section-photography" data-animate="fade-in">
+      <div class="photography-container">
+        <div class="section-title-with-icon">
+          <i class="fas fa-camera camera-icon"></i>
+          <h2 class="title-section" data-animate="slide-right">Álbum de Fotos</h2>
+        </div>
+        <p data-animate="slide-right">
+          ¡Descarga la app <strong>WedShoots</strong> con antelación y usa nuestro código para compartir tus fotos con
+          nosotros! <br>Cada foto cuenta un pedazo de nuestro corazón: haced que sea inolvidable.
+        </p>
+
+        <div class="album-code-container"
+          style="background: rgba(255,255,255,0.6); border: 1px dashed var(--terracotta); border-radius: 12px; padding: 1rem; margin: 1.5rem auto; max-width: 300px;">
+          <p
+            style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 0.5rem; color: var(--ink-soft);">
+            Código del Álbum</p>
+          <strong
+            style="font-size: 1.4rem; letter-spacing: 0.1em; color: var(--terracotta); user-select: all;">ITa97694ec</strong>
+        </div>
+
+        <div class="app-store-buttons"
+          style="display: flex; gap: 1rem; justify-content: center; margin-top: 1.5rem; flex-wrap: wrap;">
+          <a href="https://apps.apple.com/es/app/wedshoots/id660256196" target="_blank"
+            style="text-decoration: none; transition: transform 0.2s; display: flex; align-items: center;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
+              alt="Descargar en App Store" style="height: 40px; width: auto; filter: invert(1);">
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=net.bodas.android.wedshoots&referrer=af_tranid%3DtrgDZecUzjZ4XBviAIwrSQ%26c%3DWP-IT-LANDINGS%26pid%3DWP-Android-IT"
+            target="_blank"
+            style="text-decoration: none; transition: transform 0.2s; display: flex; align-items: center;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+              alt="Disponible en Google Play" style="height: 40px; width: auto; filter: invert(1) hue-rotate(180deg);">
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider-image">
+      <img src="A.png" alt="divisore">
+    </div>
+
+    <!-- Footer finale -->
+    <section style="padding: 3rem 1rem; text-align: center; background: transparent;">
+      <div
+        style="font-family: 'Montserrat', sans-serif; font-size: 1.2rem; font-weight: 300; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 0.5rem;">
+        Con amor <i class="fas fa-heart" style="font-size: 0.9em; margin-left: 0.3rem;"></i>
+      </div>
+      <div style="font-family: 'Amalfi Coast', cursive; font-size: 1.5rem; color: white; font-weight: 1000;">
+        Andrea &amp; Leonardo
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    // --- PERSONALIZZAZIONE OSPITE (URL) ---
+    const urlParams = new URLSearchParams(window.location.search);
+    const ospiteParam = urlParams.get('ospite') || urlParams.get('guest');
+    const adultiParam = urlParams.get('adulti'); // Nuovo parametro
+
+    try {
+      if (ospiteParam) {
+        // 1. Aggiorna Overlay Busta
+        const guestNameDiv = document.getElementById('intro-guest-name');
+        if (guestNameDiv) {
+          guestNameDiv.innerHTML = `<span style="font-family: 'Amalfi Coast', cursive; font-size: 1.3em; text-transform: none; letter-spacing: normal; display: block; margin-bottom: 0.6rem; opacity: 0.9;">Una invitación para...</span>${ospiteParam}`;
+          setTimeout(() => {
+            guestNameDiv.style.opacity = '1';
+            guestNameDiv.style.transform = 'translateY(0)';
+          }, 300);
+        }
+
+        // 2. Pre-compila Form RSVP
+        const nomeInput = document.getElementById('nome');
+        if (nomeInput) {
+          nomeInput.value = ospiteParam;
+        }
+      }
+
+      // 3. Limita numero ospiti se presente parametro 'adulti' o in base al nome (logica base)
+      if (adultiParam) {
+        const maxAdulti = parseInt(adultiParam, 10);
+        const ospitiSelect = document.getElementById('ospiti');
+        if (ospitiSelect && !isNaN(maxAdulti)) {
+          // Pulisci opzioni esistenti tranne la prima (placeholder)
+          // Oppure ricostruisci da capo.
+          ospitiSelect.innerHTML = '<option value="">¿Cuántos adultos?</option>';
+
+          // Se maxAdulti è 0, permetti solo "Non verrò" tramite 'presenza', ma qui si parla di 'adulti presenti'.
+          // Se mettono adulti=2, le opzioni saranno 1, 2. (0 non ha senso se "partecipano", ma lasciamo coerenza col form)
+          // Il form chiede "Quanti adulti?". Se non vengono, mettono "No" sopra e questo campo è disabled o ignorato?
+          // Attualmente non c'è logica di disable.
+
+          // Genera opzioni da 1 a maxAdulti
+          for (let i = 1; i <= maxAdulti; i++) {
+            const label = (i === 1) ? "Solo yo" : i.toString();
+            const option = document.createElement('option');
+            option.value = i;
+            option.text = label;
+            // Seleziona l'ultimo valore come default
+            if (i === maxAdulti) {
+              option.selected = true;
+            }
+            ospitiSelect.add(option);
+          }
+        }
+      }
+
+    } catch (err) {
+      console.error("Errore JS: " + err.message);
+    }
+
+    // Animazioni on-scroll
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.18 }
+    );
+    document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
+
+    // Countdown
+    const countdownEl = document.getElementById('countdown-days');
+    const weddingDate = new Date('2026-09-12T16:00:00+02:00');
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = weddingDate - now;
+      const days = Math.max(0, Math.floor(diff / (1000 * 60 * 60 * 24)));
+      countdownEl.textContent = String(days).padStart(2, '0');
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000 * 60 * 60); // ogni ora è sufficiente
+
+    // Music Control
+    const audioEl = document.getElementById('bg-music');
+    const musicIcon = document.getElementById('music-icon');
+    if (audioEl && musicIcon) {
+      audioEl.volume = 0.5;
+
+      function setMusicIcon() {
+        if (audioEl.paused) {
+          musicIcon.classList.remove('fa-pause');
+          musicIcon.classList.add('fa-music');
+        } else {
+          musicIcon.classList.remove('fa-music');
+          musicIcon.classList.add('fa-pause');
+        }
+      }
+
+      window.toggleMusic = function toggleMusic() {
+        if (audioEl.paused) {
+          audioEl.play().then(setMusicIcon).catch(() => {
+            // Play fallisce senza interazione su alcuni browser; il click sul bottone lo sblocca
+          });
+        } else {
+          audioEl.pause();
+          setMusicIcon();
+        }
+      };
+
+      setMusicIcon();
+    }
+    // --- HANDLE INTRO OPENING ---
+    const introOverlay = document.getElementById('intro-overlay');
+    const waxSealBtn = document.getElementById('wax-seal-btn');
+
+    if (introOverlay && waxSealBtn) {
+      // Prevent scrolling while overlay is visible
+      document.body.style.overflow = 'hidden';
+
+      waxSealBtn.addEventListener('click', () => {
+        // 1. Start Animation
+        introOverlay.classList.add('open');
+
+        // 2. Play Music (Interaction allows this now)
+        if (audioEl) {
+          audioEl.play().then(() => {
+            setMusicIcon();
+          }).catch(err => console.log('Autoplay blocked:', err));
+        }
+
+        // 3. Remove overlay after animation
+        // 3. Remove overlay after animation
+        setTimeout(() => {
+          introOverlay.classList.add('hidden');
+          document.body.style.overflow = ''; // Restore scroll
+        }, 1100);
+      });
+    }
+
+    // --- RSVP LOGIC ---
+    // IMPORTANTE: Incolla qui sotto l'URL che ottieni dal deployment su Google Apps Script!
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzkhlD4NotAzhGQJw-u_0GlwTKI9RfqOaiP2ucWbZ5Zrzfcz6RoPP4GMMqavZR3EdiA/exec";
+
+    const rsvpForm = document.getElementById('rsvp-form');
+    const rsvpStatus = document.getElementById('rsvp-status');
+
+    // Logic for hiding accommodation details (dates + cots) if no needed
+    const pernottamentoSelect = document.getElementById('pernottamento');
+    const accommodationDetails = document.getElementById('accommodation-details');
+
+    function toggleAccommodationDetails() {
+      if (pernottamentoSelect && accommodationDetails) {
+        // Hide strictly on 'no' as requested.
+        if (pernottamentoSelect.value === 'no') {
+          accommodationDetails.style.display = 'none';
+          // Clear fields to avoid stale data
+          document.getElementById('arrivo').value = '';
+          document.getElementById('partenza').value = '';
+          document.getElementById('culla').value = '0';
+        } else {
+          accommodationDetails.style.display = 'block';
+        }
+      }
+    }
+
+    if (pernottamentoSelect) {
+      pernottamentoSelect.addEventListener('change', toggleAccommodationDetails);
+      // Run once on load
+      toggleAccommodationDetails();
+    }
+
+    if (rsvpForm) {
+      rsvpForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // Check if URL is set
+        if (!SCRIPT_URL) {
+          alert("ATTENZIONE: Manca l'URL dello script Google.\\nSegui le istruzioni in SETUP_RSVP.md per configurarlo.");
+          return;
+        }
+
+        // VALIDAZIONE ESPLICITA
+        const nome = document.getElementById('nome').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const presenzaMatrimonio = document.getElementById('presenza-matrimonio').value;
+        const presenzaWelcome = document.getElementById('presenza-welcome').value;
+        const ospiti = document.getElementById('ospiti').value;
+
+        // Reset previous error messages
+        rsvpStatus.style.display = 'none';
+
+        // Validate required fields
+        if (!nome) {
+          rsvpStatus.style.display = 'block';
+          rsvpStatus.style.color = '#D32F2F';
+          rsvpStatus.innerHTML = '<strong>¡Atención!</strong><br>Introduce tu nombre y apellido.';
+          document.getElementById('nome').focus();
+          return;
+        }
+
+        if (!email) {
+          rsvpStatus.style.display = 'block';
+          rsvpStatus.style.color = '#D32F2F';
+          rsvpStatus.innerHTML = '<strong>¡Atención!</strong><br>Introduce tu email.';
+          document.getElementById('email').focus();
+          return;
+        }
+
+        if (!presenzaMatrimonio) {
+          rsvpStatus.style.display = 'block';
+          rsvpStatus.style.color = '#D32F2F';
+          rsvpStatus.innerHTML = '<strong>¡Atención!</strong><br>Indica si asistirás a la Boda (12-09).';
+          document.getElementById('presenza-matrimonio').focus();
+          return;
+        }
+
+        if (!presenzaWelcome) {
+          rsvpStatus.style.display = 'block';
+          rsvpStatus.style.color = '#D32F2F';
+          rsvpStatus.innerHTML = '<strong>¡Atención!</strong><br>Indica si asistirás a la Welcome Party (11-09).';
+          document.getElementById('presenza-welcome').focus();
+          return;
+        }
+
+        if (!ospiti) {
+          rsvpStatus.style.display = 'block';
+          rsvpStatus.style.color = '#D32F2F';
+          rsvpStatus.innerHTML = '<strong>¡Atención!</strong><br>Indica cuántos adultos asistirán.';
+          document.getElementById('ospiti').focus();
+          return;
+        }
+
+        const btn = rsvpForm.querySelector('button[type="submit"]');
+        const originalBtnText = btn.innerHTML;
+
+        // UI Loading State
+        btn.disabled = true;
+        btn.innerHTML = "Enviando...";
+        rsvpStatus.style.display = 'none';
+
+        // Collect Data
+        const formData = new FormData(rsvpForm);
+        const data = {};
+        formData.forEach((value, key) => data[key] = value);
+
+        // Send to Google Script
+        fetch(SCRIPT_URL, {
+          method: 'POST',
+          body: JSON.stringify(data),
+          // mode: 'no-cors' // Use if CORS errors persist, but we lose error handling
+        })
+          .then(response => response.json()) // Expecting JSON form script
+          .then(res => {
+            if (res.result === 'success') {
+              // Success!
+              rsvpForm.reset();
+              // Reset accommodation details visibility after reset
+              if (pernottamentoSelect) {
+                toggleAccommodationDetails();
+              }
+              rsvpStatus.style.display = 'block';
+              rsvpStatus.style.color = 'white';
+              rsvpStatus.innerHTML = `<strong>¡Gracias ${data.nome.split(' ')[0]}!</strong><br>Tu confirmación ha sido recibida.`;
+              btn.innerHTML = "Enviado ✓";
+              setTimeout(() => {
+                btn.disabled = false;
+                btn.innerHTML = originalBtnText;
+              }, 5000);
+            } else {
+              // Script Error (e.g. duplicate)
+              throw new Error(res.message || "Errore sconosciuto");
+            }
+          })
+          .catch(error => {
+            console.error('Error:', error);
+            rsvpStatus.style.display = 'block';
+            rsvpStatus.style.color = '#D32F2F'; // Red
+            rsvpStatus.innerHTML = `<strong>¡Ups! Algo no va bien.</strong><br>${error.message}`;
+            btn.disabled = false;
+            btn.innerHTML = originalBtnText;
+          });
+      });
+    }
+  </script>
+
+</body>
+
+</html>
