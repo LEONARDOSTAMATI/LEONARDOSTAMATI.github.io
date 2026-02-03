@@ -2168,6 +2168,8 @@
                 </div>
               </div>
 
+              <input type="hidden" name="sito-provenienza" id="sito-provenienza" value="Italiano">
+
               <div id="accommodation-details">
                 <div class="form-row-double">
                   <div>
@@ -2358,6 +2360,12 @@
             ospitiSelect.add(option);
           }
         }
+      }
+
+      // 4. Imposta provenienza
+      const provInput = document.getElementById('sito-provenienza');
+      if (provInput) {
+        provInput.value = window.location.pathname.includes('index-esp') ? 'Spagnolo' : 'Italiano';
       }
 
     } catch (err) {
