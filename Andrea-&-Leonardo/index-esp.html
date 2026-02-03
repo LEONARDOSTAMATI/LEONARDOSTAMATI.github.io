@@ -2176,7 +2176,7 @@
                 </div>
               </div>
 
-              <input type="hidden" name="sito-provenienza" id="sito-provenienza" value="Spagnolo">
+              <input type="hidden" name="sito-provenienza" id="sito-provenienza" value="">
 
               <div id="accommodation-details">
                 <div class="form-row-double">
@@ -2370,10 +2370,10 @@
         }
       }
 
-      // 4. Imposta provenienza
+      // 4. Imposta provenienza (URL completo)
       const provInput = document.getElementById('sito-provenienza');
       if (provInput) {
-        provInput.value = window.location.pathname.includes('index-esp') ? 'Spagnolo' : 'Italiano';
+        provInput.value = window.location.href;
       }
 
     } catch (err) {
