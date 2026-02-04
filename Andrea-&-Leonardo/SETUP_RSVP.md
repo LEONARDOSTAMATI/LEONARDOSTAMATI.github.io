@@ -5,7 +5,7 @@ Segui questa guida per collegare il tuo form RSVP a Google Sheets e ricevere le 
 ## 1. Crea il Foglio Google
 1. Vai su [Google Sheets](https://sheets.google.com) e crea un nuovo foglio vuoto.
 2. Chiamalo `Matrimonio RSVP`.
-3. Nella **prima riga** (intestazione), scrivi esattamente questi titoli nelle colonne da A a M:
+3. Nella **prima riga** (intestazione), scrivi esattamente questi titoli nelle colonne da A a N:
    - **A**: Data Invio
    - **B**: Email (ID Univoco)
    - **C**: Nome e Cognome
@@ -19,6 +19,7 @@ Segui questa guida per collegare il tuo form RSVP a Google Sheets e ricevere le 
    - **K**: Data Arrivo
    - **L**: Data Partenza
    - **M**: Culle
+   - **N**: Link Provenienza (URL completa)
 
 ## 2. Crea lo Script
 1. Nel foglio, clicca su **Estensioni** > **Apps Script**.
@@ -79,7 +80,8 @@ function doPost(e) {
       data.pernottamento || "no",         // J: Pernottamento
       data.arrivo || "",                  // K: Data Arrivo
       data.partenza || "",                // L: Data Partenza
-      data.culla || "0"                   // M: Culle
+      data.culla || "0",                  // M: Culle
+      data["sito-provenienza"] || ""      // N: Link Provenienza (URL completa)
     ];
 
     sheet.appendRow(row);
@@ -101,6 +103,7 @@ function doPost(e) {
           <p><strong>Date soggiorno:</strong> ${data.arrivo || "N/A"} → ${data.partenza || "N/A"}</p>
           <p><strong>Culle:</strong> ${data.culla || 0}</p>
           <p><strong>Note:</strong> ${data.note || "Nessuna"}</p>
+          <p><strong>Provenienza:</strong> ${data["sito-provenienza"] || "N/A"}</p>
           <hr>
           <p><a href="${SpreadsheetApp.getActiveSpreadsheet().getUrl()}">Apri il Foglio Google</a></p>
         `

@@ -1924,8 +1924,9 @@
               <p>Culla aggiuntiva · +10€ a notte</p>
             </div>
             <p class="pernottamento-footer">
-              Le camere hanno tariffe dedicate per il weekend del matrimonio. Indicate nel form RSVP se desiderate
-              soggiornare in struttura e la tipologia di camera preferita. Durante il weekend del matrimonio, il
+              Le camere hanno tariffe dedicate con colazione inclusa per il weekend del matrimonio. Indicate nel form
+              RSVP se desiderate soggiornare in struttura e la tipologia di camera preferita. Durante il weekend del
+              matrimonio, il
               check-in è flessibile: potete arrivare anche la mattina presto, ma è necessario indicarlo. Il check-out
               della domenica è possibile farlo fino a tarda mattinata, prima di pranzo. Il saldo potrete effettuarlo al
               check-out.
@@ -2167,6 +2168,8 @@
                 </div>
               </div>
 
+              <input type="hidden" name="sito-provenienza" id="sito-provenienza" value="">
+
               <div id="accommodation-details">
                 <div class="form-row-double">
                   <div>
@@ -2359,6 +2362,12 @@
         }
       }
 
+      // 4. Imposta provenienza (URL completo)
+      const provInput = document.getElementById('sito-provenienza');
+      if (provInput) {
+        provInput.value = window.location.href;
+      }
+
     } catch (err) {
       console.error("Errore JS: " + err.message);
     }
@@ -2450,7 +2459,7 @@
 
     // --- RSVP LOGIC ---
     // IMPORTANTE: Incolla qui sotto l'URL che ottieni dal deployment su Google Apps Script!
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzkhlD4NotAzhGQJw-u_0GlwTKI9RfqOaiP2ucWbZ5Zrzfcz6RoPP4GMMqavZR3EdiA/exec";
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxkfg2mHkEj4inlrwWpsxoSkd1mnu4qiXtTmHO9us7gEqf-bQQojZFICctBMhPDYz9A/exec";
 
     const rsvpForm = document.getElementById('rsvp-form');
     const rsvpStatus = document.getElementById('rsvp-status');

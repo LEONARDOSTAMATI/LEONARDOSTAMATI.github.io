@@ -1693,9 +1693,8 @@
           style="font-family: 'Playfair Display', serif; font-size: 1.3rem; text-transform: uppercase; letter-spacing: 0.22em; margin-bottom: 1.5rem; color: var(--terracotta); font-weight: 600;">
           Les invitamos a compartir con nosotros este momento</p>
         <p style="font-size: 1.1rem; line-height: 1.8; color: var(--ink-soft); font-style: normal;">
-          Una boda pensada como un libro para hojear en el que celebramos el amor que nos une
-          y la elección de caminar juntos hacia el futuro. <br>
-          Un fin de semana para vivir juntos.
+          Una boda pensada para celebrar el amor que nos une y la decisión de caminar juntos hacia el futuro.
+          Un fin de semana para vivir, sentir y compartir juntos.
         </p>
       </div>
     </section>
@@ -1712,7 +1711,7 @@
           <h2 class="title-section" data-animate="slide-right">Nuestra historia</h2>
         </div>
         <p class="story-intro" data-animate="slide-right">
-          Tres momentos que han marcado nuestro camino.
+          Tres momentos que han marcado nuestro camino
         </p>
       </div>
     </header>
@@ -1725,8 +1724,8 @@
             <h3 class="story-step-title">El comienzo de todo</h3>
             <div class="story-step-meta">Bologna 2016</div>
             <p class="story-step-text">
-              Un encuentro nacido por casualidad, suspendido entre bromas, preguntas y risas.
-              Ningún gran gesto, solo la sensación de que ese momento no debía interrumpirse.
+              Un encuentro nacido por casualidad, entre bromas, preguntas y risas.
+              Sin grandes gestos, solo la sensación de que ese momento no debía terminar.
             </p>
           </article>
         </div>
@@ -1749,8 +1748,8 @@
             <h3 class="story-step-title">Un sí entre mar y montañas</h3>
             <div class="story-step-meta">Corigliano-Rossano</div>
             <p class="story-step-text">
-              El mar a un lado, el bosque enfrente, la luz del sur coloreándolo todo.
-              Aquí decidimos detener el tiempo y convertirlo en nuestro lugar especial, junto a vosotros.
+              El mar a un lado, el bosque enfrente, y la luz del sur tiñéndolo todo.
+              Aquí decidimos detener el tiempo y convertir este rincón en nuestro lugar especial, junto a ustedes.
             </p>
           </article>
         </div>
@@ -1923,7 +1922,8 @@
               <p>Cuna adicional · +10€ por noche</p>
             </div>
             <p class="pernottamento-footer">
-              Las habitaciones tienen tarifas especiales para el fin de semana de la boda. Indicad en el formulario RSVP
+              Las habitaciones tienen tarifas especiales con desayuno incluido para el fin de semana de la boda. Indicad
+              en el formulario RSVP
               si deseáis
               alojaros en la estructura y la tipología de habitación preferida. Durante el fin de semana de la boda, el
               check-in es flexible: podéis llegar incluso temprano por la mañana, pero es necesario indicarlo. El
@@ -2175,6 +2175,8 @@
                 </div>
               </div>
 
+              <input type="hidden" name="sito-provenienza" id="sito-provenienza" value="">
+
               <div id="accommodation-details">
                 <div class="form-row-double">
                   <div>
@@ -2324,7 +2326,7 @@
         // 1. Aggiorna Overlay Busta
         const guestNameDiv = document.getElementById('intro-guest-name');
         if (guestNameDiv) {
-          guestNameDiv.innerHTML = `<span style="font-family: 'Amalfi Coast', cursive; font-size: 1.3em; text-transform: none; letter-spacing: normal; display: block; margin-bottom: 0.6rem; opacity: 0.9;">Una invitación para...</span>${ospiteParam}`;
+          guestNameDiv.innerHTML = `<span style="font-family: 'Amalfi Coast', cursive; font-size: 1.3em; text-transform: none; letter-spacing: normal; display: block; margin-bottom: 0.6rem; opacity: 0.9;">Para...</span>${ospiteParam}`;
           setTimeout(() => {
             guestNameDiv.style.opacity = '1';
             guestNameDiv.style.transform = 'translateY(0)';
@@ -2365,6 +2367,12 @@
             ospitiSelect.add(option);
           }
         }
+      }
+
+      // 4. Imposta provenienza (URL completo)
+      const provInput = document.getElementById('sito-provenienza');
+      if (provInput) {
+        provInput.value = window.location.href;
       }
 
     } catch (err) {
@@ -2458,7 +2466,7 @@
 
     // --- RSVP LOGIC ---
     // IMPORTANTE: Incolla qui sotto l'URL che ottieni dal deployment su Google Apps Script!
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzkhlD4NotAzhGQJw-u_0GlwTKI9RfqOaiP2ucWbZ5Zrzfcz6RoPP4GMMqavZR3EdiA/exec";
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxkfg2mHkEj4inlrwWpsxoSkd1mnu4qiXtTmHO9us7gEqf-bQQojZFICctBMhPDYz9A/exec";
 
     const rsvpForm = document.getElementById('rsvp-form');
     const rsvpStatus = document.getElementById('rsvp-status');
